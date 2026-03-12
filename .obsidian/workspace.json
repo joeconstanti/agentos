@@ -1,0 +1,334 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "29239c1fe55be096",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8380fcd4fb1eca7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "645505df0accb99c",
+    "type": "split",
+    "children": [
+      {
+        "id": "b95be35bec41dc0f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77546fb45b631038",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "552ef8ccae620189",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fdeb8f34e11acbef",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "recent-files"
+            }
+          },
+          {
+            "id": "4e3a8a8a4089cdf6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "path:\"02_AREAS/REPORTS/\"",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 284.50312423706055
+  },
+  "right": {
+    "id": "e13cd37146cf338b",
+    "type": "split",
+    "children": [
+      {
+        "id": "792e818e1fe61bc5",
+        "type": "tabs",
+        "dimension": 42.4757281553398,
+        "children": [
+          {
+            "id": "ec4b549dfe3a5946",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "options": {
+                  "collapse-filter": false,
+                  "search": "                    ",
+                  "localJumps": 3,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": true,
+                  "showTags": true,
+                  "showAttachments": true,
+                  "hideUnresolved": true,
+                  "collapse-color-groups": true,
+                  "colorGroups": [
+                    {
+                      "query": "ftr",
+                      "color": {
+                        "a": 1,
+                        "rgb": 16711680
+                      }
+                    },
+                    {
+                      "query": "synthetic",
+                      "color": {
+                        "a": 1,
+                        "rgb": 14725458
+                      }
+                    },
+                    {
+                      "query": "cerebral",
+                      "color": {
+                        "a": 1,
+                        "rgb": 5431378
+                      }
+                    },
+                    {
+                      "query": "daily",
+                      "color": {
+                        "a": 1,
+                        "rgb": 5401056
+                      }
+                    }
+                  ],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": false,
+                  "centerStrength": 1,
+                  "repelStrength": 20,
+                  "linkStrength": 1,
+                  "linkDistance": 30,
+                  "scale": 0.16872194015928407,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "a310d6fa6ae2605e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "00_INBOX/Test Sync.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Test Sync"
+            }
+          },
+          {
+            "id": "c07d8c30e54ee604",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01_PROJECTS/Dev/Obsidian Improvements.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Obsidian Improvements"
+            }
+          },
+          {
+            "id": "35e940d6f5690090",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2ccd221a6b78619",
+        "type": "tabs",
+        "dimension": 57.52427184466019,
+        "children": [
+          {
+            "id": "29cd9838e5081097",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01_PROJECTS/Journal/2025-10-11.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-10-11"
+            }
+          },
+          {
+            "id": "356f521fcee82c32",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 493.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "command-palette:Open command palette": false,
+      "graph:Open graph view": false,
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": true,
+      "canvas:Create new canvas": true,
+      "workspaces:Manage workspace layouts": true,
+      "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false,
+      "activity-heatmap:Open activity heatmap": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "terminal:Open terminal": false
+    }
+  },
+  "active": "77546fb45b631038",
+  "lastOpenFiles": [
+    "install.sh",
+    "scripts/agentos-install.mjs",
+    "scripts",
+    "podcast-script.md",
+    "builders-vault-podcast.mp3",
+    "builders-vault-podcast.mp3.tmp",
+    "01_PROJECTS/Revori/BUILDS/BUILD_09/BUILD-09_REPORT_280226.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-DATA/Acruals Rec.csv",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-DATA",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS/Non-crucial_fixes_280226.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS/Crucial_fixes_280226.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/BUILD-08_REPORT_260226.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/NOTES",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-CODE/Dashboard_Updated/watchlist.html",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-CODE/Dashboard_Updated/upload-data.html",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot3.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot2.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot1.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Performance Analysis – Prior Year vs Current Year Bar Ordering_screenshot2.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Performance Analysis – Prior Year vs Current Year Bar Ordering_screenshot1.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Overview Screens – Duplicate % Variance KPI_screenshot1.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Filter Dropdown Background and Text rendering issue_screenshot3.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Module Emphasis in Left Navigation_screenshot1.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Filter Dropdown Background and Text rendering issue_screenshot1.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Consolidated_KPI Layout_Screenshot1.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/PRP Remove Producer Analysis Placeholder.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/PRP Final Polish 2.10.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/First UI Draft Notes - Revori.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/Debug Notes Watchlist Cancellations Timing Deferral.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/BUILD-07_REPORT_100226.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/EMAILS/EMAIL-TO-CHRIS_100226.md",
+    "02_AREAS/MOC/AI Market Signals 2026 MOC.md",
+    "03_RESOURCES/Docs/How to use Obsidian.md",
+    "02_AREAS/DASHBOARDS/index.md",
+    "02_AREAS/REPORTS/Top 15 AI SAAS Ideas 2026 Report.md",
+    "02_AREAS/MOC/Digital Products Ideation MOC.md",
+    "02_AREAS/MOC/AI SaaS 50 Focused Ideas 2026 MOC.md",
+    "02_AREAS/DASHBOARDS/index.html.md",
+    "README.md",
+    "01_PROJECTS/Revori/SOC-Audit-Plan_100226.md",
+    "03_RESOURCES/Skills/revori/SKILL.md",
+    "03_RESOURCES/Skills/algorithmic-art/SKILL.md",
+    "03_RESOURCES/Skills/canvas-design/SKILL.md",
+    "03_RESOURCES/Skills/brand-guidelines/SKILL.md",
+    "03_RESOURCES/Skills/doc-coauthoring/SKILL.md",
+    "03_RESOURCES/Canvas/Home Canvas.canvas",
+    "03_RESOURCES/Canvas/ComfyUI Context Prompting.canvas",
+    "03_RESOURCES/Canvas/2024.canvas",
+    "Joe's Canvas.canvas",
+    "03_RESOURCES/Canvas/toolbox.cerebral.studio.canvas",
+    "03_RESOURCES/Canvas/Writing Space.canvas",
+    "03_RESOURCES/Canvas/Tasks Dashboard.canvas",
+    "03_RESOURCES/Canvas/Recent Docs.canvas",
+    "03_RESOURCES/Canvas/Prompts_Canvas_01.canvas",
+    "03_RESOURCES/Canvas/Network Diagram.canvas"
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1250ea4eb41c41e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c02e48e405b3abab",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "TaskNotes/Views/tasks-default.base",
+                "viewName": "All Tasks"
+              },
+              "icon": "tasknotes-simple",
+              "title": "tasks-default"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3dfde4f06d6b2745",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "abc3becfb89e0a2d",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "bd6755e57728defa",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "640180ed44006bdc",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "2e89bedf9201e2ea",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "0f32411f4117e76f",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "b1ad355b92dbc124",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "d4b8c225d87b6f38",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Dashboards/Dashboard.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "5569753eb76bdde9",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Dashboards/Dashboard.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "fe1b1bbbd3cda603",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Dashboards/Dashboard.md"
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      },
+      {
+        "id": "e6b3f7150e65048e",
+        "type": "leaf",
+        "state": {
+          "type": "journal-calendar",
+          "state": {},
+          "icon": "calendar-days",
+          "title": "Calendar"
+        }
+      },
+      {
+        "id": "fda27638dbe2721e",
+        "type": "leaf",
+        "state": {
+          "type": "copilot-chat-view",
+          "state": {},
+          "icon": "message-square",
+          "title": "Copilot"
+        }
+      },
+      {
+        "id": "aacf71aab44d2096",
+        "type": "leaf",
+        "state": {
+          "type": "journal-calendar",
+          "state": {},
+          "icon": "lucide-file",
+          "title": "Plugin no longer active"
+        }
+      },
+      {
+        "id": "147dd56b48f5419f",
+        "type": "leaf",
+        "state": {
+          "type": "journal-calendar",
+          "state": {},
+          "icon": "calendar-days",
+          "title": "Calendar"
+        }
+      }
+    ],
+    "currentTab": 4
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "terminal:Open terminal": false,
+      "tasknotes:Open mini calendar": false,
+      "tasknotes:Open advanced calendar": false,
+      "tasknotes:Open task list": false,
+      "tasknotes:Open agenda": false,
+      "tasknotes:Open kanban board": false,
+      "tasknotes:Open pomodoro": false,
+      "tasknotes:Open pomodoro stats": false,
+      "tasknotes:Create new task": false,
+      "bases:Create new base": false,
+      "callout-manager:Insert Callout": false,
+      "graph:Open graph view": false,
+      "command-palette:Open command palette": false,
+      "switcher:Open quick switcher": false,
+      "daily-notes:Open today's daily note": false,
+      "canvas:Create new canvas": false,
+      "workspaces:Manage workspace layouts": true,
+      "templater-obsidian:Templater": false,
+      "copilot:Open Copilot Chat": false,
+      "homepage:Open homepage": false,
+      "companion:Toggle completion": false,
+      "omnisearch:Omnisearch": false,
+      "activity-heatmap:Open activity heatmap": false,
+      "chronology:Open Chronology": false,
+      "obsidian-plugin-update-tracker:Plugin Update Tracker": false,
+      "pexels-banner:🚩 Pixel Banner Menu": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false
+    }
+  },
+  "active": "c02e48e405b3abab",
+  "lastOpenFiles": [
+    "TaskNotes/Views/Call with Pete to discuss project workload.md",
+    "01_PROJECTS/Journal/2026-01-07.md",
+    "TaskNotes/Views/tasks-default.base",
+    "TaskNotes/Tasks/Push latest revenue intelligence build 2 to prod and message Chris.md",
+    "TaskNotes/Tasks/Finalise 2025 receipts and call dad.md",
+    "01_PROJECTS/Journal/2025-12-31.md",
+    "TaskNotes/Views/agenda-default.base",
+    "01_PROJECTS/Journal/2025-12-10.md",
+    "01_PROJECTS/Journal/2025-12-28.md",
+    "TaskNotes/Tasks/Update GPT models in n8n cloud for VibraMedia.md",
+    "01_PROJECTS/Journal/2025-12-13.md",
+    "01_PROJECTS/Journal/2025-12-11.md",
+    "TaskNotes/Tasks/Government PSC verification.md",
+    "TaskNotes/Tasks/Check error logger workflow vibra n8n cloud and respond to Pete and Rich.md",
+    "TaskNotes/Tasks/Update banking information for Target sports coaching.md",
+    "01_PROJECTS/Journal/2025-12-08.md",
+    "01_PROJECTS/Journal/2025-12-07.md",
+    "01_PROJECTS/Journal/2025-12-03.md",
+    "00_INBOX/Presents for Imogens 30th.md",
+    "TaskNotes/Tasks/Get back to Rich about n8n deployment move week long project.md",
+    "TaskNotes/Tasks/Reply to Jay and get API key for Supabase and explain start time.md",
+    "TaskNotes/Tasks/Reply to Chris about AutoAccrual and bad internet.md",
+    "00_INBOX/Untitled.md",
+    "01_PROJECTS/Journal/2025-11-28.md",
+    "01_PROJECTS/Journal/2025-11-20.md",
+    "02_AREAS/MOC/MOC - Personal & Life.md",
+    "03_RESOURCES/Canvas/Home Canvas.canvas",
+    "TaskNotes/Views/kanban-default.base",
+    "01_PROJECTS/Journal/2025-10-22.md",
+    "03_RESOURCES/Docs/Automate.md",
+    "Journal",
+    "00_INBOX/ComfyUI Context Prompting.canvas",
+    "Tags/#+#projects",
+    "Attachments/cover-2025.jpg",
+    "Tags/#finance",
+    "Canvas/MOC Canvas Testing.canvas",
+    "copilot-conversations",
+    "Attachments/2023-06-20_google-photo_101111.jpg",
+    "Attachments/2023-06-14_google-photo_172125.jpg",
+    "Canvas/Recent Docs.canvas",
+    "Canvas/Tasks Dashboard.canvas",
+    "Canvas/MOC Testing.canvas",
+    "Attachments/From the Root x Nuovant Partnership.wav"
+  ]
+}

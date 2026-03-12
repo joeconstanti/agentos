@@ -1,0 +1,22 @@
+{
+  "webhooks": [
+    {
+      "id": "8b4ae78d-1428-4fed-836e-b7f44ec8e04e",
+      "name": "Default Webhook",
+      "url": "",
+      "enabled": true,
+      "processInlineFields": false,
+      "responseHandling": "append"
+    },
+    {
+      "id": "44a86274-4ae3-442a-881f-e6fe3bf820a8",
+      "name": "New Webhook",
+      "url": "",
+      "excludeAttachments": false,
+      "includeVariableNote": false,
+      "enabled": false,
+      "processInlineFields": false,
+      "responseHandling": "append"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1739303210426,
+      "title": "Main Graph",
+      "options": {
+        "collapse-filter": false,
+        "search": "",
+        "showTags": true,
+        "showAttachments": true,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": true,
+        "colorGroups": [
+          {
+            "query": "ftr",
+            "color": {
+              "a": 1,
+              "rgb": 14430740
+            }
+          },
+          {
+            "query": "synthetic",
+            "color": {
+              "a": 1,
+              "rgb": 14461460
+            }
+          },
+          {
+            "query": "daily",
+            "color": {
+              "a": 1,
+              "rgb": 11817180
+            }
+          },
+          {
+            "query": "task",
+            "color": {
+              "a": 1,
+              "rgb": 43775
+            }
+          },
+          {
+            "query": "moc",
+            "color": {
+              "a": 1,
+              "rgb": 5431473
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": true,
+        "textFadeMultiplier": -0.9,
+        "nodeSizeMultiplier": 1.05333062550772,
+        "lineSizeMultiplier": 1.20475561873815,
+        "collapse-forces": true,
+        "centerStrength": 1,
+        "repelStrength": 20,
+        "linkStrength": 1,
+        "linkDistance": 30,
+        "scale": 0.21208946054894406,
+        "close": false
+      }
+    },
+    {
+      "type": "file",
+      "ctime": 1748906668722,
+      "path": "README.md",
+      "title": "README"
+    },
+    {
+      "type": "file",
+      "ctime": 1748906601759,
+      "path": "02_AREAS/Dashboard.md",
+      "title": "Dashboard"
+    },
+    {
+      "type": "file",
+      "ctime": 1748906639452,
+      "path": "01_PROJECTS/From the Root.md",
+      "title": "From the Root"
+    },
+    {
+      "type": "file",
+      "ctime": 1748906653469,
+      "path": "01_PROJECTS/Synthetic.md",
+      "title": "Synthetic"
+    },
+    {
+      "type": "file",
+      "ctime": 1753829374787,
+      "path": "01_PROJECTS/Notes/Cerebral.md",
+      "title": ""
+    },
+    {
+      "type": "file",
+      "ctime": 1760217164874,
+      "path": "03_RESOURCES/Docs/Automate.md",
+      "title": "Automate "
+    },
+    {
+      "type": "file",
+      "ctime": 1763585831791,
+      "path": "TaskNotes/Views/tasks-default.base",
+      "title": "Tasks"
+    },
+    {
+      "type": "file",
+      "ctime": 1770232056614,
+      "path": "03_RESOURCES/Docs/How to use Obsidian.md"
+    },
+    {
+      "type": "file",
+      "ctime": 1770744089535,
+      "path": "01_PROJECTS/Revori/SOC-Audit-Plan_100226.md"
+    },
+    {
+      "type": "file",
+      "ctime": 1773324990688,
+      "path": "README.md"
+    }
+  ]
+}

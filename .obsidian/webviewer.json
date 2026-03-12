@@ -1,0 +1,8 @@
+{
+  "openExternalURLs": false,
+  "enableAdblocking": true,
+  "customSearchEngine": "https://www.perplexity.ai/?q=%s",
+  "searchEngine": "custom",
+  "homepage": "https://google.com",
+  "markdownPath": "03_RESOURCES/Clippings"
+}

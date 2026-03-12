@@ -1,0 +1,51 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": true,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:00_INBOX  ",
+      "color": {
+        "a": 1,
+        "rgb": 13720863
+      }
+    },
+    {
+      "query": "path:01_PROJECTS  ",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "path:\"02_AREAS/SAAS Ideas\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 5463530
+      }
+    },
+    {
+      "query": "path:01_PROJECTS/Revori  ",
+      "color": {
+        "a": 1,
+        "rgb": 12459635
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 1,
+  "repelStrength": 20,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.19829253453652804,
+  "close": true
+}

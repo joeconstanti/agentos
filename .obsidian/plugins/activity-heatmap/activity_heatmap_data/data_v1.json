@@ -1,0 +1,2333 @@
+{
+  "checkpoints": {
+    "README.md": {
+      "mtime": 1773327543997,
+      "wordCount": 505,
+      "fileSize": 4600
+    },
+    "01_PROJECTS/Revori/README.md": {
+      "mtime": 1770338720666,
+      "wordCount": 2619,
+      "fileSize": 21024
+    },
+    "01_PROJECTS/Revori/SOC-Audit-Plan_100226.md": {
+      "mtime": 1770744578000,
+      "wordCount": 2341,
+      "fileSize": 16115
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.8 - Deferral JE Alignment.md": {
+      "mtime": 1770606944000,
+      "wordCount": 769,
+      "fileSize": 5517
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.16 - Timing Intelligence PY Curve Rendering.md": {
+      "mtime": 1770606941000,
+      "wordCount": 459,
+      "fileSize": 2877
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.9 - Allowance for Cancellation JE.md": {
+      "mtime": 1770606944000,
+      "wordCount": 490,
+      "fileSize": 3232
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP LOGIC 6.17 - Agency Bill Pretransacted Cancellation Fix.md": {
+      "mtime": 1770606944000,
+      "wordCount": 396,
+      "fileSize": 2798
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.7 - DEBUG JE Export Basis Mismatch.md": {
+      "mtime": 1770606944000,
+      "wordCount": 378,
+      "fileSize": 2534
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.2 - Timing Curve Bar Chart Cutoff Indicator.md": {
+      "mtime": 1770606941000,
+      "wordCount": 352,
+      "fileSize": 2282
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.6 - Cancellations KPI Label Update.md": {
+      "mtime": 1770606941000,
+      "wordCount": 135,
+      "fileSize": 1018
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.5 - Cancellations JE Export Remove 606.md": {
+      "mtime": 1770606941000,
+      "wordCount": 227,
+      "fileSize": 1450
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.4 - Timing Intelligence Cumulative PY Extension.md": {
+      "mtime": 1770606944000,
+      "wordCount": 472,
+      "fileSize": 3235
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.3 - Timing Intelligence X-Axis Labeling.md": {
+      "mtime": 1770606944000,
+      "wordCount": 388,
+      "fileSize": 2665
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.21 - Premium Payable X-Axis Alignment.md": {
+      "mtime": 1770606941000,
+      "wordCount": 281,
+      "fileSize": 1795
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.20 - Written Premium X-Axis Alignment.md": {
+      "mtime": 1770606944000,
+      "wordCount": 400,
+      "fileSize": 2624
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.19 - Deferred Revenue Remove Fiscal Year Filter.md": {
+      "mtime": 1770606941000,
+      "wordCount": 215,
+      "fileSize": 1419
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.18 - Deferred Revenue Waterfall Buckets.md": {
+      "mtime": 1770606941000,
+      "wordCount": 412,
+      "fileSize": 2824
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.12 - Carrier Written Premium Change Table Sorting.md": {
+      "mtime": 1770606941000,
+      "wordCount": 171,
+      "fileSize": 1130
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.13 - Written Premium vs Commission Graph.md": {
+      "mtime": 1770606941000,
+      "wordCount": 375,
+      "fileSize": 2465
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.15 - Timing Curve Prior Year Toggle Sync.md": {
+      "mtime": 1770606941000,
+      "wordCount": 349,
+      "fileSize": 2185
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.14 - Premiums Payable Rendering Fix.md": {
+      "mtime": 1770606941000,
+      "wordCount": 363,
+      "fileSize": 2307
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.11 - Written Premium Remove Local Period Selectors.md": {
+      "mtime": 1770606941000,
+      "wordCount": 166,
+      "fileSize": 1064
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.10 - Premium Payable Removal of 606.md": {
+      "mtime": 1770606941000,
+      "wordCount": 228,
+      "fileSize": 1461
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/PRP 6.1 - Cancellations Screen Removal of 606 Logic.md": {
+      "mtime": 1770606941000,
+      "wordCount": 263,
+      "fileSize": 1769
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/LEAST PRIORITY - UX Fine Tuning Pack - Simple For Agents/PRP UX.6 - Sidebar Active Indicator.md": {
+      "mtime": 1770606941000,
+      "wordCount": 286,
+      "fileSize": 1786
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/LEAST PRIORITY - UX Fine Tuning Pack - Simple For Agents/PRP UX.5 - Rename Budget to Actual Placeholder.md": {
+      "mtime": 1770606941000,
+      "wordCount": 84,
+      "fileSize": 516
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/LEAST PRIORITY - UX Fine Tuning Pack - Simple For Agents/PRP UX.4 - Earned vs Reported Terminology.md": {
+      "mtime": 1770606941000,
+      "wordCount": 381,
+      "fileSize": 2622
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/LEAST PRIORITY - UX Fine Tuning Pack - Simple For Agents/PRP UX.3 - Month End Exports Basis Mode Hierarchy.md": {
+      "mtime": 1770606941000,
+      "wordCount": 212,
+      "fileSize": 1361
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/LEAST PRIORITY - UX Fine Tuning Pack - Simple For Agents/PRP UX.2 - Accrual Reconciliation Label Update.md": {
+      "mtime": 1770606941000,
+      "wordCount": 196,
+      "fileSize": 1360
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/PRPS/LEAST PRIORITY - UX Fine Tuning Pack - Simple For Agents/PRP UX.1 - Contextual Info Icons.md": {
+      "mtime": 1770606941000,
+      "wordCount": 552,
+      "fileSize": 3699
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_06/BUILD-06_REPORT_090226.md": {
+      "mtime": 1770614403731,
+      "wordCount": 979,
+      "fileSize": 6711
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 03 - Minor Debugging Pack/B05-H03_5. Quick Fix PRP 5 Performance Compare Mode Behavior.md": {
+      "mtime": 1770396879000,
+      "wordCount": 322,
+      "fileSize": 2220
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 03 - Minor Debugging Pack/B05-H03_4. Debug PRP 4 Top Contributors Pct Change Column.md": {
+      "mtime": 1770396880000,
+      "wordCount": 209,
+      "fileSize": 1338
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 03 - Minor Debugging Pack/B05-H03_3. Quick Fix PRP 3 Global As-Of Filter.md": {
+      "mtime": 1770396880000,
+      "wordCount": 187,
+      "fileSize": 1218
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 03 - Minor Debugging Pack/B05-H03_2. Debug PRP 2 - Written Premium KPI Tables.md": {
+      "mtime": 1770396880000,
+      "wordCount": 201,
+      "fileSize": 1288
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 03 - Minor Debugging Pack/B05-H03_1. Logic Debug PRP 1 Agency Bill Cancellation.md": {
+      "mtime": 1770396880000,
+      "wordCount": 387,
+      "fileSize": 2805
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 02 - Consolidated Module Debugging Pack/B05-H02_4. Consolidated Deferral Analysis Debugging Notes.md": {
+      "mtime": 1770277864502,
+      "wordCount": 512,
+      "fileSize": 3664
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 02 - Consolidated Module Debugging Pack/B05-H02_3. Consolidated Cancellation Analysis Debugging Notes.md": {
+      "mtime": 1770277864512,
+      "wordCount": 442,
+      "fileSize": 3106
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 02 - Consolidated Module Debugging Pack/B05-H02_2. Consolidated Performance Submodule Debugging.md": {
+      "mtime": 1770277864511,
+      "wordCount": 362,
+      "fileSize": 2598
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 02 - Consolidated Module Debugging Pack/B05-H02_1. Consolidated Module Debugging Context.md": {
+      "mtime": 1770277864510,
+      "wordCount": 271,
+      "fileSize": 1891
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 01 - Agency Bill Module Debugging Pack/B05-H01_6. Agency Bill Deferral Analysis Debugging Notes.md": {
+      "mtime": 1770277864501,
+      "wordCount": 381,
+      "fileSize": 2645
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 01 - Agency Bill Module Debugging Pack/B05-H01_5. Agency Bill Cancellation Analysis Debugging Notes.md": {
+      "mtime": 1770277864487,
+      "wordCount": 210,
+      "fileSize": 1480
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 01 - Agency Bill Module Debugging Pack/B05-H01_4. Agency Bill Written Premium Debugging Notes.md": {
+      "mtime": 1770277864502,
+      "wordCount": 493,
+      "fileSize": 3151
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 01 - Agency Bill Module Debugging Pack/B05-H01_3. Agency Bill Performance Analysis Debugging Notes.md": {
+      "mtime": 1770277864500,
+      "wordCount": 541,
+      "fileSize": 3623
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 01 - Agency Bill Module Debugging Pack/B05-H01_2. Agency Bill Overview Debugging Notes.md": {
+      "mtime": 1770277864495,
+      "wordCount": 461,
+      "fileSize": 3079
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/Hotfix 01 - Agency Bill Module Debugging Pack/B05-H01_1. Agency Bill Debugging Context.md": {
+      "mtime": 1770277864501,
+      "wordCount": 396,
+      "fileSize": 2721
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.9 PRP Timing Analysis Display Enhancements.md": {
+      "mtime": 1770206544028,
+      "wordCount": 363,
+      "fileSize": 2447
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.8 PRP Searchable Global Filters.md": {
+      "mtime": 1770206544028,
+      "wordCount": 349,
+      "fileSize": 2272
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.7 PRP Hide Period Filters Timing Accrual.md": {
+      "mtime": 1770206544028,
+      "wordCount": 262,
+      "fileSize": 1757
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.6 PRP Deferral Balance Trend Over Time Graph.md": {
+      "mtime": 1770206544028,
+      "wordCount": 259,
+      "fileSize": 1704
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.4 PRP - Period View Toggle State Cleanup.md": {
+      "mtime": 1770206544027,
+      "wordCount": 189,
+      "fileSize": 1220
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.5 PRP - Timing Curve Cutoff Month Indicator.md": {
+      "mtime": 1770206544027,
+      "wordCount": 301,
+      "fileSize": 2018
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.16 PRP - Revori Mode Based Accent System.md": {
+      "mtime": 1770206544027,
+      "wordCount": 581,
+      "fileSize": 3706
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.15 PRP Producer and Budget Placeholders.md": {
+      "mtime": 1770206544027,
+      "wordCount": 437,
+      "fileSize": 2988
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.14 PRP - Multi Year Layering of Timing Curves.md": {
+      "mtime": 1770206544027,
+      "wordCount": 560,
+      "fileSize": 3721
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.13 PRP - As Of Selector Standardization.md": {
+      "mtime": 1770206544027,
+      "wordCount": 391,
+      "fileSize": 2763
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.12 PRP Top Contributors Dimension Selector.md": {
+      "mtime": 1770206544027,
+      "wordCount": 361,
+      "fileSize": 2350
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.11 PRP Timing KPI Label Clarification.md": {
+      "mtime": 1770206544027,
+      "wordCount": 160,
+      "fileSize": 1046
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/2. Cleanup/5.10 PRP Timing KPI DB Reported To Date Label.md": {
+      "mtime": 1770206544027,
+      "wordCount": 175,
+      "fileSize": 1150
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/1. Logic/5.3 PRP - Deferral JE Export Population Alignment.md": {
+      "mtime": 1770206544026,
+      "wordCount": 283,
+      "fileSize": 1898
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/1. Logic/5.2 PRP - Upload Code Global Filter.md": {
+      "mtime": 1770206544026,
+      "wordCount": 477,
+      "fileSize": 3057
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/PRPS/1. Logic/5.1 PRP - Cancellation Journal Entry Export Alignment.md": {
+      "mtime": 1770206544026,
+      "wordCount": 558,
+      "fileSize": 3657
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/NOTES/Hotfix 02 - Notes from Chris 050226.md": {
+      "mtime": 1770277871443,
+      "wordCount": 498,
+      "fileSize": 3013
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/NOTES/Hotfix 01 - Notes from Chris 040226.md": {
+      "mtime": 1770277871430,
+      "wordCount": 416,
+      "fileSize": 2720
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/NOTES/Hotfix 03 - Notes from Chris 060226.md": {
+      "mtime": 1770396880000,
+      "wordCount": 489,
+      "fileSize": 3746
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/NOTES/NOTES-FROM-CHRIS_310126.md": {
+      "mtime": 1770206544026,
+      "wordCount": 291,
+      "fileSize": 1853
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/NOTES/Logic Propagation Guide - Leveraging DirectBill ASC 606 Logic .md": {
+      "mtime": 1770206544026,
+      "wordCount": 678,
+      "fileSize": 4602
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/NOTES/5.0 Logic Propagation Guide - Leveraging DirectBill ASC 606 Logic.md": {
+      "mtime": 1770206544026,
+      "wordCount": 680,
+      "fileSize": 4610
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/EMAILS/B5_EMAIL_030226.md": {
+      "mtime": 1770206544026,
+      "wordCount": 178,
+      "fileSize": 1106
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/BUILD-05_REPORT_060226.md": {
+      "mtime": 1770404704273,
+      "wordCount": 5480,
+      "fileSize": 47733
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_05/BUILD-05_COMPLETION_ANALYSIS.md": {
+      "mtime": 1770206544025,
+      "wordCount": 770,
+      "fileSize": 5812
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/PRPS/BUILD_04_HOTFIX_02_PRP_270126.md": {
+      "mtime": 1770206544025,
+      "wordCount": 734,
+      "fileSize": 5330
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/PRPS/BUILD_04_HOTFIX_01_PRP_220126.md": {
+      "mtime": 1770206544025,
+      "wordCount": 3208,
+      "fileSize": 26350
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/PRPS/BUILD_04_HOTFIX_01B_PRP_270126.md": {
+      "mtime": 1770206544025,
+      "wordCount": 4174,
+      "fileSize": 30869
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/PRPS/BUILD_04_HOTFIX_01A_PRP_250126.md": {
+      "mtime": 1770206544025,
+      "wordCount": 2344,
+      "fileSize": 18306
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/plan-notes-from-chris_220126.md": {
+      "mtime": 1770206544024,
+      "wordCount": 673,
+      "fileSize": 4264
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #7 Interpretation - Direct Bill Timing SubModule (Data As of August 2023 - Multiple Curve Answers).md": {
+      "mtime": 1770206544024,
+      "wordCount": 477,
+      "fileSize": 3041
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #6 Interpretation- Direct Bill Deferral Analysis SubModule - 606 Basis Current Month and Fiscal year.md": {
+      "mtime": 1770206544024,
+      "wordCount": 769,
+      "fileSize": 5067
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #5 Interpretation - Direct Bill Cancellations Module - 606 Basis Current Month and Fiscal year.md": {
+      "mtime": 1770206544024,
+      "wordCount": 886,
+      "fileSize": 6152
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #4 - Direct Bill Performance Module - ASC 606 Current Month and Fiscal Year View (As-Of August 2023).md": {
+      "mtime": 1770206544024,
+      "wordCount": 1134,
+      "fileSize": 6112
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #3 Interpretation - Direct Bill Overview Module - ASC 606 TTM View (As-Of August 2023).md": {
+      "mtime": 1770206544024,
+      "wordCount": 587,
+      "fileSize": 3608
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #2 Interpretation - Direct Bill Overview Module - ASC 606 Fiscal Year View (As-of August 2023).md": {
+      "mtime": 1770206544023,
+      "wordCount": 700,
+      "fileSize": 4891
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/Answer Key #1 Interpretation - Direct Bill Overview Module - ASC 606 Current Month View (As-of August 2023).md": {
+      "mtime": 1770206544023,
+      "wordCount": 395,
+      "fileSize": 2775
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/Answer Key Interpretations/0. ASC 606 - DirectBill Overview Closing Note (Save For Last).md": {
+      "mtime": 1770206544023,
+      "wordCount": 711,
+      "fileSize": 4504
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/5. Prof Chris's Crash Course - Video Walkthroughs/5a. DirectBill Performance Sub-Module AI Notes.md": {
+      "mtime": 1770206544023,
+      "wordCount": 554,
+      "fileSize": 4125
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/5. Prof Chris's Crash Course - Video Walkthroughs/4a. 606 Filtering AI Notes.md": {
+      "mtime": 1770206544023,
+      "wordCount": 624,
+      "fileSize": 4782
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/5. Prof Chris's Crash Course - Video Walkthroughs/3a. Transaction Basis AI Notes.md": {
+      "mtime": 1770206544023,
+      "wordCount": 466,
+      "fileSize": 3572
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/5. Prof Chris's Crash Course - Video Walkthroughs/2a. View Types AI Notes.md": {
+      "mtime": 1770206544022,
+      "wordCount": 397,
+      "fileSize": 3097
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/NOTES/5. Prof Chris's Crash Course - Video Walkthroughs/1a - What's the Problem AI Notes.md": {
+      "mtime": 1770206544022,
+      "wordCount": 9696,
+      "fileSize": 56663
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/EMAILS/B4_01A_EMAIL_260126.md": {
+      "mtime": 1770206544022,
+      "wordCount": 204,
+      "fileSize": 1312
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/EMAILS/B4_02_EMAIL_280126.md": {
+      "mtime": 1770206544022,
+      "wordCount": 226,
+      "fileSize": 1667
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/EMAILS/RESPONSE_LBIT_280126.md": {
+      "mtime": 1770206544022,
+      "wordCount": 374,
+      "fileSize": 2291
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_04/BUILD-04_REPORT_260126.md": {
+      "mtime": 1770206544022,
+      "wordCount": 7891,
+      "fileSize": 59989
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.9 PRP - Overview Screen Line Chart Distortion Fix.md": {
+      "mtime": 1770206544021,
+      "wordCount": 878,
+      "fileSize": 5492
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.8 PRP As-Of Month toggle (Rescoping dataset).md": {
+      "mtime": 1770206544021,
+      "wordCount": 699,
+      "fileSize": 4528
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.7 LOGIC PRP ASC 606 Revenue - Authoritative.md": {
+      "mtime": 1770206544021,
+      "wordCount": 395,
+      "fileSize": 2604
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.6 LOGIC PRP TTM vs Fiscal Year Toggle under 606 views.md": {
+      "mtime": 1770206544021,
+      "wordCount": 880,
+      "fileSize": 5796
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.5 LOGIC PRPTiming view correcting and bug fix.md": {
+      "mtime": 1770206544021,
+      "wordCount": 790,
+      "fileSize": 4991
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.4 PRP Performance Decomposition Driver Chart.md": {
+      "mtime": 1770206544021,
+      "wordCount": 628,
+      "fileSize": 4095
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.3 LOGIC PRP - Prior Year Comparison Logic.md": {
+      "mtime": 1770206544020,
+      "wordCount": 963,
+      "fileSize": 6368
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.22 LOGIC PRP - KPI Badges and Tables Timing Analysis Direct Bill.md": {
+      "mtime": 1770206544020,
+      "wordCount": 921,
+      "fileSize": 5998
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.21 LOGIC PRP - Premiums Payable Analysis.md": {
+      "mtime": 1770206544020,
+      "wordCount": 916,
+      "fileSize": 6131
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.20 LOGIC PRP - Exclude Cancellations From Total Revenue.md": {
+      "mtime": 1770206544020,
+      "wordCount": 610,
+      "fileSize": 4397
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.2 PRP - KPI Drilldown and Underlying Export.md": {
+      "mtime": 1770206544019,
+      "wordCount": 746,
+      "fileSize": 4702
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.19 LOGIC PRP - Written Premium Analysis Logic Alignment.md": {
+      "mtime": 1770206544019,
+      "wordCount": 571,
+      "fileSize": 3723
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.18 LOGIC PRP - Cancellation Analysis Reemphasis.md": {
+      "mtime": 1770206544019,
+      "wordCount": 795,
+      "fileSize": 5723
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.17 LOGIC PRP - Accrual Reconciliation Screen.md": {
+      "mtime": 1770206544019,
+      "wordCount": 977,
+      "fileSize": 6626
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.16 LOGIC PRP Cutoff Denotation and Direct Bill Timing Curve Behavior.md": {
+      "mtime": 1770206544019,
+      "wordCount": 1342,
+      "fileSize": 8919
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.15 LOGIC PRP - PY amounts Transaction Basis Logic - Reemphasis PRP.md": {
+      "mtime": 1770206544019,
+      "wordCount": 767,
+      "fileSize": 4982
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.14 PRP - Y-Axis Labeling Scaled to Data Views.md": {
+      "mtime": 1770206544018,
+      "wordCount": 613,
+      "fileSize": 3945
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.13 PRP - Primary Menu Navigation Architecture.md": {
+      "mtime": 1770206544018,
+      "wordCount": 631,
+      "fileSize": 4370
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.1 LOGIC PRP - Deferred Revenue Recognition and balance logic.md": {
+      "mtime": 1770206544018,
+      "wordCount": 955,
+      "fileSize": 6352
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.12 PRP - Remove Dual Year Filtering.md": {
+      "mtime": 1770206544018,
+      "wordCount": 511,
+      "fileSize": 3275
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.11 LOGIC PRP TransactionType Authoritative Definitions.md": {
+      "mtime": 1770206544018,
+      "wordCount": 762,
+      "fileSize": 5060
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.10 PRP - X-Axis Labelling Standardization.md": {
+      "mtime": 1770206544018,
+      "wordCount": 662,
+      "fileSize": 4046
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/comments-from-chris_140126.md": {
+      "mtime": 1770206544017,
+      "wordCount": 568,
+      "fileSize": 3738
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/TIMING-CURVES_190126.md": {
+      "mtime": 1770206544017,
+      "wordCount": 207,
+      "fileSize": 1644
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/TEST_DASHBOARD_ENHANCEMENTS_20260122.md": {
+      "mtime": 1770206544017,
+      "wordCount": 761,
+      "fileSize": 5408
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/JE EXPORTS + DEFERRAL ANALYSIS_210126.md": {
+      "mtime": 1770206544017,
+      "wordCount": 319,
+      "fileSize": 2177
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/INVESTIGATION_TIMING_CURVE_DISCREPANCIES_20260122.md": {
+      "mtime": 1770206544017,
+      "wordCount": 1300,
+      "fileSize": 9515
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/EMAIL-TO-CHRIS_220126.md": {
+      "mtime": 1770206544017,
+      "wordCount": 306,
+      "fileSize": 2176
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/ANSWER_KEY_ISSUES_ANALYSIS_20260122.md": {
+      "mtime": 1770206544017,
+      "wordCount": 1394,
+      "fileSize": 9984
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/ANSWER_KEY_CORRECTIONS_20260122.md": {
+      "mtime": 1770206544017,
+      "wordCount": 2251,
+      "fileSize": 13817
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/NOTES/ACCRUAL-RECONCILIATION_200126.md": {
+      "mtime": 1770206544016,
+      "wordCount": 172,
+      "fileSize": 1251
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/BUILD-03_REPORT_220126.md": {
+      "mtime": 1770206544016,
+      "wordCount": 1638,
+      "fileSize": 12132
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/ANSWER-KEYS/TIMING-CURVE/Timing Curve Interpretationand Answer Key - User Selects January_2023_Selected_Period_FINAL.md": {
+      "mtime": 1770206544016,
+      "wordCount": 849,
+      "fileSize": 4878
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/ANSWER-KEYS/TIMING-CURVE/Timing Curve Interpretation and Answer Key - User Selects Full_Year_2023.md": {
+      "mtime": 1770206544016,
+      "wordCount": 1129,
+      "fileSize": 6795
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/ANSWER-KEYS/TIMING-CURVE/Timing Curve Interpretation and Answer Key - User Selected August 2023_Selected_Period_v2.md": {
+      "mtime": 1770206544015,
+      "wordCount": 914,
+      "fileSize": 5584
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/ANSWER-KEYS/TIMING-CURVE/Timing Answer Keys Context Note.md": {
+      "mtime": 1770206544015,
+      "wordCount": 704,
+      "fileSize": 4406
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/ANSWER-KEYS/ACCRUAL-RECONCILIATION/Accrual Reconciliation Guided Answer Key2026-01-22_2026-01-22.md": {
+      "mtime": 1770206544015,
+      "wordCount": 652,
+      "fileSize": 4602
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 6.0 KPI Scope and Reconciliation Guardrails.md": {
+      "mtime": 1770206544015,
+      "wordCount": 718,
+      "fileSize": 4364
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 5.0 Journal Entry Exports Module.md": {
+      "mtime": 1770206544015,
+      "wordCount": 1223,
+      "fileSize": 8025
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 4.4 Consolidated Deferral Analysis.md": {
+      "mtime": 1770206544015,
+      "wordCount": 428,
+      "fileSize": 2838
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 4.3 Consolidated Cancellation Analysis Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 613,
+      "fileSize": 3871
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 3.5 - Agency Bill Deferral Analysis Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 389,
+      "fileSize": 2645
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 4.2 Consolidated Performance Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 623,
+      "fileSize": 3934
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 4.1 Consolidated Overview North Star.md": {
+      "mtime": 1770206544014,
+      "wordCount": 447,
+      "fileSize": 2842
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 3.6 Agency Bill Premiums Payable Analysis Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 531,
+      "fileSize": 3512
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 3.4 - Agency Bill Cancellation Analysis Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 480,
+      "fileSize": 3425
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 3.3 - Agency Bill Written Premium Analysis Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 661,
+      "fileSize": 4373
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 3.2 - Agency Bill Performance Subscreen.md": {
+      "mtime": 1770206544014,
+      "wordCount": 579,
+      "fileSize": 3777
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 3.1 - Agency Bill Overview North Star - V2.md": {
+      "mtime": 1770206544013,
+      "wordCount": 638,
+      "fileSize": 4229
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 2.6 - Direct Bill Accrual Reconciliation Subscreen.md": {
+      "mtime": 1770206544013,
+      "wordCount": 363,
+      "fileSize": 2313
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 2.5 - Direct Bill Timing Subscreen.md": {
+      "mtime": 1770206544013,
+      "wordCount": 438,
+      "fileSize": 3029
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 2.4 - Direct Bill Deferral Analysis Subscreen.md": {
+      "mtime": 1770206544013,
+      "wordCount": 414,
+      "fileSize": 2899
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 0.0 - Global System Architecture and Navigation.md": {
+      "mtime": 1770206544012,
+      "wordCount": 499,
+      "fileSize": 3490
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 2.3 - Direct Bill Cancellation Analysis Subscreen.md": {
+      "mtime": 1770206544013,
+      "wordCount": 419,
+      "fileSize": 2865
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 2.2 - Direct Bill Performance Subscreen.md": {
+      "mtime": 1770206544013,
+      "wordCount": 739,
+      "fileSize": 4801
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 2.1 - Direct Bill Overview North Star.md": {
+      "mtime": 1770206544013,
+      "wordCount": 466,
+      "fileSize": 2975
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/PRP 0.1 Global Context Filters.md": {
+      "mtime": 1770206544013,
+      "wordCount": 314,
+      "fileSize": 2028
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/MASTER PRP Global System Structure and Filter Guardrails.md": {
+      "mtime": 1770206544012,
+      "wordCount": 622,
+      "fileSize": 3982
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 2.5 - Dual-Basis Comparison Engine.md": {
+      "mtime": 1770206544012,
+      "wordCount": 956,
+      "fileSize": 6639
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 2.4 - Revenue by Transaction Date Logic (Cash Basis).md": {
+      "mtime": 1770206544012,
+      "wordCount": 1081,
+      "fileSize": 7537
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 2.3 - Revenue by Effective Date Logic (606 Basis).md": {
+      "mtime": 1770206544011,
+      "wordCount": 801,
+      "fileSize": 5445
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 1.7 - Subsequent Reporting Routing Rules.md": {
+      "mtime": 1770206544011,
+      "wordCount": 980,
+      "fileSize": 6732
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 1.6 - Historical Stacking Behavior.md": {
+      "mtime": 1770206544011,
+      "wordCount": 935,
+      "fileSize": 6374
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 1.5 - Run ID Freezing & As-of Behavior IMPORTANT.md": {
+      "mtime": 1770206544011,
+      "wordCount": 1170,
+      "fileSize": 7702
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 1.4 – Cohort Assignment Rules (Agency × Carrier × LOB × Effective Month).md": {
+      "mtime": 1770206544011,
+      "wordCount": 913,
+      "fileSize": 6146
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/PRP 1.3 - Effective Date vs Transaction Date Model.md": {
+      "mtime": 1770206544010,
+      "wordCount": 747,
+      "fileSize": 5607
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/PRPs/Hot Logic Fix Attempt/Context & Bug Fix - Context PRP.md": {
+      "mtime": 1770206544010,
+      "wordCount": 1064,
+      "fileSize": 7270
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/NOTES/PRP_COMPLIANCE_REPORT.md": {
+      "mtime": 1770206544010,
+      "wordCount": 1299,
+      "fileSize": 7986
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/NOTES/Note-From-Chris_291225.md": {
+      "mtime": 1770206544010,
+      "wordCount": 693,
+      "fileSize": 4277
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/BUILD-02a_REPORT_010126.md": {
+      "mtime": 1770206544009,
+      "wordCount": 884,
+      "fileSize": 6475
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_02/BUILD-02_REPORT_291225.md": {
+      "mtime": 1770206544009,
+      "wordCount": 5433,
+      "fileSize": 37339
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_01/NOTES/VERIFICATION_REPORT_201225.md": {
+      "mtime": 1770206544009,
+      "wordCount": 2726,
+      "fileSize": 25246
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_01/NOTES/UI-TESTING-GUIDE_201225.md": {
+      "mtime": 1770206544009,
+      "wordCount": 2877,
+      "fileSize": 16743
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_01/NOTES/THE-PLAN.md": {
+      "mtime": 1770206544008,
+      "wordCount": 6572,
+      "fileSize": 43837
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_01/NOTES/CODEBASE-ASSESSMENT_201225.md": {
+      "mtime": 1770206544008,
+      "wordCount": 2173,
+      "fileSize": 15981
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_01/Build-01_REPORT_221225.md": {
+      "mtime": 1770206544008,
+      "wordCount": 4528,
+      "fileSize": 35730
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/CONTEXT/SPINE-CONTEXT.md": {
+      "mtime": 1770206543993,
+      "wordCount": 4884,
+      "fileSize": 33348
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/CONTEXT/COMMUNICATION-CONTEXT.md": {
+      "mtime": 1770206543992,
+      "wordCount": 4464,
+      "fileSize": 28469
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/CONTEXT/1112-CONTEXT.md": {
+      "mtime": 1770206543992,
+      "wordCount": 1365,
+      "fileSize": 8727
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 9.4 - Reporting Routing (Never blending Cohorts).md": {
+      "mtime": 1770206544007,
+      "wordCount": 719,
+      "fileSize": 5052
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 9.3 - RUN ID Preservation and As of Behavior.md": {
+      "mtime": 1770206544007,
+      "wordCount": 749,
+      "fileSize": 4841
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 9.2 - Historical Integrity Rules.md": {
+      "mtime": 1770206544007,
+      "wordCount": 630,
+      "fileSize": 4120
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 9.1 - What Cannot Happen (No Prediction, No Ultimate, No M0M1, No DD Baseline).md": {
+      "mtime": 1770206544007,
+      "wordCount": 563,
+      "fileSize": 3801
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 8.3 - Volatility Visualization Rules.md": {
+      "mtime": 1770206544007,
+      "wordCount": 600,
+      "fileSize": 4037
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 8.2 Volatility Segmentation & Threshold Rules.md": {
+      "mtime": 1770206544006,
+      "wordCount": 660,
+      "fileSize": 4444
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 8.1 - Volatility Index Definition.md": {
+      "mtime": 1770206544006,
+      "wordCount": 637,
+      "fileSize": 4383
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 7.3 - Analytics and UI Behavior (Unified Deferred Revenue + Cancellations).md": {
+      "mtime": 1770206544006,
+      "wordCount": 833,
+      "fileSize": 5902
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 7.2 - Measurement Rules - Deferred Revenue + Cancellations.md": {
+      "mtime": 1770206544006,
+      "wordCount": 660,
+      "fileSize": 4945
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 7.1 - Definitions and Classification Rules - Deferred Revenue + Cancellations.md": {
+      "mtime": 1770206544005,
+      "wordCount": 847,
+      "fileSize": 6184
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 6.6 - Export Rules for Subsequent Reporting.md": {
+      "mtime": 1770206544005,
+      "wordCount": 863,
+      "fileSize": 6041
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 6.5 - Visualizations - Subsequent Reporting Waterfall, YoY Curves.md": {
+      "mtime": 1770206544005,
+      "wordCount": 964,
+      "fileSize": 6261
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 6.4 - Revenue Attribution Across Years.md": {
+      "mtime": 1770206544005,
+      "wordCount": 1003,
+      "fileSize": 6495
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 6.3 - Agency x LOB Subsequent Reporting Drilldowns.md": {
+      "mtime": 1770206544004,
+      "wordCount": 1058,
+      "fileSize": 6866
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 6.2 - Logic for Capturing Subsequent Year Reporting by effective year.md": {
+      "mtime": 1770206544004,
+      "wordCount": 818,
+      "fileSize": 5126
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 6.1 - Definition - Prior Year Revenue Reported after Period End.md": {
+      "mtime": 1770206544004,
+      "wordCount": 798,
+      "fileSize": 5048
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.7 Lag Module Export Rules.md": {
+      "mtime": 1770206544004,
+      "wordCount": 847,
+      "fileSize": 5928
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.6 - Volatility Measurement (No Applied Lag).md": {
+      "mtime": 1770206544003,
+      "wordCount": 894,
+      "fileSize": 6311
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.5 - Carrier Lag Patterns.md": {
+      "mtime": 1770206544003,
+      "wordCount": 905,
+      "fileSize": 6084
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.4 - CompanywideLag Behavior Screens.md": {
+      "mtime": 1770206544003,
+      "wordCount": 921,
+      "fileSize": 6388
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.3 – Agency × LOB Lag Curves (Dollar Progression).md": {
+      "mtime": 1770206544003,
+      "wordCount": 913,
+      "fileSize": 5955
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.2 - Cohort Lag Curves (Dollar Progression Only).md": {
+      "mtime": 1770206544002,
+      "wordCount": 824,
+      "fileSize": 5480
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.1 - Purpose of Lag Behavior (Insight, Not prediction).md": {
+      "mtime": 1770206544002,
+      "wordCount": 742,
+      "fileSize": 4939
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 5.0 - Lag Behavior Module (Non Predictive).md": {
+      "mtime": 1770206544002,
+      "wordCount": 807,
+      "fileSize": 5580
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.6 – Cohort Exports (Audit Trail).md": {
+      "mtime": 1770206544002,
+      "wordCount": 881,
+      "fileSize": 6213
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.5  – Cohort Drilldown (Transaction Level).md": {
+      "mtime": 1770206544002,
+      "wordCount": 866,
+      "fileSize": 5622
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.4 - Cohort YoY Comparison Views.md": {
+      "mtime": 1770206544001,
+      "wordCount": 846,
+      "fileSize": 5627
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.3 - Cohort waterfall (M0-Mn Structure).md": {
+      "mtime": 1770206544001,
+      "wordCount": 882,
+      "fileSize": 5941
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.2 - RTD Reporting Logic (Dollar-Based).md": {
+      "mtime": 1770206544001,
+      "wordCount": 901,
+      "fileSize": 6158
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.1 - Cohort Definition & Lifecycle.md": {
+      "mtime": 1770206544001,
+      "wordCount": 847,
+      "fileSize": 5782
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 4.0 - Cohort Module (Redefined).md": {
+      "mtime": 1770206544001,
+      "wordCount": 751,
+      "fileSize": 4922
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.6 - Global Export Rules.md": {
+      "mtime": 1770206544000,
+      "wordCount": 1119,
+      "fileSize": 7698
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.5 - Drilldown Navigation Architecture.md": {
+      "mtime": 1770206544000,
+      "wordCount": 838,
+      "fileSize": 5679
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.4 - LOB Level Intelligence Dashboards.md": {
+      "mtime": 1770206544000,
+      "wordCount": 860,
+      "fileSize": 5971
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.3 - Carrier Reporting Behavior Dashboard.md": {
+      "mtime": 1770206544000,
+      "wordCount": 1122,
+      "fileSize": 7804
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.2 - Agency-Level Analytics (Trends, Stability, YOY).md": {
+      "mtime": 1770206543999,
+      "wordCount": 828,
+      "fileSize": 5740
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.1 - Company-Level Navigation & Inheritance.md": {
+      "mtime": 1770206543999,
+      "wordCount": 856,
+      "fileSize": 5757
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 3.0 - AGENCY  CARRIER  LOB NAVIGATION LAYER.md": {
+      "mtime": 1770206543999,
+      "wordCount": 798,
+      "fileSize": 5507
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.8 - Export Behavior for Main Module.md": {
+      "mtime": 1770206543999,
+      "wordCount": 826,
+      "fileSize": 5597
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.7 - Agency, LOB, Carrier Filtering Layer.md": {
+      "mtime": 1770206543998,
+      "wordCount": 929,
+      "fileSize": 6369
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.6 - Companywide Metrics Panel (Totals, YOY, Variance).md": {
+      "mtime": 1770206543998,
+      "wordCount": 795,
+      "fileSize": 5404
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.5 - Dual-Basis Comparison Engine.md": {
+      "mtime": 1770206543998,
+      "wordCount": 956,
+      "fileSize": 6639
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.4 - Revenue by Transaction Date Logic (Cash Basis).md": {
+      "mtime": 1770206543998,
+      "wordCount": 1081,
+      "fileSize": 7537
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.3 - Revenue by Effective Date Logic (606 Basis).md": {
+      "mtime": 1770206543998,
+      "wordCount": 801,
+      "fileSize": 5445
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.2 - Default Dashboard Layout (What Appears on Load).md": {
+      "mtime": 1770206543997,
+      "wordCount": 816,
+      "fileSize": 5261
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.1 - Revenue Mode Toggle (606 vs Cash vs Compare).md": {
+      "mtime": 1770206543997,
+      "wordCount": 1008,
+      "fileSize": 6912
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 2.0 - MAIN REVENUE ANALYTICS MODULE (PRIMARY UI).md": {
+      "mtime": 1770206543997,
+      "wordCount": 985,
+      "fileSize": 6673
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.7 - Subsequent Reporting Routing Rules.md": {
+      "mtime": 1770206543997,
+      "wordCount": 980,
+      "fileSize": 6732
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.6 - Historical Stacking Behavior.md": {
+      "mtime": 1770206543996,
+      "wordCount": 935,
+      "fileSize": 6374
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.5 - Run ID Freezing & As-of Behavior IMPORTANT.md": {
+      "mtime": 1770206543996,
+      "wordCount": 1170,
+      "fileSize": 7702
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.4 – Cohort Assignment Rules (Agency × Carrier × LOB × Effective Month).md": {
+      "mtime": 1770206543996,
+      "wordCount": 913,
+      "fileSize": 6146
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.3 - Effective Date vs Transaction Date Model.md": {
+      "mtime": 1770206543995,
+      "wordCount": 747,
+      "fileSize": 5607
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.2 - Deduplication Rules (TransactionID).md": {
+      "mtime": 1770206543995,
+      "wordCount": 485,
+      "fileSize": 3583
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.1 - Monthly Upload Model & Field Mapping.md": {
+      "mtime": 1770206543995,
+      "wordCount": 685,
+      "fileSize": 4833
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 1.0 - DATA MODEL & UPLOAD ARCHITECTURE.md": {
+      "mtime": 1770206543995,
+      "wordCount": 605,
+      "fileSize": 4270
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 0.5 - Period Windowing & View Definitions.md": {
+      "mtime": 1770206543995,
+      "wordCount": 499,
+      "fileSize": 3582
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 0.4 - Time Basis Definitions.md": {
+      "mtime": 1770206543995,
+      "wordCount": 637,
+      "fileSize": 4392
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 0.3 - Definitions & Core Concepts.md": {
+      "mtime": 1770206543994,
+      "wordCount": 797,
+      "fileSize": 5636
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 0.2 - What Was Removed vs Retained (Comparison to Old Spine).md": {
+      "mtime": 1770206543994,
+      "wordCount": 790,
+      "fileSize": 5550
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 0.0 - SYSTEM PURPOSE + GLOBAL STRUCTURE.md": {
+      "mtime": 1770206543994,
+      "wordCount": 577,
+      "fileSize": 4146
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/PRP 0.1 - System Purpose and Scope.md": {
+      "mtime": 1770206543994,
+      "wordCount": 582,
+      "fileSize": 4262
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/IMPORTANT KEY PRP - 3-SCREEN REVENUE INTELLIGENCE  ENGINE.md": {
+      "mtime": 1770206543993,
+      "wordCount": 1109,
+      "fileSize": 7651
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_00/REVENUE INTELLIGENCE/0. Table of Contents.md": {
+      "mtime": 1770206543993,
+      "wordCount": 721,
+      "fileSize": 4378
+    },
+    "03_RESOURCES/Templates/main.md": {
+      "mtime": 1770187562095,
+      "wordCount": 20,
+      "fileSize": 141
+    },
+    "03_RESOURCES/Skills/xlsx/SKILL.md": {
+      "mtime": 1770691150000,
+      "wordCount": 1481,
+      "fileSize": 10632
+    },
+    "03_RESOURCES/Skills/webapp-testing/SKILL.md": {
+      "mtime": 1770691150000,
+      "wordCount": 501,
+      "fileSize": 3913
+    },
+    "03_RESOURCES/Skills/web-artifacts-builder/SKILL.md": {
+      "mtime": 1770691150000,
+      "wordCount": 446,
+      "fileSize": 3087
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/sunset-boulevard.md": {
+      "mtime": 1770691150000,
+      "wordCount": 81,
+      "fileSize": 558
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/ocean-depths.md": {
+      "mtime": 1770691150000,
+      "wordCount": 81,
+      "fileSize": 555
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/modern-minimalist.md": {
+      "mtime": 1770691150000,
+      "wordCount": 79,
+      "fileSize": 549
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/midnight-galaxy.md": {
+      "mtime": 1770691151000,
+      "wordCount": 75,
+      "fileSize": 513
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/golden-hour.md": {
+      "mtime": 1770691151000,
+      "wordCount": 76,
+      "fileSize": 528
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/forest-canopy.md": {
+      "mtime": 1770691151000,
+      "wordCount": 73,
+      "fileSize": 506
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/desert-rose.md": {
+      "mtime": 1770691151000,
+      "wordCount": 73,
+      "fileSize": 496
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/botanical-garden.md": {
+      "mtime": 1770691151000,
+      "wordCount": 74,
+      "fileSize": 519
+    },
+    "03_RESOURCES/Skills/theme-factory/themes/arctic-frost.md": {
+      "mtime": 1770691151000,
+      "wordCount": 78,
+      "fileSize": 544
+    },
+    "03_RESOURCES/Skills/theme-factory/SKILL.md": {
+      "mtime": 1770691151000,
+      "wordCount": 487,
+      "fileSize": 3124
+    },
+    "03_RESOURCES/Skills/template/SKILL.md": {
+      "mtime": 1770691151000,
+      "wordCount": 22,
+      "fileSize": 140
+    },
+    "03_RESOURCES/Skills/slack-gif-creator/SKILL.md": {
+      "mtime": 1770691151000,
+      "wordCount": 1104,
+      "fileSize": 7841
+    },
+    "03_RESOURCES/Skills/skill-creator/references/workflows.md": {
+      "mtime": 1770691153000,
+      "wordCount": 113,
+      "fileSize": 818
+    },
+    "03_RESOURCES/Skills/skill-creator/references/output-patterns.md": {
+      "mtime": 1770691153000,
+      "wordCount": 252,
+      "fileSize": 1813
+    },
+    "03_RESOURCES/Skills/skill-creator/SKILL.md": {
+      "mtime": 1770691153000,
+      "wordCount": 2539,
+      "fileSize": 17837
+    },
+    "03_RESOURCES/Skills/revori/SKILL.md": {
+      "mtime": 1770691780000,
+      "wordCount": 582,
+      "fileSize": 6281
+    },
+    "03_RESOURCES/Skills/pptx/html2pptx.md": {
+      "mtime": 1770691153000,
+      "wordCount": 2703,
+      "fileSize": 19859
+    },
+    "03_RESOURCES/Skills/pptx/ooxml.md": {
+      "mtime": 1770691150000,
+      "wordCount": 1022,
+      "fileSize": 10388
+    },
+    "03_RESOURCES/Skills/pptx/SKILL.md": {
+      "mtime": 1770691153000,
+      "wordCount": 3487,
+      "fileSize": 25551
+    },
+    "03_RESOURCES/Skills/pdf/reference.md": {
+      "mtime": 1770691153000,
+      "wordCount": 1893,
+      "fileSize": 16692
+    },
+    "03_RESOURCES/Skills/pdf/forms.md": {
+      "mtime": 1770691153000,
+      "wordCount": 1374,
+      "fileSize": 9438
+    },
+    "03_RESOURCES/Skills/pdf/SKILL.md": {
+      "mtime": 1770691153000,
+      "wordCount": 884,
+      "fileSize": 7068
+    },
+    "03_RESOURCES/Skills/mcp-builder/reference/python_mcp_server.md": {
+      "mtime": 1770691153000,
+      "wordCount": 2912,
+      "fileSize": 25099
+    },
+    "03_RESOURCES/Skills/mcp-builder/reference/node_mcp_server.md": {
+      "mtime": 1770691153000,
+      "wordCount": 3406,
+      "fileSize": 28550
+    },
+    "03_RESOURCES/Skills/mcp-builder/reference/mcp_best_practices.md": {
+      "mtime": 1770691153000,
+      "wordCount": 996,
+      "fileSize": 7330
+    },
+    "03_RESOURCES/Skills/mcp-builder/reference/evaluation.md": {
+      "mtime": 1770691153000,
+      "wordCount": 3078,
+      "fileSize": 21663
+    },
+    "03_RESOURCES/Skills/mcp-builder/SKILL.md": {
+      "mtime": 1770691153000,
+      "wordCount": 1144,
+      "fileSize": 9092
+    },
+    "03_RESOURCES/Skills/internal-comms/examples/general-comms.md": {
+      "mtime": 1770691153000,
+      "wordCount": 86,
+      "fileSize": 602
+    },
+    "03_RESOURCES/Skills/internal-comms/examples/faq-answers.md": {
+      "mtime": 1770691153000,
+      "wordCount": 403,
+      "fileSize": 2366
+    },
+    "03_RESOURCES/Skills/internal-comms/examples/company-newsletter.md": {
+      "mtime": 1770691153000,
+      "wordCount": 555,
+      "fileSize": 3295
+    },
+    "03_RESOURCES/Skills/internal-comms/examples/3p-updates.md": {
+      "mtime": 1770691153000,
+      "wordCount": 552,
+      "fileSize": 3274
+    },
+    "03_RESOURCES/Skills/internal-comms/SKILL.md": {
+      "mtime": 1770691153000,
+      "wordCount": 212,
+      "fileSize": 1511
+    },
+    "03_RESOURCES/Skills/frontend-design/SKILL.md": {
+      "mtime": 1770691153000,
+      "wordCount": 584,
+      "fileSize": 4440
+    },
+    "03_RESOURCES/Skills/docx/ooxml.md": {
+      "mtime": 1770691153000,
+      "wordCount": 2196,
+      "fileSize": 23572
+    },
+    "03_RESOURCES/Skills/docx/docx-js.md": {
+      "mtime": 1770691153000,
+      "wordCount": 2194,
+      "fileSize": 16509
+    },
+    "03_RESOURCES/Skills/docx/SKILL.md": {
+      "mtime": 1770691154000,
+      "wordCount": 1404,
+      "fileSize": 10150
+    },
+    "03_RESOURCES/Skills/doc-coauthoring/SKILL.md": {
+      "mtime": 1770691154000,
+      "wordCount": 2467,
+      "fileSize": 15815
+    },
+    "03_RESOURCES/Skills/canvas-design/SKILL.md": {
+      "mtime": 1770691780000,
+      "wordCount": 1749,
+      "fileSize": 11939
+    },
+    "03_RESOURCES/Skills/brand-guidelines/SKILL.md": {
+      "mtime": 1770691780000,
+      "wordCount": 330,
+      "fileSize": 2235
+    },
+    "03_RESOURCES/Skills/algorithmic-art/SKILL.md": {
+      "mtime": 1770691780000,
+      "wordCount": 2761,
+      "fileSize": 19769
+    },
+    "03_RESOURCES/Docs/How to use Obsidian.md": {
+      "mtime": 1770312772967,
+      "wordCount": 588,
+      "fileSize": 3744
+    },
+    "02_AREAS/SAAS Ideas/White Label AI Content Localization Studio for Agencies.md": {
+      "mtime": 1770224031020,
+      "wordCount": 393,
+      "fileSize": 3407
+    },
+    "02_AREAS/SAAS Ideas/Website Change Trigger Prospecting Monitor for Agencies.md": {
+      "mtime": 1770226863995,
+      "wordCount": 354,
+      "fileSize": 2329
+    },
+    "02_AREAS/SAAS Ideas/Voice Utility Outage Support Assistant.md": {
+      "mtime": 1770223888319,
+      "wordCount": 389,
+      "fileSize": 3090
+    },
+    "02_AREAS/SAAS Ideas/Voice Restaurant Reservation and Upsell Agent.md": {
+      "mtime": 1770223888319,
+      "wordCount": 394,
+      "fileSize": 3117
+    },
+    "02_AREAS/SAAS Ideas/Voice Notes to Structured Content SaaS.md": {
+      "mtime": 1770212892089,
+      "wordCount": 401,
+      "fileSize": 2670
+    },
+    "02_AREAS/SAAS Ideas/Voice Mortgage Pre Qualification Assistant.md": {
+      "mtime": 1770223888318,
+      "wordCount": 389,
+      "fileSize": 3099
+    },
+    "02_AREAS/SAAS Ideas/Voice Intake Assistant for Law Firms.md": {
+      "mtime": 1770223888314,
+      "wordCount": 397,
+      "fileSize": 3083
+    },
+    "02_AREAS/SAAS Ideas/Voice Field Dispatch Assistant for Home Services.md": {
+      "mtime": 1770223888313,
+      "wordCount": 395,
+      "fileSize": 3123
+    },
+    "02_AREAS/SAAS Ideas/Voice IT Helpdesk Triage Agent.md": {
+      "mtime": 1770223888319,
+      "wordCount": 393,
+      "fileSize": 3083
+    },
+    "02_AREAS/SAAS Ideas/Voice FNOL Assistant for Insurance Brokers.md": {
+      "mtime": 1770223888318,
+      "wordCount": 396,
+      "fileSize": 3108
+    },
+    "02_AREAS/SAAS Ideas/Voice Debt Collection Assistant with Compliance Guardrails.md": {
+      "mtime": 1770223888313,
+      "wordCount": 397,
+      "fileSize": 3149
+    },
+    "02_AREAS/SAAS Ideas/Voice B2B Order Entry Assistant.md": {
+      "mtime": 1770223888320,
+      "wordCount": 388,
+      "fileSize": 3066
+    },
+    "02_AREAS/SAAS Ideas/Voice Appointment Booking Agent for Clinics.md": {
+      "mtime": 1770223888311,
+      "wordCount": 396,
+      "fileSize": 3114
+    },
+    "02_AREAS/SAAS Ideas/Vehicle Service History Tracker.md": {
+      "mtime": 1770212278343,
+      "wordCount": 389,
+      "fileSize": 2536
+    },
+    "02_AREAS/SAAS Ideas/Unified Agenda To-Do Planner.md": {
+      "mtime": 1770212278342,
+      "wordCount": 381,
+      "fileSize": 2466
+    },
+    "02_AREAS/SAAS Ideas/Travel Packing Assistant SaaS.md": {
+      "mtime": 1770212278342,
+      "wordCount": 384,
+      "fileSize": 2514
+    },
+    "02_AREAS/SAAS Ideas/SMB Uptime Alerting Monitor.md": {
+      "mtime": 1770212278342,
+      "wordCount": 398,
+      "fileSize": 2584
+    },
+    "02_AREAS/SAAS Ideas/Supply Chain Delay Insight Dashboard.md": {
+      "mtime": 1770223888321,
+      "wordCount": 383,
+      "fileSize": 3203
+    },
+    "02_AREAS/SAAS Ideas/Social Media Lead Mining Automation.md": {
+      "mtime": 1770212278342,
+      "wordCount": 400,
+      "fileSize": 2569
+    },
+    "02_AREAS/SAAS Ideas/Stablecoin Treasury and Compliance OS.md": {
+      "mtime": 1770215774562,
+      "wordCount": 377,
+      "fileSize": 3037
+    },
+    "02_AREAS/SAAS Ideas/Legal Contract Review AI.md": {
+      "mtime": 1770213565584,
+      "wordCount": 809,
+      "fileSize": 5760
+    },
+    "02_AREAS/SAAS Ideas/SME Bookkeeper AI Assistant.md": {
+      "mtime": 1770213721695,
+      "wordCount": 751,
+      "fileSize": 5467
+    },
+    "02_AREAS/SAAS Ideas/SEO Community Builder Platform.md": {
+      "mtime": 1770212278342,
+      "wordCount": 405,
+      "fileSize": 2626
+    },
+    "02_AREAS/SAAS Ideas/SMB Attack Surface Monitor.md": {
+      "mtime": 1770212278342,
+      "wordCount": 390,
+      "fileSize": 2594
+    },
+    "02_AREAS/SAAS Ideas/Reddit Trend to Product Idea Miner.md": {
+      "mtime": 1770212278341,
+      "wordCount": 403,
+      "fileSize": 2672
+    },
+    "02_AREAS/SAAS Ideas/Revenue Leakage Insight Dashboard for Finance Teams.md": {
+      "mtime": 1770223888320,
+      "wordCount": 387,
+      "fileSize": 3238
+    },
+    "02_AREAS/SAAS Ideas/Retail Store Performance Insight Dashboard.md": {
+      "mtime": 1770223888321,
+      "wordCount": 380,
+      "fileSize": 3187
+    },
+    "02_AREAS/SAAS Ideas/Retail Theft Prevention AI.md": {
+      "mtime": 1770213721695,
+      "wordCount": 425,
+      "fileSize": 3350
+    },
+    "02_AREAS/SAAS Ideas/Resume to Portfolio Generator.md": {
+      "mtime": 1770212278341,
+      "wordCount": 393,
+      "fileSize": 2560
+    },
+    "02_AREAS/SAAS Ideas/RAG Franchise Operations Knowledge Hub.md": {
+      "mtime": 1770223888288,
+      "wordCount": 382,
+      "fileSize": 3137
+    },
+    "02_AREAS/SAAS Ideas/Recruitment Agency AI Backend.md": {
+      "mtime": 1770213721694,
+      "wordCount": 771,
+      "fileSize": 5724
+    },
+    "02_AREAS/SAAS Ideas/RAG SOP Copilot for Manufacturing Plants.md": {
+      "mtime": 1770223888285,
+      "wordCount": 391,
+      "fileSize": 3167
+    },
+    "02_AREAS/SAAS Ideas/Paid Ads Waste Detector and Pitch Builder for Agencies.md": {
+      "mtime": 1770226945202,
+      "wordCount": 362,
+      "fileSize": 2385
+    },
+    "02_AREAS/SAAS Ideas/RAG Procurement Knowledge Desk.md": {
+      "mtime": 1770223888287,
+      "wordCount": 384,
+      "fileSize": 3152
+    },
+    "02_AREAS/SAAS Ideas/RAG Engineering Runbook Resolver.md": {
+      "mtime": 1770223888287,
+      "wordCount": 384,
+      "fileSize": 3130
+    },
+    "02_AREAS/SAAS Ideas/RAG Customer Escalation Root Cause Memory.md": {
+      "mtime": 1770223888288,
+      "wordCount": 390,
+      "fileSize": 3169
+    },
+    "02_AREAS/SAAS Ideas/RAG Deal Dataroom Intelligence Assistant.md": {
+      "mtime": 1770223888286,
+      "wordCount": 389,
+      "fileSize": 3158
+    },
+    "02_AREAS/SAAS Ideas/Product Launch Visibility Marketplace.md": {
+      "mtime": 1770212278340,
+      "wordCount": 416,
+      "fileSize": 2774
+    },
+    "02_AREAS/SAAS Ideas/RAG Contract Clause Precedent Finder.md": {
+      "mtime": 1770223888286,
+      "wordCount": 387,
+      "fileSize": 3147
+    },
+    "02_AREAS/SAAS Ideas/RAG Compliance Evidence Graph for Banks.md": {
+      "mtime": 1770223888284,
+      "wordCount": 400,
+      "fileSize": 3213
+    },
+    "02_AREAS/SAAS Ideas/RAG Clinical Guideline Assistant for Care Teams.md": {
+      "mtime": 1770223888286,
+      "wordCount": 389,
+      "fileSize": 3185
+    },
+    "02_AREAS/SAAS Ideas/RAG Claims Policy Navigator for Insurers.md": {
+      "mtime": 1770223888285,
+      "wordCount": 388,
+      "fileSize": 3142
+    },
+    "02_AREAS/SAAS Ideas/Property Planning Permission AI.md": {
+      "mtime": 1770213721694,
+      "wordCount": 419,
+      "fileSize": 3396
+    },
+    "02_AREAS/SAAS Ideas/Project Assignment Matching Tool.md": {
+      "mtime": 1770212278340,
+      "wordCount": 390,
+      "fileSize": 2593
+    },
+    "02_AREAS/SAAS Ideas/Product Adoption Insight Dashboard for Customer Success.md": {
+      "mtime": 1770223888322,
+      "wordCount": 384,
+      "fileSize": 3229
+    },
+    "02_AREAS/SAAS Ideas/Preemptive AI Attack Simulation Platform.md": {
+      "mtime": 1770215774563,
+      "wordCount": 378,
+      "fileSize": 3051
+    },
+    "02_AREAS/SAAS Ideas/Polyfunctional Robot Fleet Orchestration SaaS.md": {
+      "mtime": 1770215774564,
+      "wordCount": 373,
+      "fileSize": 3156
+    },
+    "02_AREAS/SAAS Ideas/Pipeline Health Insight Dashboard for RevOps.md": {
+      "mtime": 1770223888320,
+      "wordCount": 386,
+      "fileSize": 3202
+    },
+    "02_AREAS/SAAS Ideas/Government Forms Intake Automation AI.md": {
+      "mtime": 1770214934355,
+      "wordCount": 418,
+      "fileSize": 3366
+    },
+    "02_AREAS/SAAS Ideas/Patient Access Bottleneck Insight Dashboard.md": {
+      "mtime": 1770223888322,
+      "wordCount": 383,
+      "fileSize": 3219
+    },
+    "02_AREAS/SAAS Ideas/Meeting Intelligence and Action Copilot.md": {
+      "mtime": 1770212892070,
+      "wordCount": 397,
+      "fileSize": 2707
+    },
+    "02_AREAS/SAAS Ideas/NHS Locum Management AI.md": {
+      "mtime": 1770212278340,
+      "wordCount": 434,
+      "fileSize": 3313
+    },
+    "02_AREAS/SAAS Ideas/Multi Client Brand Voice Governance Platform.md": {
+      "mtime": 1770224031022,
+      "wordCount": 388,
+      "fileSize": 3380
+    },
+    "02_AREAS/SAAS Ideas/Meeting Notes to CRM Updates.md": {
+      "mtime": 1770213721694,
+      "wordCount": 808,
+      "fileSize": 5982
+    },
+    "02_AREAS/SAAS Ideas/Marketing Creative Fatigue Insight Dashboard.md": {
+      "mtime": 1770223888322,
+      "wordCount": 383,
+      "fileSize": 3200
+    },
+    "02_AREAS/SAAS Ideas/Making Tax Digital Automation.md": {
+      "mtime": 1770213721694,
+      "wordCount": 713,
+      "fileSize": 5282
+    },
+    "02_AREAS/SAAS Ideas/M&A Deal Flow AI Assistant.md": {
+      "mtime": 1770212278340,
+      "wordCount": 457,
+      "fileSize": 3527
+    },
+    "02_AREAS/SAAS Ideas/LinkedIn First Message Personalizer.md": {
+      "mtime": 1770212278339,
+      "wordCount": 389,
+      "fileSize": 2544
+    },
+    "02_AREAS/SAAS Ideas/Link Building Outreach AI.md": {
+      "mtime": 1770213721693,
+      "wordCount": 776,
+      "fileSize": 5451
+    },
+    "02_AREAS/SAAS Ideas/LLM TrainingOps Platform for Enterprises.md": {
+      "mtime": 1770214934364,
+      "wordCount": 390,
+      "fileSize": 3061
+    },
+    "02_AREAS/SAAS Ideas/Job Application Copilot for Candidates.md": {
+      "mtime": 1770212892053,
+      "wordCount": 401,
+      "fileSize": 2682
+    },
+    "02_AREAS/SAAS Ideas/Invoice Data Extraction API.md": {
+      "mtime": 1770213721693,
+      "wordCount": 729,
+      "fileSize": 5437
+    },
+    "02_AREAS/SAAS Ideas/Insurance Claims Processing AI.md": {
+      "mtime": 1770213721693,
+      "wordCount": 784,
+      "fileSize": 5526
+    },
+    "02_AREAS/SAAS Ideas/Human-Agent Workflow Orchestrator for SMBs.md": {
+      "mtime": 1770214934366,
+      "wordCount": 409,
+      "fileSize": 3429
+    },
+    "02_AREAS/SAAS Ideas/Insurance Broker Revenue Accrual AI.md": {
+      "mtime": 1770213565586,
+      "wordCount": 794,
+      "fileSize": 5733
+    },
+    "02_AREAS/SAAS Ideas/Government Fraud Evidence Builder AI.md": {
+      "mtime": 1770214934362,
+      "wordCount": 386,
+      "fileSize": 2973
+    },
+    "02_AREAS/SAAS Ideas/Agentic Cross Border Trade Operations Copilot.md": {
+      "mtime": 1770223888324,
+      "wordCount": 387,
+      "fileSize": 3436
+    },
+    "02_AREAS/SAAS Ideas/Focus Redirection App.md": {
+      "mtime": 1770212278338,
+      "wordCount": 388,
+      "fileSize": 2542
+    },
+    "02_AREAS/SAAS Ideas/Contact Center Quality Insight Dashboard.md": {
+      "mtime": 1770223888321,
+      "wordCount": 385,
+      "fileSize": 3224
+    },
+    "02_AREAS/SAAS Ideas/Financial Adviser CRM AI.md": {
+      "mtime": 1770213721693,
+      "wordCount": 429,
+      "fileSize": 3275
+    },
+    "02_AREAS/SAAS Ideas/Field Technician AI Guidance Copilot.md": {
+      "mtime": 1770214934356,
+      "wordCount": 395,
+      "fileSize": 3026
+    },
+    "02_AREAS/SAAS Ideas/Executive KPI Narrative Dashboard for SaaS Boards.md": {
+      "mtime": 1770223888320,
+      "wordCount": 384,
+      "fileSize": 3220
+    },
+    "02_AREAS/SAAS Ideas/Email-to-Task AI for PMs.md": {
+      "mtime": 1770213721693,
+      "wordCount": 390,
+      "fileSize": 3099
+    },
+    "02_AREAS/SAAS Ideas/ESG Compliance Insight Dashboard for Mid Market.md": {
+      "mtime": 1770223888323,
+      "wordCount": 386,
+      "fileSize": 3208
+    },
+    "02_AREAS/SAAS Ideas/E-commerce Product Photo Enhancer AI.md": {
+      "mtime": 1770212892053,
+      "wordCount": 398,
+      "fileSize": 2697
+    },
+    "02_AREAS/SAAS Ideas/Document Q&A for Accountants.md": {
+      "mtime": 1770213721692,
+      "wordCount": 783,
+      "fileSize": 5841
+    },
+    "02_AREAS/SAAS Ideas/Digital Provenance Verification API.md": {
+      "mtime": 1770215774563,
+      "wordCount": 374,
+      "fileSize": 3096
+    },
+    "02_AREAS/SAAS Ideas/Customs Declaration Automation.md": {
+      "mtime": 1770212278338,
+      "wordCount": 425,
+      "fileSize": 3409
+    },
+    "02_AREAS/SAAS Ideas/Creative Brief to Storyboard Automation for Agencies.md": {
+      "mtime": 1770224031018,
+      "wordCount": 391,
+      "fileSize": 3397
+    },
+    "02_AREAS/SAAS Ideas/Consulting Data Analysis AI.md": {
+      "mtime": 1770213721692,
+      "wordCount": 414,
+      "fileSize": 3308
+    },
+    "02_AREAS/SAAS Ideas/Construction Supervision Workflow SaaS.md": {
+      "mtime": 1770212278337,
+      "wordCount": 397,
+      "fileSize": 2633
+    },
+    "02_AREAS/SAAS Ideas/Confidential AI Workload Sandbox.md": {
+      "mtime": 1770215774563,
+      "wordCount": 375,
+      "fileSize": 3043
+    },
+    "02_AREAS/SAAS Ideas/Compliance Checklist AI.md": {
+      "mtime": 1770213721692,
+      "wordCount": 407,
+      "fileSize": 3147
+    },
+    "02_AREAS/SAAS Ideas/Click Fraud Detection for SMEs.md": {
+      "mtime": 1770212278337,
+      "wordCount": 436,
+      "fileSize": 3337
+    },
+    "02_AREAS/SAAS Ideas/Case Study Match Outreach Copilot for Agencies.md": {
+      "mtime": 1770226878077,
+      "wordCount": 342,
+      "fileSize": 2304
+    },
+    "02_AREAS/SAAS Ideas/Campaign Performance Narrative Generator for Agency Clients.md": {
+      "mtime": 1770224031018,
+      "wordCount": 387,
+      "fileSize": 3411
+    },
+    "02_AREAS/SAAS Ideas/Agentic Grant Management System for Public Sector.md": {
+      "mtime": 1770223888325,
+      "wordCount": 389,
+      "fileSize": 3433
+    },
+    "02_AREAS/SAAS Ideas/Bank Statement PDF to CSV Converter.md": {
+      "mtime": 1770212278337,
+      "wordCount": 403,
+      "fileSize": 2617
+    },
+    "02_AREAS/SAAS Ideas/Audience Monitoring Intelligence SaaS.md": {
+      "mtime": 1770214395182,
+      "wordCount": 419,
+      "fileSize": 2776
+    },
+    "02_AREAS/SAAS Ideas/Assistants API to Responses Migration Copilot.md": {
+      "mtime": 1770214934366,
+      "wordCount": 403,
+      "fileSize": 3064
+    },
+    "02_AREAS/SAAS Ideas/Animated Product Mockup Generator.md": {
+      "mtime": 1770212278337,
+      "wordCount": 404,
+      "fileSize": 2609
+    },
+    "02_AREAS/SAAS Ideas/Agentic Vendor Onboarding Orchestrator.md": {
+      "mtime": 1770223888323,
+      "wordCount": 384,
+      "fileSize": 3437
+    },
+    "02_AREAS/SAAS Ideas/Agentic Quote to Cash Orchestrator.md": {
+      "mtime": 1770223888323,
+      "wordCount": 386,
+      "fileSize": 3418
+    },
+    "02_AREAS/SAAS Ideas/Agentic Property Management Backoffice System.md": {
+      "mtime": 1770223888326,
+      "wordCount": 386,
+      "fileSize": 3441
+    },
+    "02_AREAS/SAAS Ideas/Agentic Loan Servicing Operations Orchestrator.md": {
+      "mtime": 1770223888325,
+      "wordCount": 385,
+      "fileSize": 3437
+    },
+    "02_AREAS/SAAS Ideas/Agentic Incident Response Coordinator for IT Ops.md": {
+      "mtime": 1770223888324,
+      "wordCount": 392,
+      "fileSize": 3440
+    },
+    "02_AREAS/SAAS Ideas/Agentic Hiring Operations Coordinator.md": {
+      "mtime": 1770223888325,
+      "wordCount": 381,
+      "fileSize": 3408
+    },
+    "02_AREAS/SAAS Ideas/Agentic Clinical Trial Site Operations Assistant.md": {
+      "mtime": 1770223888326,
+      "wordCount": 388,
+      "fileSize": 3450
+    },
+    "02_AREAS/SAAS Ideas/Agency Proposal Personalization Engine.md": {
+      "mtime": 1770224031018,
+      "wordCount": 386,
+      "fileSize": 3382
+    },
+    "02_AREAS/SAAS Ideas/AI Freight Exception Command Center.md": {
+      "mtime": 1770221791526,
+      "wordCount": 361,
+      "fileSize": 3149
+    },
+    "02_AREAS/SAAS Ideas/Agentic Claims Subrogation Workflow System.md": {
+      "mtime": 1770223888324,
+      "wordCount": 387,
+      "fileSize": 3435
+    },
+    "02_AREAS/SAAS Ideas/Agency Scope Creep Detection Copilot.md": {
+      "mtime": 1770224031018,
+      "wordCount": 391,
+      "fileSize": 3384
+    },
+    "02_AREAS/SAAS Ideas/Agency Retainer Renewal Risk Copilot.md": {
+      "mtime": 1770224031021,
+      "wordCount": 386,
+      "fileSize": 3355
+    },
+    "02_AREAS/SAAS Ideas/Agency Margin Intelligence and Pricing Copilot.md": {
+      "mtime": 1770224031017,
+      "wordCount": 389,
+      "fileSize": 3380
+    },
+    "02_AREAS/SAAS Ideas/AI-Powered Content Generation Workspace.md": {
+      "mtime": 1770214395180,
+      "wordCount": 413,
+      "fileSize": 2725
+    },
+    "02_AREAS/SAAS Ideas/Agency Inbound Lead Qualification Router.md": {
+      "mtime": 1770226847881,
+      "wordCount": 353,
+      "fileSize": 2282
+    },
+    "02_AREAS/SAAS Ideas/Agency Client Onboarding Automation Hub.md": {
+      "mtime": 1770224031019,
+      "wordCount": 386,
+      "fileSize": 3372
+    },
+    "02_AREAS/SAAS Ideas/Agency Buyer Intent Signal Hub.md": {
+      "mtime": 1770226833035,
+      "wordCount": 369,
+      "fileSize": 2348
+    },
+    "02_AREAS/SAAS Ideas/AI-Powered Inventory Management Optimizer.md": {
+      "mtime": 1770214395184,
+      "wordCount": 407,
+      "fileSize": 2688
+    },
+    "02_AREAS/SAAS Ideas/AI-Powered HR Management Assistant.md": {
+      "mtime": 1770214395183,
+      "wordCount": 413,
+      "fileSize": 2723
+    },
+    "02_AREAS/SAAS Ideas/AI-Powered Financial Management Copilot.md": {
+      "mtime": 1770214395182,
+      "wordCount": 413,
+      "fileSize": 2726
+    },
+    "02_AREAS/SAAS Ideas/AI-Native Hedge Fund Research Ops Platform.md": {
+      "mtime": 1770215774421,
+      "wordCount": 373,
+      "fileSize": 2857
+    },
+    "02_AREAS/SAAS Ideas/AI-Native Agency Operations OS.md": {
+      "mtime": 1770214934365,
+      "wordCount": 407,
+      "fileSize": 3384
+    },
+    "02_AREAS/SAAS Ideas/AI-Native ATS and Recruiting CRM.md": {
+      "mtime": 1770212278337,
+      "wordCount": 399,
+      "fileSize": 2593
+    },
+    "02_AREAS/SAAS Ideas/AI-Driven Business Analytics Copilot.md": {
+      "mtime": 1770214395181,
+      "wordCount": 413,
+      "fileSize": 2715
+    },
+    "02_AREAS/SAAS Ideas/AI Vendor Security Review Assistant.md": {
+      "mtime": 1770221791506,
+      "wordCount": 360,
+      "fileSize": 3182
+    },
+    "02_AREAS/SAAS Ideas/AI Targeted Marketing and Personalization Engine.md": {
+      "mtime": 1770214395184,
+      "wordCount": 418,
+      "fileSize": 2781
+    },
+    "02_AREAS/SAAS Ideas/AI Therapy Companion App.md": {
+      "mtime": 1770212278337,
+      "wordCount": 386,
+      "fileSize": 2543
+    },
+    "02_AREAS/SAAS Ideas/AI Sales Call Compliance Auditor.md": {
+      "mtime": 1770221791508,
+      "wordCount": 360,
+      "fileSize": 2943
+    },
+    "02_AREAS/SAAS Ideas/AI SOC 2 Evidence Autopilot.md": {
+      "mtime": 1770221791506,
+      "wordCount": 363,
+      "fileSize": 3021
+    },
+    "02_AREAS/SAAS Ideas/AI Renewal Risk Intervention Copilot.md": {
+      "mtime": 1770221791508,
+      "wordCount": 359,
+      "fileSize": 2965
+    },
+    "02_AREAS/SAAS Ideas/AI Reddit Outreach Assistant.md": {
+      "mtime": 1770212278337,
+      "wordCount": 392,
+      "fileSize": 2589
+    },
+    "02_AREAS/SAAS Ideas/AI RFP Response Orchestrator.md": {
+      "mtime": 1770221791432,
+      "wordCount": 360,
+      "fileSize": 2899
+    },
+    "02_AREAS/SAAS Ideas/AI Public Comment Intelligence Platform.md": {
+      "mtime": 1770221791533,
+      "wordCount": 360,
+      "fileSize": 2853
+    },
+    "02_AREAS/SAAS Ideas/AI Professional Headshot Generator for Teams.md": {
+      "mtime": 1770212892016,
+      "wordCount": 420,
+      "fileSize": 2805
+    },
+    "02_AREAS/SAAS Ideas/AI Product Discovery Copilot for PM Teams.md": {
+      "mtime": 1770214934278,
+      "wordCount": 422,
+      "fileSize": 3335
+    },
+    "02_AREAS/SAAS Ideas/AI Procurement Policy Copilot.md": {
+      "mtime": 1770221791505,
+      "wordCount": 356,
+      "fileSize": 2931
+    },
+    "02_AREAS/SAAS Ideas/AI Prior Authorization Intake Hub.md": {
+      "mtime": 1770221791510,
+      "wordCount": 359,
+      "fileSize": 2895
+    },
+    "02_AREAS/SAAS Ideas/AI Permit Review Pre-Screener.md": {
+      "mtime": 1770221791532,
+      "wordCount": 355,
+      "fileSize": 2682
+    },
+    "02_AREAS/SAAS Ideas/AI Mortgage Document Deficiency Resolver.md": {
+      "mtime": 1770221791534,
+      "wordCount": 355,
+      "fileSize": 2712
+    },
+    "02_AREAS/SAAS Ideas/AI Mock Coding Interview Simulator.md": {
+      "mtime": 1770212278337,
+      "wordCount": 396,
+      "fileSize": 2648
+    },
+    "02_AREAS/SAAS Ideas/AI Media Buying QA Copilot for Agencies.md": {
+      "mtime": 1770224031020,
+      "wordCount": 390,
+      "fileSize": 3351
+    },
+    "02_AREAS/SAAS Ideas/AI Journalist Pitch Manager.md": {
+      "mtime": 1770213721691,
+      "wordCount": 787,
+      "fileSize": 5498
+    },
+    "02_AREAS/SAAS Ideas/AI Maintenance Failure Triage Copilot.md": {
+      "mtime": 1770221791525,
+      "wordCount": 357,
+      "fileSize": 3057
+    },
+    "02_AREAS/SAAS Ideas/AI Invoice Exception Resolution Desk.md": {
+      "mtime": 1770221791508,
+      "wordCount": 358,
+      "fileSize": 2893
+    },
+    "02_AREAS/SAAS Ideas/AI Image and Video Analysis Platform.md": {
+      "mtime": 1770214395182,
+      "wordCount": 423,
+      "fileSize": 2724
+    },
+    "02_AREAS/SAAS Ideas/AI Grant Application Compliance Copilot.md": {
+      "mtime": 1770221791532,
+      "wordCount": 358,
+      "fileSize": 2797
+    },
+    "02_AREAS/SAAS Ideas/AI Data Retention and Deletion Orchestrator.md": {
+      "mtime": 1770221791507,
+      "wordCount": 363,
+      "fileSize": 3036
+    },
+    "02_AREAS/SAAS Ideas/AI Decision-Making Strategy Optimizer.md": {
+      "mtime": 1770214395185,
+      "wordCount": 424,
+      "fileSize": 2782
+    },
+    "02_AREAS/SAAS Ideas/AI Coursework Writing Coach.md": {
+      "mtime": 1770212892090,
+      "wordCount": 396,
+      "fileSize": 2688
+    },
+    "02_AREAS/SAAS Ideas/AI Customer Support Agent Builder.md": {
+      "mtime": 1770212892090,
+      "wordCount": 421,
+      "fileSize": 2751
+    },
+    "02_AREAS/SAAS Ideas/AI Customer Onboarding Implementation Copilot.md": {
+      "mtime": 1770221791508,
+      "wordCount": 358,
+      "fileSize": 2857
+    },
+    "02_AREAS/SAAS Ideas/AI Contract Redline Risk Monitor.md": {
+      "mtime": 1770221791507,
+      "wordCount": 359,
+      "fileSize": 2711
+    },
+    "02_AREAS/SAAS Ideas/AI Course and Microlearning Generator.md": {
+      "mtime": 1770214395184,
+      "wordCount": 415,
+      "fileSize": 2754
+    },
+    "02_AREAS/SAAS Ideas/AI Contact Center QA and Coaching Copilot.md": {
+      "mtime": 1770221791534,
+      "wordCount": 362,
+      "fileSize": 3193
+    },
+    "02_AREAS/SAAS Ideas/AI Content Repurposing Studio.md": {
+      "mtime": 1770212892089,
+      "wordCount": 400,
+      "fileSize": 2691
+    },
+    "02_AREAS/SAAS Ideas/AI Construction Change-Order Intelligence.md": {
+      "mtime": 1770221791526,
+      "wordCount": 357,
+      "fileSize": 2759
+    },
+    "02_AREAS/SAAS Ideas/AI Cash Application Reconciliation Copilot.md": {
+      "mtime": 1770221791509,
+      "wordCount": 359,
+      "fileSize": 2890
+    },
+    "02_AREAS/SAAS Ideas/AI Collections Strategy Assistant.md": {
+      "mtime": 1770221791509,
+      "wordCount": 357,
+      "fileSize": 2745
+    },
+    "02_AREAS/SAAS Ideas/AI Clinical Coding QA Copilot.md": {
+      "mtime": 1770221791524,
+      "wordCount": 360,
+      "fileSize": 3089
+    },
+    "02_AREAS/SAAS Ideas/AI Claims Appeal Drafting Assistant.md": {
+      "mtime": 1770221791525,
+      "wordCount": 357,
+      "fileSize": 2824
+    },
+    "02_AREAS/SAAS Ideas/AI CAPA Quality Management Assistant.md": {
+      "mtime": 1770221791525,
+      "wordCount": 360,
+      "fileSize": 3035
+    },
+    "02_AREAS/SAAS Ideas/AI B-Roll and Video Asset Generator.md": {
+      "mtime": 1770212892091,
+      "wordCount": 400,
+      "fileSize": 2653
+    },
+    "02_AREAS/SAAS Ideas/AI Audio Content Creator Studio.md": {
+      "mtime": 1770214395183,
+      "wordCount": 414,
+      "fileSize": 2676
+    },
+    "02_AREAS/SAAS Ideas/AI Agent Security and Compliance Hub.md": {
+      "mtime": 1770214934365,
+      "wordCount": 408,
+      "fileSize": 3352
+    },
+    "02_AREAS/SAAS Ideas/AI Admissions File Review Assistant.md": {
+      "mtime": 1770221791534,
+      "wordCount": 359,
+      "fileSize": 3017
+    },
+    "02_AREAS/SAAS Ideas/ADHD-Friendly Daily Planner.md": {
+      "mtime": 1770212278336,
+      "wordCount": 392,
+      "fileSize": 2602
+    },
+    "02_AREAS/REPORTS/Top 15 AI SAAS Ideas 2026 Report.md": {
+      "mtime": 1770228195534,
+      "wordCount": 2190,
+      "fileSize": 16628
+    },
+    "02_AREAS/MOC/YC Spring 2026 RFS MOC.md": {
+      "mtime": 1770215774067,
+      "wordCount": 134,
+      "fileSize": 898
+    },
+    "02_AREAS/MOC/Starter Story AI App Ideas MOC.md": {
+      "mtime": 1770213499810,
+      "wordCount": 136,
+      "fileSize": 976
+    },
+    "02_AREAS/MOC/Reddit rSaaS Ideas MOC.md": {
+      "mtime": 1770213499810,
+      "wordCount": 204,
+      "fileSize": 1369
+    },
+    "02_AREAS/MOC/RaftLabs AI SaaS Ideas MOC.md": {
+      "mtime": 1770214395189,
+      "wordCount": 143,
+      "fileSize": 1092
+    },
+    "02_AREAS/MOC/Fuel Ventures AI Analysis MOC.md": {
+      "mtime": 1770213499042,
+      "wordCount": 162,
+      "fileSize": 1086
+    },
+    "02_AREAS/MOC/Digital Products Ideation MOC.md": {
+      "mtime": 1770213565587,
+      "wordCount": 125,
+      "fileSize": 860
+    },
+    "02_AREAS/MOC/AI SaaS 50 Focused Ideas 2026 MOC.md": {
+      "mtime": 1770224031024,
+      "wordCount": 552,
+      "fileSize": 5052
+    },
+    "02_AREAS/MOC/AI SaaS 25 Ideas 2026 MOC.md": {
+      "mtime": 1770221839829,
+      "wordCount": 272,
+      "fileSize": 2393
+    },
+    "02_AREAS/MOC/AI Market Signals 2026 MOC.md": {
+      "mtime": 1770215774067,
+      "wordCount": 127,
+      "fileSize": 1362
+    },
+    "00_INBOX/Test Sync.md": {
+      "mtime": 1770342339000,
+      "wordCount": 25,
+      "fileSize": 153
+    },
+    "02_AREAS/DASHBOARDS/index.md": {
+      "mtime": 1771627487617,
+      "wordCount": 1,
+      "fileSize": 0
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/BUILD-07_REPORT_100226.md": {
+      "mtime": 1772304942471,
+      "wordCount": 1791,
+      "fileSize": 13783
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/Debug Notes Watchlist Cancellations Timing Deferral.md": {
+      "mtime": 1772304942472,
+      "wordCount": 304,
+      "fileSize": 1996
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/First UI Draft Notes - Revori.md": {
+      "mtime": 1772304942472,
+      "wordCount": 461,
+      "fileSize": 2727
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/PRP Final Polish 2.10.md": {
+      "mtime": 1772304942472,
+      "wordCount": 720,
+      "fileSize": 4921
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/PRP Remove Producer Analysis Placeholder.md": {
+      "mtime": 1772304942473,
+      "wordCount": 64,
+      "fileSize": 435
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/BUILD-08_REPORT_260226.md": {
+      "mtime": 1772304942473,
+      "wordCount": 241,
+      "fileSize": 1930
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS/Crucial_fixes_280226.md": {
+      "mtime": 1772304942474,
+      "wordCount": 1881,
+      "fileSize": 13208
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS/Non-crucial_fixes_280226.md": {
+      "mtime": 1772304942475,
+      "wordCount": 847,
+      "fileSize": 5977
+    },
+    "01_PROJECTS/Revori/BUILDS/BUILD_09/BUILD-09_REPORT_280226.md": {
+      "mtime": 1772304942475,
+      "wordCount": 891,
+      "fileSize": 7385
+    },
+    "podcast-script.md": {
+      "mtime": 1773314987975,
+      "wordCount": 1971,
+      "fileSize": 13619
+    }
+  },
+  "activityOverTime": {
+    "2026-02-06": {
+      "wordCount": 0,
+      "fileSize": 0
+    },
+    "2026-02-10": {
+      "wordCount": 0,
+      "fileSize": 0
+    },
+    "2026-02-09": {
+      "wordCount": 0,
+      "fileSize": 0
+    },
+    "2026-02-05": {
+      "wordCount": 0,
+      "fileSize": 0
+    },
+    "2026-02-04": {
+      "wordCount": 0,
+      "fileSize": 0
+    },
+    "2026-02-20": {
+      "wordCount": 1,
+      "fileSize": 0
+    },
+    "2026-02-28": {
+      "wordCount": 7498,
+      "fileSize": 54127
+    },
+    "2026-03-12": {
+      "wordCount": 2557,
+      "fileSize": 17349
+    }
+  }
+}

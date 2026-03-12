@@ -1,0 +1,21 @@
+{
+  "cssTheme": "Minimal",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "floating-action-button",
+    "buttons",
+    "buttons-row",
+    "custom-callouts",
+    "dashboard",
+    "MCL Gallery Cards",
+    "MCL Multi Column",
+    "mobile-fix"
+  ],
+  "showViewHeader": true,
+  "accentColor": "#4e7adf",
+  "nativeMenus": true,
+  "baseFontSize": 14,
+  "translucency": true,
+  "showRibbon": true,
+  "baseFontSizeAction": false
+}

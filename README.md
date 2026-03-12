@@ -11,103 +11,110 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/automatedigital/agentos/ci.yml?style=flat-square&label=CI)](https://github.com/automatedigital/agentos/actions)
 [![License](https://img.shields.io/github/license/automatedigital/agentos?style=flat-square)](https://github.com/automatedigital/agentos/blob/main/LICENSE)
 
-### AgentOS — Personal Agentic Workspace for Knowledge Work
+### AgentOS — Your Personal Vault + AI Agent Workspace
 
-**AgentOS** is your **personal operating system for knowledge work**: a lightweight, extensible workspace where AI agents, tools, and your own workflows plug together into a single environment.
+**AgentOS** is a workspace that combines:
 
-- **For knowledge workers**: researchers, builders, writers, engineers, founders.
-- **For real projects**: specs, notes, experiments, automations, and code.
-- **For multi-agent workflows**: Cursor, Claude Code, Antigravity, and more, all pointed at the same workspace.
+- **AI Agents** (Claude Code, Codex, Gemini CLI, OpenCode, etc.) with full context of your vault
+- **Obsidian** for beautiful visualization and navigation of your knowledge base
+- **Agent Skills** (like Claude Skills) to give your agent superpowers
 
 ---
 
-### Why this repo exists
+### Quick Start
 
-Modern knowledge work is:
+Get up and running with one simple interactive command:
 
-- **Fragmented** across docs, chats, scratchpads, and repos.
-- **Opaque** to agents (they can’t see your “real” working context).
-- **Hard to reuse** (insights and decisions get lost in history).
+```bash
+./install.sh
+```
 
-This repo is meant to be a **living home base** where:
+---
 
-- **Your artifacts live**: notes, specs, research, datasets, prompts, scripts.
-- **Your agents collaborate**: different tools share the same structure and conventions.
-- **Your workflows solidify**: from “one-off clever prompt” to repeatable systems.
+### What makes this different
+
+This repo is your **living knowledge vault** where:
+
+- **Your artifacts live**: notes, specs, research, datasets, prompts, scripts
+- **Your agents collaborate**: AI tools share the same structure and conventions
+- **Obsidian enhances**: beautiful graphs, links, and visual navigation of your vault
+- **Skills amplify**: extend your agent's capabilities with reusable skills
 
 Use it as a **starting template** for a durable agentic workspace you can grow over time.
 
 ---
 
-### Core ideas
+### Vault Structure
 
-- **Workspace, not app**: This is a folder-first design. Your tools (Cursor, Claude, terminal, notebooks) all operate on the same files.
-- **Artifacts over prompts**: Capture knowledge and decisions as files (docs, specs, playbooks) instead of ephemeral chats.
-- **Agents as teammates**: Treat AI tools as collaborators with roles, responsibilities, and interfaces, not just autocomplete.
-- **Composable workflows**: Small scripts + conventions > huge platforms. Keep it simple and remixable.
+The workspace comes with a thoughtful structure that works great with both agents and Obsidian:
 
----
+- **`/notes`**: Daily notes, scratchpads, meeting logs
+- **`/specs`**: Feature specs, research plans, design docs
+- **`/agents`**: Agent configs, MCP servers, skills, and capabilities
+- **`/playbooks`**: Step‑by‑step workflows and repeatable processes
+- **`/scripts`**: Automation utilities that accelerate your work
+- **`/archive`**: Completed projects and retired artifacts
 
-### Suggested structure
-
-You can evolve this however you like, but a simple starting point:
-
-- **`/notes`**: Daily notes, scratchpads, meeting logs.
-- **`/specs`**: Feature specs, research plans, design docs.
-- **`/agents`**: Agent configs, MCP servers, skills, and prompt “contracts”.
-- **`/playbooks`**: Step‑by‑step workflows (e.g. “debugging checklist”, “publish a post”, “ship a feature”).
-- **`/scripts`**: Small utilities that accelerate your work (data cleaning, report generation, automation).
-- **`/archive`**: Closed loops — completed projects and retired artifacts, kept for reference.
-
-Feel free to start with just a couple of these and add more as your needs grow.
+Evolve this structure as your needs grow.
 
 ---
 
-### How to use this with agents
+### Using Agent Skills
 
-- **With Cursor / Claude Code**
-  - Open this repo as your main workspace.
-  - Point agents to specific folders (`notes`, `specs`, `playbooks`) so they can read and update your artifacts.
-  - Keep long‑lived docs (e.g. “working agreements”, “coding standards”, “research log”) in versioned files instead of in-chat.
+Agent Skills are reusable capabilities that extend what your AI agent can do. Store them in `/agents/skills/` and reference them in your workflows.
 
-- **With other tools (Antigravity, CLI agents, MCP)**
-  - Treat this repo as the **single source of truth** those tools operate on.
-  - Store credentials/configs in environment files or secrets managers (never commit secrets).
-  - Use `agents/` to define how each tool should behave in this workspace.
+Examples:
+- Web research and synthesis
+- Code analysis and refactoring
+- Document generation
+- Data processing pipelines
 
----
-
-### Example workflows
-
-- **Designing a feature with agents**
-  - Capture the problem and constraints in `specs/<feature>.md`.
-  - Use agents to explore options, review tradeoffs, and propose designs directly in that file.
-  - Evolve the spec into implementation notes, tasks, and tests.
-
-- **Research & synthesis**
-  - Drop raw findings into `notes/research-<topic>.md`.
-  - Ask agents to summarize, compare, and extract decisions into `specs/` or `playbooks/`.
-
-- **Personal knowledge base**
-  - Keep evergreen concepts (systems, frameworks, mental models) in `notes/` and link to them from specs and playbooks.
-  - Periodically refactor: consolidate scattered insights into clearer artifacts.
+Your agent can use these skills as building blocks for complex tasks.
 
 ---
 
-### Principles for working here
+### Obsidian Integration
 
-- **Make thinking legible**: Prefer writing things down over keeping them in your head or in chat logs.
-- **Prefer small, named artifacts**: Many focused docs beat one giant brain dump.
-- **Automate the repeatable**: When you do something a third time, capture it as a playbook or script.
-- **Keep it tool-agnostic**: This repo should outlive any specific AI product or editor.
+Open this repo in Obsidian to unlock:
+
+- **Graph view**: Visualize connections between notes and specs
+- **Backlinks**: See how ideas reference each other
+- **Templates**: Quick-start new artifacts
+- **Daily notes**: Capture thoughts and link them to your vault
+
+Your agent can read and write these files while you navigate them beautifully in Obsidian.
 
 ---
 
-### Getting started
+### Supported Agents
 
-1. **Clone / init this repo** whenever you start a new machine or environment.
-2. **Create just a couple of folders** you’ll actually use next week (probably `notes` and `specs`).
-3. **Add a first spec or playbook** (e.g. “How I ship small features with agents”).
-4. **Point your agents here** and let them help you refine the structure as you go.
+Works with any agent that can access your filesystem:
 
-This is your **agentic workspace for serious knowledge work**. Adapt it, break it, and rebuild it to fit how you actually think and build.
+- **Claude Code** (CLI)
+- **GitHub Copilot / Codex**
+- **Gemini CLI**
+- **Cursor**
+- **OpenCode**
+- **Custom MCP servers**
+
+Point your agent at this workspace and it gains full context of your vault.
+
+---
+
+### Core Principles
+
+- **Vault-first design**: Files over ephemeral chats
+- **Agent-augmented**: AI tools as collaborators, not replacements
+- **Obsidian-enhanced**: Beautiful visualization meets powerful automation
+- **Skill-powered**: Reusable capabilities that compound over time
+
+---
+
+### Next Steps
+
+1. Run `./install.sh` to configure your workspace
+2. Open the repo in Obsidian
+3. Point your preferred AI agent to this directory
+4. Start building your vault
+
+This is your **agentic workspace for serious knowledge work**. Adapt it to fit how you actually think and build.

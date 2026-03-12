@@ -1,0 +1,16 @@
+{
+  "primary-theme@@colorful-folders_text": false,
+  "primary-theme@@colorful-folders_background": true,
+  "primary-theme@@colorful-folders_indentation-guide": true,
+  "primary-theme@@colorful-folders_inherit-color": true,
+  "primary-theme@@colorful-folders_collapse-indicator": true,
+  "primary-theme@@alt-folder-icons": true,
+  "vicious@@vibrant-indents": false,
+  "vicious@@vibrant-folders": true,
+  "minimal-style@@workspace-background-translucent@@dark": "#070707A3",
+  "minimal-style@@window-title-off": true,
+  "minimal-style@@workspace-background-translucent@@light": "#070707A3",
+  "modular-css-layout-mc@@list-min-width": 300,
+  "modular-css-layout-mc@@mcl-card-gap": "0.1em",
+  "minimal-cards-style@@cards-padding": "3em"
+}

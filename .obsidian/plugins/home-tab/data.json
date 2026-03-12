@@ -1,0 +1,45 @@
+{
+  "logoType": "imagePath",
+  "logo": {
+    "lucideIcon": "",
+    "imagePath": "03_RESOURCES/Attachments/automate-icon.png",
+    "imageLink": ""
+  },
+  "logoScale": 3,
+  "iconColorType": "default",
+  "wordmark": "",
+  "customFont": "interfaceFont",
+  "fontSize": "4.5em",
+  "fontColorType": "accentColor",
+  "fontWeight": 500,
+  "maxResults": 25,
+  "showbookmarkedFiles": true,
+  "showRecentFiles": true,
+  "maxRecentFiles": 5,
+  "storeRecentFile": true,
+  "showPath": true,
+  "selectionHighlight": "accentColor",
+  "showShortcuts": true,
+  "markdownOnly": false,
+  "unresolvedLinks": false,
+  "recentFilesStore": [
+    {
+      "filepath": "README.md",
+      "timestamp": 1773324946275
+    }
+  ],
+  "bookmarkedFileStore": [
+    {
+      "filepath": "README.md"
+    },
+    {
+      "filepath": "README.md"
+    }
+  ],
+  "searchDelay": 10,
+  "replaceNewTabs": true,
+  "newTabOnStart": true,
+  "closePreviousSessionTabs": false,
+  "omnisearch": false,
+  "showOmnisearchExcerpt": true
+}
