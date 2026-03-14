@@ -27,11 +27,17 @@ It combines:
 curl -fsSL https://raw.githubusercontent.com/joeconstanti/agentos/main/install.sh | bash
 ```
 
+Installs to `~/agentos` by default. To choose a custom location:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/joeconstanti/agentos/main/install.sh | bash -s -- ~/my-workspace
+```
+
 Or clone the repository first:
 
 ```bash
-git clone https://github.com/joeconstanti/agentos.git
-cd agentos
+git clone https://github.com/joeconstanti/agentos.git ~/agentos
+cd ~/agentos
 ./install.sh
 ```
 

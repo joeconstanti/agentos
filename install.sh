@@ -2,7 +2,30 @@
 
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_URL="https://github.com/joeconstanti/agentos.git"
+
+# Detect if running via pipe (curl | bash) or as a local file
+SCRIPT_PATH="${BASH_SOURCE[0]:-}"
+if [[ -f "$SCRIPT_PATH" ]] && [[ "$(basename "$SCRIPT_PATH")" == "install.sh" ]]; then
+  # Running as a local file — use the script's directory
+  ROOT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+else
+  # Running via pipe — clone the repo first
+  DEFAULT_DIR="$HOME/agentos"
+  INSTALL_DIR="${1:-}"
+
+  if [[ -z "$INSTALL_DIR" ]]; then
+    read -rp "Install location [$DEFAULT_DIR]: " INSTALL_DIR
+    INSTALL_DIR="${INSTALL_DIR:-$DEFAULT_DIR}"
+  fi
+
+  # Expand ~ manually in case read doesn't expand it
+  INSTALL_DIR="${INSTALL_DIR/#\~/$HOME}"
+
+  echo "📦 Cloning AgentOS into $INSTALL_DIR..."
+  git clone "$REPO_URL" "$INSTALL_DIR"
+  ROOT_DIR="$INSTALL_DIR"
+fi
 
 echo "╔═══════════════════════════════════════╗"
 echo "║      AgentOS Installation Setup       ║"
