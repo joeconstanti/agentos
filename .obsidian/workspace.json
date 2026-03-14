@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "29239c1fe55be096",
+        "id": "885ea22bcd40766b",
         "type": "tabs",
         "children": [
           {
-            "id": "8380fcd4fb1eca7c",
+            "id": "32c6bf8b8cdcc534",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,13 +35,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "77546fb45b631038",
+            "id": "fdeb8f34e11acbef",
             "type": "leaf",
             "state": {
-              "type": "bookmarks",
+              "type": "recent-files",
               "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "icon": "clock",
+              "title": "Recent Files"
             }
           },
           {
@@ -58,13 +58,13 @@
             }
           },
           {
-            "id": "fdeb8f34e11acbef",
+            "id": "77546fb45b631038",
             "type": "leaf",
             "state": {
-              "type": "recent-files",
+              "type": "bookmarks",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "recent-files"
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           },
           {
@@ -84,11 +84,12 @@
               "title": "Search"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 284.50312423706055
+    "width": 264.5024719238281
   },
   "right": {
     "id": "e13cd37146cf338b",
@@ -105,6 +106,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "README.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "                    ",
@@ -161,7 +163,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "Graph of README"
             }
           },
           {
@@ -224,13 +226,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_PROJECTS/Journal/2025-10-11.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-10-11"
+              "title": "Outline of README"
             }
           },
           {
@@ -248,13 +250,11 @@
               "title": "Tags"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 493.5,
-    "collapsed": true
+    "width": 493.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -266,60 +266,61 @@
       "workspaces:Manage workspace layouts": true,
       "templater-obsidian:Templater": false,
       "omnisearch:Omnisearch": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
       "activity-heatmap:Open activity heatmap": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "terminal:Open terminal": false
+      "terminal:Open terminal": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "77546fb45b631038",
+  "active": "29cd9838e5081097",
   "lastOpenFiles": [
-    "scripts/setup-obsidian.sh",
-    "install.sh",
-    "scripts/agentos-install.mjs",
-    "scripts",
-    "podcast-script.md",
-    "builders-vault-podcast.mp3",
-    "builders-vault-podcast.mp3.tmp",
-    "01_PROJECTS/Revori/BUILDS/BUILD_09/BUILD-09_REPORT_280226.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-DATA/Acruals Rec.csv",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-DATA",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS/Non-crucial_fixes_280226.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS/Crucial_fixes_280226.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/PRPS",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/BUILD-08_REPORT_260226.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/NOTES",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-CODE/Dashboard_Updated/watchlist.html",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot3.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot2.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot1.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Performance Analysis – Prior Year vs Current Year Bar Ordering_screenshot2.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Performance Analysis – Prior Year vs Current Year Bar Ordering_screenshot1.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Overview Screens – Duplicate % Variance KPI_screenshot1.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Filter Dropdown Background and Text rendering issue_screenshot3.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Module Emphasis in Left Navigation_screenshot1.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Filter Dropdown Background and Text rendering issue_screenshot1.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/Consolidated_KPI Layout_Screenshot1.png",
-    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/PRP Remove Producer Analysis Placeholder.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/PRP Final Polish 2.10.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/First UI Draft Notes - Revori.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_07/PRPS/Debug Notes Watchlist Cancellations Timing Deferral.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_07/BUILD-07_REPORT_100226.md",
-    "01_PROJECTS/Revori/BUILDS/BUILD_07/EMAILS/EMAIL-TO-CHRIS_100226.md",
-    "02_AREAS/MOC/AI Market Signals 2026 MOC.md",
+    "00_INBOX/20260314223653-top-10-claude-code-skills.md",
+    "03_RESOURCES/Templates/main.md",
+    "02_AREAS/agents/OpenCode.md",
+    "README.md",
+    "README.md.tmp.68077.1773530050726",
+    "03_RESOURCES/Playbooks",
+    "03_RESOURCES/playbooks",
+    "03_RESOURCES/Notes",
+    "03_RESOURCES/notes",
+    "03_RESOURCES/Attachments/agentos_ascii_logo.png",
+    "03_RESOURCES/Excalidraw/Drawing 2026-03-14 21.55.42.excalidraw.md",
+    "02_AREAS/agents/Gemini CLI.md",
+    "02_AREAS/agents/Custom MCP-backed agents.md",
+    "02_AREAS/agents/Cursor.md",
+    "02_AREAS/agents/Codex.md",
+    "02_AREAS/agents/Claude Code.md",
+    "02_AREAS/agents",
+    "03_RESOURCES/Attachments/obsidian-icon.png",
+    "03_RESOURCES/Attachments/automate-vault-header.png",
+    "03_RESOURCES/Attachments/automate-icon.png",
+    "03_RESOURCES/Attachments",
+    "03_RESOURCES/Templates",
     "03_RESOURCES/Docs/How to use Obsidian.md",
-    "02_AREAS/DASHBOARDS/index.md",
+    "03_RESOURCES/Docs",
+    "03_RESOURCES/PRDs",
+    "03_RESOURCES/Excalidraw/Drawing 2026-03-14 22.20.10.excalidraw.md",
     "02_AREAS/REPORTS/Top 15 AI SAAS Ideas 2026 Report.md",
+    "02_AREAS/MOC/YC Spring 2026 RFS MOC.md",
+    "02_AREAS/MOC/Reddit rSaaS Ideas MOC.md",
+    "02_AREAS/MOC/Starter Story AI App Ideas MOC.md",
+    "02_AREAS/MOC/RaftLabs AI SaaS Ideas MOC.md",
+    "02_AREAS/MOC/Fuel Ventures AI Analysis MOC.md",
     "02_AREAS/MOC/Digital Products Ideation MOC.md",
     "02_AREAS/MOC/AI SaaS 50 Focused Ideas 2026 MOC.md",
-    "02_AREAS/DASHBOARDS/index.html.md",
-    "README.md",
-    "01_PROJECTS/Revori/SOC-Audit-Plan_100226.md",
-    "03_RESOURCES/Skills/revori/SKILL.md",
-    "03_RESOURCES/Skills/algorithmic-art/SKILL.md",
-    "03_RESOURCES/Skills/canvas-design/SKILL.md",
-    "03_RESOURCES/Skills/brand-guidelines/SKILL.md",
-    "03_RESOURCES/Skills/doc-coauthoring/SKILL.md",
+    "02_AREAS/MOC/AI SaaS 25 Ideas 2026 MOC.md",
+    "02_AREAS/MOC/AI Market Signals 2026 MOC.md",
+    "02_AREAS/DASHBOARDS/index.md",
+    "02_AREAS/SAAS Ideas/White Label AI Content Localization Studio for Agencies.md",
+    "02_AREAS/SAAS Ideas/Website Change Trigger Prospecting Monitor for Agencies.md",
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.9 PRP Screenshot - Overview Chart Current Behavior.jpg",
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.17 PRP Screenshot B.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.17 PRP Screenshot A.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_03/PRPs/2.12 PRP Screenshot - Dual Fiscal Year Filter.jpg",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot3.png",
+    "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot2.png",
     "03_RESOURCES/Canvas/Home Canvas.canvas",
     "03_RESOURCES/Canvas/ComfyUI Context Prompting.canvas",
     "03_RESOURCES/Canvas/2024.canvas",

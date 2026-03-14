@@ -2,7 +2,7 @@
   "logoType": "imagePath",
   "logo": {
     "lucideIcon": "",
-    "imagePath": "03_RESOURCES/Attachments/automate-icon.png",
+    "imagePath": "attachments/agentos_ascii_logo.png",
     "imageLink": ""
   },
   "logoScale": 3,
@@ -25,13 +25,22 @@
   "recentFilesStore": [
     {
       "filepath": "README.md",
-      "timestamp": 1773324946275
+      "timestamp": 1773530394100
+    },
+    {
+      "filepath": "00_INBOX/20260314223653-top-10-claude-code-skills.md",
+      "timestamp": 1773530381861
+    },
+    {
+      "filepath": "03_RESOURCES/Templates/main.md",
+      "timestamp": 1773530303755
+    },
+    {
+      "filepath": "02_AREAS/agents/OpenCode.md",
+      "timestamp": 1773530279697
     }
   ],
   "bookmarkedFileStore": [
-    {
-      "filepath": "README.md"
-    },
     {
       "filepath": "README.md"
     }

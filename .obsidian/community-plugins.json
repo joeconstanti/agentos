@@ -25,5 +25,8 @@
   "terminal",
   "obsidian-enhancing-export",
   "data-files-editor",
-  "obsidian-html-plugin"
+  "obsidian-html-plugin",
+  "extended-graph",
+  "obsidian-excalidraw-plugin",
+  "obsidian-git"
 ]

@@ -24,21 +24,31 @@ It combines:
 ## Quick Start
 
 ```bash
-./install.sh
-./scripts/setup-obsidian.sh
+curl -fsSL https://raw.githubusercontent.com/joeconstanti/agentos/main/install.sh | bash
 ```
 
-- `install.sh` launches the interactive setup wizard.
-- `setup-obsidian.sh` creates the standard vault folders and attempts to open this repo in Obsidian.
+Or clone the repository first:
+
+```bash
+git clone https://github.com/joeconstanti/agentos.git
+cd agentos
+./install.sh
+```
+
+The installer will:
+- Create the standard vault folder structure
+- Prompt you to install Obsidian (automatically, manually, or skip)
+- Attempt to open the vault in Obsidian
 
 ## Vault Layout
 
-- `notes/` daily notes, scratchpads, meeting logs
-- `specs/` feature specs, research plans, design docs
-- `agents/` agent configs, MCP servers, skills
-- `playbooks/` repeatable workflows
-- `scripts/` local automation utilities
-- `archive/` completed and retired work
+Following the PARA methodology (Projects, Areas, Resources, Archives):
+
+- `00_INBOX/` capture inbox for new items, unsorted notes, quick captures
+- `01_PROJECTS/` active projects with specific goals and deadlines
+- `02_AREAS/` ongoing areas of responsibility and standards
+- `03_RESOURCES/` reference materials, research, knowledge base
+- `04_ARCHIVE/` completed projects and retired work
 
 ## Why this repo
 
@@ -49,12 +59,12 @@ It combines:
 
 ## Supported Agents
 
-- Claude Code
-- GitHub Copilot / Codex
-- Gemini CLI
-- Cursor
-- OpenCode
-- Custom MCP-backed agents
+- [[Claude Code]]
+- [[Codex]]
+- [[Gemini CLI]]
+- [[Cursor]]
+- [[OpenCode]]
+- [[Custom MCP-backed agents]]
 
 ## Typical Workflow
 
