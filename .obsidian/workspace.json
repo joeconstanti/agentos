@@ -274,6 +274,7 @@
   },
   "active": "77546fb45b631038",
   "lastOpenFiles": [
+    "scripts/setup-obsidian.sh",
     "install.sh",
     "scripts/agentos-install.mjs",
     "scripts",
@@ -289,7 +290,6 @@
     "01_PROJECTS/Revori/BUILDS/BUILD_08/BUILD-08_REPORT_260226.md",
     "01_PROJECTS/Revori/BUILDS/BUILD_08/NOTES",
     "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-CODE/Dashboard_Updated/watchlist.html",
-    "01_PROJECTS/Revori/BUILDS/BUILD_08/REFERENCE-CODE/Dashboard_Updated/upload-data.html",
     "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot3.png",
     "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot2.png",
     "01_PROJECTS/Revori/BUILDS/BUILD_08/SCREENSHOTS/as-of-filter_screenshot1.png",
