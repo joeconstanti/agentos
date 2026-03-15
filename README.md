@@ -7,15 +7,16 @@
 ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚══════╝
 ```
 
-[![GitHub stars](https://img.shields.io/github/stars/automatedigital/agentos?style=flat-square)](https://github.com/automatedigital/agentos/stargazers)
-[![CI](https://img.shields.io/github/actions/workflow/status/automatedigital/agentos/ci.yml?style=flat-square&label=CI)](https://github.com/automatedigital/agentos/actions)
-[![License](https://img.shields.io/github/license/automatedigital/agentos?style=flat-square)](https://github.com/automatedigital/agentos/blob/main/LICENSE)
+[GitHub stars](https://github.com/automatedigital/agentos/stargazers)
+[CI](https://github.com/automatedigital/agentos/actions)
+[License](https://github.com/automatedigital/agentos/blob/main/LICENSE)
 
-## AgentOS
+##   AgentOS
 
 AgentOS is a practical workspace for AI-assisted knowledge work.
 
 It combines:
+
 - your files as a durable knowledge vault
 - Obsidian for navigation and linking
 - AI agents (Claude Code, Codex, Gemini CLI, OpenCode, and more)
@@ -36,6 +37,7 @@ cd ~/agentos
 ```
 
 The installer will:
+
 - Prompt for an install location (default: `~/agentos`)
 - Create the standard vault folder structure
 - Register and open the vault in Obsidian if it's installed

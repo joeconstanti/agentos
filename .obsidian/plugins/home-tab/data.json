@@ -2,7 +2,7 @@
   "logoType": "imagePath",
   "logo": {
     "lucideIcon": "",
-    "imagePath": "attachments/agentos_ascii_logo.png",
+    "imagePath": "03_RESOURCES/Attachments/agentos_ascii_logo.png",
     "imageLink": ""
   },
   "logoScale": 3,
@@ -22,10 +22,18 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": false,
-  "recentFilesStore": [],
+  "recentFilesStore": [
+    {
+      "filepath": "README.md",
+      "timestamp": 1773570891697
+    }
+  ],
   "bookmarkedFileStore": [
     {
       "filepath": "README.md"
+    },
+    {
+      "filepath": "03_RESOURCES/Docs/How to use Obsidian.md"
     }
   ],
   "searchDelay": 10,

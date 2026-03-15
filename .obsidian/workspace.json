@@ -22,6 +22,22 @@
             }
           }
         ]
+      },
+      {
+        "id": "67ad509eba83860e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77bd22370c37273a",
+            "type": "leaf",
+            "state": {
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -40,8 +56,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-ghost",
+              "title": "recent-files"
             }
           },
           {
@@ -158,7 +174,7 @@
                   "repelStrength": 20,
                   "linkStrength": 1,
                   "linkDistance": 30,
-                  "scale": 0.16872194015928407,
+                  "scale": 0.477682274062104,
                   "close": true
                 }
               },
@@ -266,16 +282,17 @@
       "workspaces:Manage workspace layouts": true,
       "templater-obsidian:Templater": false,
       "omnisearch:Omnisearch": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "activity-heatmap:Open activity heatmap": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
       "terminal:Open terminal": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "32c6bf8b8cdcc534",
+  "active": "ec4b549dfe3a5946",
   "lastOpenFiles": [
+    "README.md",
     "installer/package-lock.json",
     "installer/node_modules/es-toolkit/util.js",
     "installer/node_modules/es-toolkit/util.d.ts",
@@ -286,7 +303,6 @@
     "installer/node_modules/es-toolkit/src/compat/_internal/RejectReadonly.d.ts",
     "installer/node_modules/es-toolkit/src/compat/_internal/MutableList.d.ts",
     "installer/node_modules/es-toolkit/src/compat/_internal/IsWritable.d.ts",
-    "installer/node_modules/es-toolkit/src/compat/_internal/Equals.d.ts",
     "installer/node_modules/@esbuild/darwin-arm64/README.md",
     "installer/node_modules/ink/readme.md",
     "installer/node_modules/react-reconciler/README.md",
