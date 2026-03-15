@@ -27,12 +27,6 @@ It combines:
 curl -fsSL https://raw.githubusercontent.com/joeconstanti/agentos/main/install.sh | bash
 ```
 
-Installs to `~/agentos` by default. To choose a custom location:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/joeconstanti/agentos/main/install.sh | bash -s -- ~/my-workspace
-```
-
 Or clone the repository first:
 
 ```bash
@@ -42,9 +36,9 @@ cd ~/agentos
 ```
 
 The installer will:
+- Prompt for an install location (default: `~/agentos`)
 - Create the standard vault folder structure
-- Prompt you to install Obsidian (automatically, manually, or skip)
-- Attempt to open the vault in Obsidian
+- Open Obsidian if it's already installed
 
 ## Vault Layout
 
