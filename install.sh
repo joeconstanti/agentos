@@ -4,49 +4,126 @@ set -euo pipefail
 
 REPO_URL="https://github.com/joeconstanti/agentos.git"
 
-# Detect if running via pipe (curl | bash) or as a local file
-SCRIPT_PATH="${BASH_SOURCE[0]:-}"
-if [[ -f "$SCRIPT_PATH" ]] && [[ "$(basename "$SCRIPT_PATH")" == "install.sh" ]]; then
-  # Running as a local file — use the script's directory
-  ROOT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+# ── Colors & styles ───────────────────────────────────────────────────────────
+if [[ -t 1 ]] || [[ -t 2 ]]; then
+  BOLD=$'\e[1m'
+  DIM=$'\e[2m'
+  RESET=$'\e[0m'
+  CYAN=$'\e[36m'
+  GREEN=$'\e[32m'
+  YELLOW=$'\e[33m'
+  RED=$'\e[31m'
+  WHITE=$'\e[97m'
+  BG_DARK=$'\e[48;5;234m'
 else
-  # Running via pipe — clone the repo first
-  DEFAULT_DIR="$HOME/agentos"
+  BOLD='' DIM='' RESET='' CYAN='' GREEN='' YELLOW='' RED='' WHITE='' BG_DARK=''
+fi
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+print_header() {
+  echo ""
+  echo "${BG_DARK}${CYAN}${BOLD}"
+  echo "  ┌─────────────────────────────────────────┐  "
+  echo "  │                                         │  "
+  echo "  │   █████╗  ██████╗ ███████╗███╗   ██╗   │  "
+  echo "  │  ██╔══██╗██╔════╝ ██╔════╝████╗  ██║   │  "
+  echo "  │  ███████║██║  ███╗█████╗  ██╔██╗ ██║   │  "
+  echo "  │  ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   │  "
+  echo "  │  ██║  ██║╚██████╔╝███████╗██║ ╚████║   │  "
+  echo "  │  ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   │  "
+  echo "  │                                         │  "
+  echo "  │        your AI workspace, installed     │  "
+  echo "  │                                         │  "
+  echo "  └─────────────────────────────────────────┘  "
+  echo "${RESET}"
+  echo ""
+}
+
+step()    { echo "  ${CYAN}${BOLD}→${RESET}  $*"; }
+ok()      { echo "  ${GREEN}${BOLD}✓${RESET}  $*"; }
+warn()    { echo "  ${YELLOW}${BOLD}!${RESET}  $*"; }
+info()    { echo "  ${DIM}ℹ  $*${RESET}"; }
+die()     { echo "  ${RED}${BOLD}✗${RESET}  $*" >&2; exit 1; }
+blank()   { echo ""; }
+
+prompt() {
+  # $1 = message  $2 = default value
+  local msg="$1" default="$2" reply
+  printf "  ${CYAN}?${RESET}  %s ${DIM}[%s]${RESET}: " "$msg" "$default"
+  if [[ -t 0 ]]; then
+    read -r reply
+  else
+    read -r reply </dev/tty
+  fi
+  echo "${reply:-$default}"
+}
+
+prompt_choice() {
+  # $1 = message
+  local msg="$1" reply
+  printf "  ${CYAN}?${RESET}  %s: " "$msg"
+  if [[ -t 0 ]]; then
+    read -r reply
+  else
+    read -r reply </dev/tty
+  fi
+  echo "$reply"
+}
+
+print_divider() {
+  echo "  ${DIM}──────────────────────────────────────────${RESET}"
+}
+
+# ── Clone or use local dir ────────────────────────────────────────────────────
+SCRIPT_PATH="${BASH_SOURCE[0]:-}"
+
+print_header
+
+if [[ -f "$SCRIPT_PATH" ]] && [[ "$(basename "$SCRIPT_PATH")" == "install.sh" ]]; then
+  ROOT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+  info "Using existing clone at ${WHITE}$ROOT_DIR${RESET}"
+else
+  blank
+  step "Where should AgentOS be installed?"
+  blank
   INSTALL_DIR="${1:-}"
 
   if [[ -z "$INSTALL_DIR" ]]; then
-    read -rp "Install location [$DEFAULT_DIR]: " INSTALL_DIR
-    INSTALL_DIR="${INSTALL_DIR:-$DEFAULT_DIR}"
+    INSTALL_DIR="$(prompt "Install location" "$HOME/agentos")"
   fi
 
-  # Expand ~ manually in case read doesn't expand it
   INSTALL_DIR="${INSTALL_DIR/#\~/$HOME}"
+  blank
 
-  echo "📦 Cloning AgentOS into $INSTALL_DIR..."
-  git clone "$REPO_URL" "$INSTALL_DIR"
+  if [[ -d "$INSTALL_DIR" ]]; then
+    warn "Directory already exists: ${WHITE}$INSTALL_DIR${RESET}"
+    CONFIRM="$(prompt_choice "Continue anyway? (y/n)")"
+    [[ "$CONFIRM" =~ ^[Yy] ]] || die "Aborted."
+    blank
+  fi
+
+  step "Cloning AgentOS into ${WHITE}$INSTALL_DIR${RESET}"
+  git clone --quiet "$REPO_URL" "$INSTALL_DIR"
+  ok "Repository cloned"
   ROOT_DIR="$INSTALL_DIR"
 fi
 
-echo "╔═══════════════════════════════════════╗"
-echo "║      AgentOS Installation Setup       ║"
-echo "╚═══════════════════════════════════════╝"
-echo ""
-echo "Welcome to AgentOS — your personal vault + agent workspace."
-echo ""
+blank
+print_divider
+blank
 
-# Create directory structure
-echo "📁 Creating workspace structure..."
+# ── Create vault structure ────────────────────────────────────────────────────
+step "Creating workspace structure..."
 mkdir -p \
   "$ROOT_DIR/00_INBOX" \
   "$ROOT_DIR/01_PROJECTS" \
   "$ROOT_DIR/02_AREAS" \
   "$ROOT_DIR/03_RESOURCES" \
   "$ROOT_DIR/04_ARCHIVE"
+ok "Vault folders ready"
+blank
 
-echo "✓ Workspace folders created"
-echo ""
-
-# Function to encode path for URI
+# ── Path encoding ─────────────────────────────────────────────────────────────
 encode_path() {
   if command -v python3 >/dev/null 2>&1; then
     python3 -c 'import sys, urllib.parse; print(urllib.parse.quote(sys.argv[1]))' "$1"
@@ -57,133 +134,113 @@ encode_path() {
   fi
 }
 
-# Function to open Obsidian
+# ── Open Obsidian ─────────────────────────────────────────────────────────────
 open_obsidian() {
-  echo "🚀 Attempting to open Obsidian..."
-
   if command -v obsidian >/dev/null 2>&1; then
     obsidian "$ROOT_DIR" >/dev/null 2>&1 &
-    echo "✓ Obsidian opened successfully"
+    ok "Obsidian opened"
     return 0
   fi
 
   if ENCODED_PATH="$(encode_path "$ROOT_DIR")"; then
     URI="obsidian://open?path=$ENCODED_PATH"
-
     case "$(uname -s)" in
-      Darwin)
-        open "$URI" >/dev/null 2>&1 && echo "✓ Obsidian opened via URI" && return 0
-        ;;
-      Linux)
-        xdg-open "$URI" >/dev/null 2>&1 && echo "✓ Obsidian opened via URI" && return 0
-        ;;
-      MINGW*|MSYS*|CYGWIN*)
-        cmd //c start "" "$URI" >/dev/null 2>&1 && echo "✓ Obsidian opened via URI" && return 0
-        ;;
+      Darwin)      open "$URI" >/dev/null 2>&1 && ok "Obsidian opened via URI" && return 0 ;;
+      Linux)       xdg-open "$URI" >/dev/null 2>&1 && ok "Obsidian opened via URI" && return 0 ;;
+      MINGW*|MSYS*|CYGWIN*) cmd //c start "" "$URI" >/dev/null 2>&1 && ok "Obsidian opened via URI" && return 0 ;;
     esac
   fi
 
   return 1
 }
 
-# Function to install Obsidian on macOS
 install_obsidian_macos() {
   if command -v brew >/dev/null 2>&1; then
-    echo "📥 Installing Obsidian via Homebrew..."
-    brew install --cask obsidian && echo "✓ Obsidian installed successfully"
+    step "Installing Obsidian via Homebrew..."
+    brew install --cask obsidian && ok "Obsidian installed"
   else
-    echo "⚠️  Homebrew not found. Opening download page..."
+    warn "Homebrew not found — opening download page..."
     open "https://obsidian.md/download"
-    echo "Please download and install Obsidian, then run this script again."
+    info "Install Obsidian, then run this script again."
     exit 0
   fi
 }
 
-# Function to install Obsidian on Linux
 install_obsidian_linux() {
-  echo "📥 For Linux, please choose an installation method:"
-  echo "  1. Download AppImage from https://obsidian.md/download"
-  echo "  2. Install via Snap: sudo snap install obsidian --classic"
-  echo "  3. Install via Flatpak: flatpak install flathub md.obsidian.Obsidian"
-  echo ""
+  blank
+  info "Choose a Linux installation method:"
+  echo "     1. AppImage  →  https://obsidian.md/download"
+  echo "     2. Snap      →  sudo snap install obsidian --classic"
+  echo "     3. Flatpak   →  flatpak install flathub md.obsidian.Obsidian"
+  blank
 
   if command -v xdg-open >/dev/null 2>&1; then
-    read -p "Open download page in browser? (y/n): " open_browser
-    if [[ "$open_browser" =~ ^[Yy] ]]; then
+    OPEN_BROWSER="$(prompt_choice "Open download page in browser? (y/n)")"
+    if [[ "$OPEN_BROWSER" =~ ^[Yy] ]]; then
       xdg-open "https://obsidian.md/download" >/dev/null 2>&1 &
     fi
   fi
 
-  echo "Please install Obsidian and run this script again."
+  info "Install Obsidian, then run this script again."
   exit 0
 }
 
-# Check if Obsidian is already installed
+# ── Obsidian setup ────────────────────────────────────────────────────────────
+print_divider
+blank
+step "Checking for Obsidian..."
+blank
+
 if command -v obsidian >/dev/null 2>&1 || open_obsidian 2>/dev/null; then
-  echo "✓ Obsidian is already available on this system"
+  ok "Obsidian is available"
   open_obsidian || true
 else
-  echo "ℹ️  Obsidian is not currently installed."
-  echo ""
-  echo "Would you like to:"
-  echo "  1. Install Obsidian automatically (requires Homebrew on macOS)"
-  echo "  2. Skip installation (I'll install it manually later)"
-  echo "  3. Open download page in browser"
-  echo ""
-  read -p "Enter your choice (1/2/3): " choice
+  warn "Obsidian is not installed"
+  blank
+  echo "     1.  Install automatically ${DIM}(Homebrew on macOS)${RESET}"
+  echo "     2.  Open download page in browser"
+  echo "     3.  Skip — I'll install it later"
+  blank
+  CHOICE="$(prompt_choice "Your choice (1/2/3)")"
 
-  case "$choice" in
+  case "$CHOICE" in
     1)
+      blank
       case "$(uname -s)" in
-        Darwin)
-          install_obsidian_macos
-          open_obsidian || echo "⚠️  Please open Obsidian manually and select: $ROOT_DIR"
-          ;;
-        Linux)
-          install_obsidian_linux
-          ;;
-        *)
-          echo "⚠️  Automatic installation not supported on this platform."
-          echo "Please download from: https://obsidian.md/download"
-          ;;
+        Darwin) install_obsidian_macos; open_obsidian || warn "Open Obsidian manually and select: $ROOT_DIR" ;;
+        Linux)  install_obsidian_linux ;;
+        *)      warn "Automatic install not supported on this platform."; info "Download from: https://obsidian.md/download" ;;
       esac
       ;;
     2)
-      echo "⏭️  Skipping Obsidian installation."
-      echo "You can install it later from: https://obsidian.md/download"
-      echo "Then open this folder as a vault: $ROOT_DIR"
+      case "$(uname -s)" in
+        Darwin)              open "https://obsidian.md/download" ;;
+        Linux)               xdg-open "https://obsidian.md/download" >/dev/null 2>&1 & ;;
+        MINGW*|MSYS*|CYGWIN*) cmd //c start "" "https://obsidian.md/download" ;;
+      esac
+      ok "Download page opened"
+      info "After installing, open this folder as a vault: $ROOT_DIR"
       ;;
     3)
-      case "$(uname -s)" in
-        Darwin)
-          open "https://obsidian.md/download"
-          ;;
-        Linux)
-          xdg-open "https://obsidian.md/download" >/dev/null 2>&1 &
-          ;;
-        MINGW*|MSYS*|CYGWIN*)
-          cmd //c start "" "https://obsidian.md/download"
-          ;;
-      esac
-      echo "✓ Download page opened in browser"
-      echo "After installing, open this folder as a vault: $ROOT_DIR"
+      info "Skipping — open this folder as a vault when ready: $ROOT_DIR"
       ;;
     *)
-      echo "⚠️  Invalid choice. Exiting."
-      exit 1
+      die "Invalid choice."
       ;;
   esac
 fi
 
-echo ""
-echo "╔═══════════════════════════════════════╗"
-echo "║          Setup Complete! ✅           ║"
-echo "╚═══════════════════════════════════════╝"
-echo ""
-echo "Next steps:"
-echo "  • Obsidian: Open this repo as a vault to navigate your knowledge"
-echo "  • AI Agent: Point your AI agent (Cursor, Claude Code, etc.) at this directory"
-echo "  • Start: Begin capturing notes in 00_INBOX/ and organize into projects/areas"
-echo ""
-echo "Workspace location: $ROOT_DIR"
-echo ""
+# ── Done ──────────────────────────────────────────────────────────────────────
+blank
+print_divider
+blank
+echo "  ${GREEN}${BOLD}  Setup complete!${RESET}"
+blank
+echo "  ${WHITE}${BOLD}Next steps${RESET}"
+echo "  ${DIM}──────────${RESET}"
+echo "  ${CYAN}→${RESET}  ${BOLD}Obsidian${RESET}   open the vault to navigate your knowledge graph"
+echo "  ${CYAN}→${RESET}  ${BOLD}AI Agent${RESET}   point Claude Code, Cursor, etc. at this directory"
+echo "  ${CYAN}→${RESET}  ${BOLD}Capture${RESET}    start dropping notes into ${WHITE}00_INBOX/${RESET}"
+blank
+echo "  ${DIM}Workspace: ${WHITE}$ROOT_DIR${RESET}"
+blank
