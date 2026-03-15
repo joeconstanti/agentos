@@ -22,24 +22,7 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": false,
-  "recentFilesStore": [
-    {
-      "filepath": "README.md",
-      "timestamp": 1773530394100
-    },
-    {
-      "filepath": "00_INBOX/20260314223653-top-10-claude-code-skills.md",
-      "timestamp": 1773530381861
-    },
-    {
-      "filepath": "03_RESOURCES/Templates/main.md",
-      "timestamp": 1773530303755
-    },
-    {
-      "filepath": "02_AREAS/agents/OpenCode.md",
-      "timestamp": 1773530279697
-    }
-  ],
+  "recentFilesStore": [],
   "bookmarkedFileStore": [
     {
       "filepath": "README.md"
