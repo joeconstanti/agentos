@@ -38,7 +38,7 @@ cd ~/agentos
 The installer will:
 - Prompt for an install location (default: `~/agentos`)
 - Create the standard vault folder structure
-- Open Obsidian if it's already installed
+- Register and open the vault in Obsidian if it's installed
 
 ## Vault Layout
 

@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Box, Text, useApp } from 'ink'
 import Spinner from 'ink-spinner'
 import { execSync } from 'child_process'
-import { mkdirSync, existsSync } from 'fs'
+import { mkdirSync, existsSync, readFileSync, writeFileSync } from 'fs'
 import { homedir } from 'os'
+import { randomBytes } from 'crypto'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -28,10 +29,34 @@ function checkObsidian(): boolean {
   return false
 }
 
-function openObsidian(): void {
+function obsidianConfigPath(): string | null {
+  if (process.platform === 'darwin')
+    return `${homedir()}/Library/Application Support/obsidian/obsidian.json`
+  if (process.platform === 'linux')
+    return `${homedir()}/.config/obsidian/obsidian.json`
+  return null
+}
+
+function registerVault(vaultPath: string): void {
+  const configPath = obsidianConfigPath()
+  if (!configPath || !existsSync(configPath)) return
   try {
-    if (process.platform === 'darwin') execSync('open -a Obsidian', { stdio: 'pipe' })
-    else if (process.platform === 'linux') execSync('obsidian', { stdio: 'pipe' })
+    const config = JSON.parse(readFileSync(configPath, 'utf8'))
+    if (!config.vaults) config.vaults = {}
+    const alreadyRegistered = Object.values(config.vaults).some((v: any) => v.path === vaultPath)
+    if (alreadyRegistered) return
+    const id = randomBytes(8).toString('hex')
+    config.vaults[id] = { path: vaultPath, ts: Date.now(), open: true }
+    writeFileSync(configPath, JSON.stringify(config))
+  } catch {}
+}
+
+function openObsidian(vaultPath: string): void {
+  try {
+    registerVault(vaultPath)
+    const uri = `obsidian://open?path=${encodeURIComponent(vaultPath)}`
+    if (process.platform === 'darwin') execSync(`open "${uri}"`, { stdio: 'pipe' })
+    else if (process.platform === 'linux') execSync(`xdg-open "${uri}"`, { stdio: 'pipe' })
   } catch {}
 }
 
@@ -105,7 +130,7 @@ export default function App({ rootDir }: Props) {
   useEffect(() => {
     if (phase !== 'obsidian-check') return
     if (checkObsidian()) {
-      openObsidian()
+      openObsidian(rootDir)
       setObsSt('done')
       setObsNote('opened')
     } else {
@@ -148,14 +173,10 @@ export default function App({ rootDir }: Props) {
                 <Text dimColor>Next steps:</Text>
                 <Box gap={1} marginLeft={1}>
                   <Text color="cyan">1.</Text>
-                  <Text dimColor>In Obsidian → <Text color="white">Open folder as vault</Text> → select the path above</Text>
+                  <Text dimColor>Point your AI agent (Claude Code, Cursor…) at the workspace dir</Text>
                 </Box>
                 <Box gap={1} marginLeft={1}>
                   <Text color="cyan">2.</Text>
-                  <Text dimColor>Point your AI agent (Claude Code, Cursor…) at the same dir</Text>
-                </Box>
-                <Box gap={1} marginLeft={1}>
-                  <Text color="cyan">3.</Text>
                   <Text dimColor>Start capturing in <Text color="white">00_INBOX/</Text></Text>
                 </Box>
               </Box>
