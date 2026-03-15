@@ -48,25 +48,18 @@ blank()   { echo ""; }
 
 prompt() {
   # $1 = message  $2 = default value
+  # Always write the prompt text to /dev/tty so it's visible even inside $()
   local msg="$1" default="$2" reply
-  printf "  ${CYAN}?${RESET}  %s ${DIM}[%s]${RESET}: " "$msg" "$default"
-  if [[ -t 0 ]]; then
-    read -r reply
-  else
-    read -r reply </dev/tty
-  fi
+  printf "  ${CYAN}?${RESET}  %s ${DIM}[%s]${RESET}: " "$msg" "$default" >/dev/tty
+  read -r reply </dev/tty
   echo "${reply:-$default}"
 }
 
 prompt_choice() {
   # $1 = message
   local msg="$1" reply
-  printf "  ${CYAN}?${RESET}  %s: " "$msg"
-  if [[ -t 0 ]]; then
-    read -r reply
-  else
-    read -r reply </dev/tty
-  fi
+  printf "  ${CYAN}?${RESET}  %s: " "$msg" >/dev/tty
+  read -r reply </dev/tty
   echo "$reply"
 }
 
