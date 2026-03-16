@@ -49,6 +49,68 @@ confirm() {
   done
 }
 
+obsidian_config_path() {
+  local platform="$1"
+  case "$platform" in
+    Darwin) printf '%s/Library/Application Support/obsidian/obsidian.json' "$HOME" ;;
+    Linux) printf '%s/.config/obsidian/obsidian.json' "$HOME" ;;
+    *) return 1 ;;
+  esac
+}
+
+register_obsidian_vault() {
+  local platform="$1"
+  local vault_path="$2"
+  local config_path
+
+  config_path="$(obsidian_config_path "$platform")" || return 0
+
+  if ! command -v python3 >/dev/null 2>&1; then
+    return 0
+  fi
+
+  python3 - "$config_path" "$vault_path" <<'PY' >/dev/null 2>&1
+import json
+import os
+import secrets
+import sys
+import time
+
+config_path = sys.argv[1]
+vault_path = os.path.abspath(sys.argv[2])
+os.makedirs(os.path.dirname(config_path), exist_ok=True)
+
+if os.path.exists(config_path):
+    try:
+        with open(config_path, "r", encoding="utf-8") as f:
+            config = json.load(f)
+    except Exception:
+        config = {}
+else:
+    config = {}
+
+vaults = config.get("vaults")
+if not isinstance(vaults, dict):
+    vaults = {}
+
+already_registered = False
+for v in vaults.values():
+    if isinstance(v, dict) and os.path.abspath(v.get("path", "")) == vault_path:
+        v["open"] = True
+        v["ts"] = int(time.time() * 1000)
+        already_registered = True
+        break
+
+if not already_registered:
+    vaults[secrets.token_hex(8)] = {"path": vault_path, "ts": int(time.time() * 1000), "open": True}
+
+config["vaults"] = vaults
+
+with open(config_path, "w", encoding="utf-8") as f:
+    json.dump(config, f)
+PY
+}
+
 if ! command -v git >/dev/null 2>&1; then
   printf '\e[31mGit is required to install AgentOS.\e[0m\n' >&2
   exit 1
@@ -127,16 +189,39 @@ esac
 
 printf '\e[2m  Opening vault in Obsidian...\e[0m\n'
 if [[ "$OS" == "Darwin" ]]; then
+  register_obsidian_vault "$OS" "$ROOT_DIR"
   if command -v python3 >/dev/null 2>&1; then
     ENCODED_ROOT="$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$ROOT_DIR")"
+    ENCODED_VAULT="$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$(basename "$ROOT_DIR")")"
     if ! open "obsidian://open?path=$ENCODED_ROOT" >/dev/null 2>&1; then
-      open -a Obsidian "$ROOT_DIR"
+      if ! open "obsidian://open?vault=$ENCODED_VAULT" >/dev/null 2>&1; then
+        open -a Obsidian "$ROOT_DIR"
+      fi
     fi
   else
     open -a Obsidian "$ROOT_DIR"
   fi
 else
-  if command -v obsidian >/dev/null 2>&1; then
+  register_obsidian_vault "$OS" "$ROOT_DIR"
+  if command -v python3 >/dev/null 2>&1; then
+    ENCODED_ROOT="$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$ROOT_DIR")"
+    ENCODED_VAULT="$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$(basename "$ROOT_DIR")")"
+  else
+    ENCODED_ROOT=""
+    ENCODED_VAULT=""
+  fi
+
+  if command -v xdg-open >/dev/null 2>&1 && [[ -n "$ENCODED_ROOT" ]]; then
+    if ! xdg-open "obsidian://open?path=$ENCODED_ROOT" >/dev/null 2>&1; then
+      if ! xdg-open "obsidian://open?vault=$ENCODED_VAULT" >/dev/null 2>&1; then
+        if command -v obsidian >/dev/null 2>&1; then
+          obsidian "$ROOT_DIR" >/dev/null 2>&1 &
+        else
+          xdg-open "$ROOT_DIR" >/dev/null 2>&1 &
+        fi
+      fi
+    fi
+  elif command -v obsidian >/dev/null 2>&1; then
     obsidian "$ROOT_DIR" >/dev/null 2>&1 &
   elif command -v xdg-open >/dev/null 2>&1; then
     xdg-open "$ROOT_DIR" >/dev/null 2>&1 &
