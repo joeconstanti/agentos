@@ -11,7 +11,7 @@
   "macOSOptionKeyPassthrough": true,
   "newInstanceBehavior": "newTab",
   "noticeTimeout": 5,
-  "openChangelogOnUpdate": true,
+  "openChangelogOnUpdate": false,
   "pinNewInstance": true,
   "preferredRenderer": "webgl",
   "profiles": {

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "885ea22bcd40766b",
+        "id": "a48869e683ffa7dd",
         "type": "tabs",
         "children": [
           {
-            "id": "32c6bf8b8cdcc534",
+            "id": "d47453fa9a9ddebe",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,22 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "README"
-            }
-          }
-        ]
-      },
-      {
-        "id": "67ad509eba83860e",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "77bd22370c37273a",
-            "type": "leaf",
-            "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
             }
           }
         ]
@@ -56,8 +40,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "recent-files"
+              "icon": "clock",
+              "title": "Recent Files"
             }
           },
           {
@@ -100,8 +84,7 @@
               "title": "Search"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -290,8 +273,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ec4b549dfe3a5946",
+  "active": "d47453fa9a9ddebe",
   "lastOpenFiles": [
+    "00_INBOX/Untitled.md",
     "README.md",
     "installer/package-lock.json",
     "installer/node_modules/es-toolkit/util.js",
@@ -327,7 +311,6 @@
     "installer/node_modules/ansi-escapes/readme.md",
     "installer/node_modules/js-tokens/README.md",
     "installer/node_modules/es-toolkit/CHANGELOG.md",
-    "installer/node_modules/is-in-ci/readme.md",
     "03_RESOURCES/Attachments/agentos_ascii_logo.png",
     "03_RESOURCES/Attachments/obsidian-icon.png",
     "03_RESOURCES/Attachments/automate-vault-header.png",
