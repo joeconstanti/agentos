@@ -3,46 +3,131 @@ set -euo pipefail
 
 REPO_URL="https://github.com/joeconstanti/agentos.git"
 
-# ── Node.js check ──────────────────────────────────────────────────────────────
-if ! command -v node >/dev/null 2>&1; then
-  printf '\e[31mAgentOS requires Node.js ≥ 18.\e[0m  Install from: https://nodejs.org\n' >&2
+if [[ ! -r /dev/tty ]] || [[ ! -w /dev/tty ]]; then
+  printf 'This installer runs in interactive mode. Run it from a terminal session.\n' >&2
   exit 1
 fi
 
-# ── Locate or clone the repo ───────────────────────────────────────────────────
-SCRIPT_PATH="${BASH_SOURCE[0]:-}"
+prompt_input() {
+  local message="$1"
+  local default_value="${2:-}"
+  local value
 
-if [[ -f "$SCRIPT_PATH" ]] && [[ "$(basename "$SCRIPT_PATH")" == "install.sh" ]]; then
-  # Running as a local file — use the script's own directory
-  ROOT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+  printf '%s [%s]: ' "$message" "$default_value" >/dev/tty
+  read -r value </dev/tty
+  if [[ -z "$value" ]]; then
+    value="$default_value"
+  fi
+  printf '%s' "$value"
+}
+
+confirm() {
+  local message="$1"
+  local default_answer="${2:-y}"
+  local answer
+
+  while true; do
+    if [[ "$default_answer" == "y" ]]; then
+      printf '%s [Y/n]: ' "$message" >/dev/tty
+    else
+      printf '%s [y/N]: ' "$message" >/dev/tty
+    fi
+
+    read -r answer </dev/tty
+    answer="${answer,,}"
+
+    if [[ -z "$answer" ]]; then
+      answer="$default_answer"
+    fi
+
+    case "$answer" in
+      y|yes) return 0 ;;
+      n|no) return 1 ;;
+    esac
+
+    printf 'Please answer y or n.\n' >/dev/tty
+  done
+}
+
+if ! command -v git >/dev/null 2>&1; then
+  printf '\e[31mGit is required to install AgentOS.\e[0m\n' >&2
+  exit 1
+fi
+
+DEFAULT_PARENT_DIR="${1:-$HOME}"
+
+while true; do
+  PARENT_DIR="$(prompt_input 'Clone directory' "$DEFAULT_PARENT_DIR")"
+  PARENT_DIR="${PARENT_DIR/#\~/$HOME}"
+  ROOT_DIR="$PARENT_DIR/agentos"
+
+  if [[ ! -d "$PARENT_DIR" ]]; then
+    printf '\e[31mDirectory does not exist:\e[0m %s\n' "$PARENT_DIR" >/dev/tty
+    continue
+  fi
+
+  if [[ -e "$ROOT_DIR" ]] && [[ ! -d "$ROOT_DIR/.git" ]]; then
+    printf '\e[31mTarget path exists and is not an AgentOS git repo:\e[0m %s\n' "$ROOT_DIR" >/dev/tty
+    continue
+  fi
+
+  break
+done
+
+printf '\nInstallation plan:\n' >/dev/tty
+printf '  - Clone/use repo: %s\n' "$ROOT_DIR" >/dev/tty
+printf '  - Install Obsidian\n' >/dev/tty
+printf '  - Open vault in Obsidian\n\n' >/dev/tty
+
+if ! confirm 'Continue?' 'y'; then
+  printf 'Installation cancelled.\n' >/dev/tty
+  exit 0
+fi
+
+if [[ -d "$ROOT_DIR/.git" ]]; then
+  printf '\e[2m  Using existing repo at %s\e[0m\n' "$ROOT_DIR"
 else
-  # Running via pipe (curl | bash) — clone first
-  DEFAULT_DIR="$HOME/agentos"
+  printf '\e[2m  Cloning AgentOS to %s...\e[0m\n' "$ROOT_DIR"
+  git clone --quiet "$REPO_URL" "$ROOT_DIR"
+fi
 
-  if [[ -n "${1:-}" ]]; then
-    ROOT_DIR="${1/#\~/$HOME}"
-  else
-    printf '\e[36m?\e[0m  Install location \e[2m[%s]\e[0m: ' "$DEFAULT_DIR" >/dev/tty
-    read -r ROOT_DIR </dev/tty
-    ROOT_DIR="${ROOT_DIR:-$DEFAULT_DIR}"
-    ROOT_DIR="${ROOT_DIR/#\~/$HOME}"
-    echo >/dev/tty
-  fi
+OS="$(uname -s)"
+case "$OS" in
+  Darwin)
+    if ! command -v brew >/dev/null 2>&1; then
+      printf '\e[31mHomebrew is required on macOS to install Obsidian.\e[0m\n' >&2
+      printf 'Install Homebrew from https://brew.sh and run this script again.\n' >&2
+      exit 1
+    fi
+    printf '\e[2m  Installing Obsidian with Homebrew...\e[0m\n'
+    brew install --cask obsidian
+    ;;
+  Linux)
+    if ! command -v snap >/dev/null 2>&1; then
+      printf '\e[31msnap is required on Linux to install Obsidian.\e[0m\n' >&2
+      printf 'Install snapd and run this script again.\n' >&2
+      exit 1
+    fi
+    printf '\e[2m  Installing Obsidian with snap...\e[0m\n'
+    sudo snap install obsidian --classic
+    ;;
+  *)
+    printf '\e[31mUnsupported OS:\e[0m %s\n' "$OS" >&2
+    exit 1
+    ;;
+esac
 
-  if [[ -d "$ROOT_DIR/.git" ]]; then
-    printf '\e[2m  Using existing repo at %s\e[0m\n' "$ROOT_DIR"
+printf '\e[2m  Opening vault in Obsidian...\e[0m\n'
+if [[ "$OS" == "Darwin" ]]; then
+  open -a Obsidian "$ROOT_DIR"
+else
+  if command -v obsidian >/dev/null 2>&1; then
+    obsidian "$ROOT_DIR" >/dev/null 2>&1 &
+  elif command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$ROOT_DIR" >/dev/null 2>&1 &
   else
-    printf '\e[2m  Cloning AgentOS...\e[0m\n'
-    git clone --quiet "$REPO_URL" "$ROOT_DIR"
+    printf '\e[33mCould not auto-open Obsidian. Open this path manually:\e[0m %s\n' "$ROOT_DIR"
   fi
 fi
 
-# ── Bootstrap the Ink installer ───────────────────────────────────────────────
-cd "$ROOT_DIR/installer"
-
-if [[ ! -d node_modules ]]; then
-  printf '\e[2m  Setting up installer...\e[0m\n'
-  npm install --silent
-fi
-
-exec ./node_modules/.bin/tsx index.tsx "$ROOT_DIR"
+printf '\e[32mDone.\e[0m AgentOS is ready at %s\n' "$ROOT_DIR"
