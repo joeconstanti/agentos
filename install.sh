@@ -94,22 +94,30 @@ fi
 OS="$(uname -s)"
 case "$OS" in
   Darwin)
-    if ! command -v brew >/dev/null 2>&1; then
-      printf '\e[31mHomebrew is required on macOS to install Obsidian.\e[0m\n' >&2
-      printf 'Install Homebrew from https://brew.sh and run this script again.\n' >&2
-      exit 1
+    if [[ -d "/Applications/Obsidian.app" ]] || [[ -d "$HOME/Applications/Obsidian.app" ]]; then
+      printf '\e[2m  Obsidian is already installed. Skipping install.\e[0m\n'
+    else
+      if ! command -v brew >/dev/null 2>&1; then
+        printf '\e[31mHomebrew is required on macOS to install Obsidian.\e[0m\n' >&2
+        printf 'Install Homebrew from https://brew.sh and run this script again.\n' >&2
+        exit 1
+      fi
+      printf '\e[2m  Installing Obsidian with Homebrew...\e[0m\n'
+      brew install --cask obsidian
     fi
-    printf '\e[2m  Installing Obsidian with Homebrew...\e[0m\n'
-    brew install --cask obsidian
     ;;
   Linux)
-    if ! command -v snap >/dev/null 2>&1; then
-      printf '\e[31msnap is required on Linux to install Obsidian.\e[0m\n' >&2
-      printf 'Install snapd and run this script again.\n' >&2
-      exit 1
+    if command -v obsidian >/dev/null 2>&1; then
+      printf '\e[2m  Obsidian is already installed. Skipping install.\e[0m\n'
+    else
+      if ! command -v snap >/dev/null 2>&1; then
+        printf '\e[31msnap is required on Linux to install Obsidian.\e[0m\n' >&2
+        printf 'Install snapd and run this script again.\n' >&2
+        exit 1
+      fi
+      printf '\e[2m  Installing Obsidian with snap...\e[0m\n'
+      sudo snap install obsidian --classic
     fi
-    printf '\e[2m  Installing Obsidian with snap...\e[0m\n'
-    sudo snap install obsidian --classic
     ;;
   *)
     printf '\e[31mUnsupported OS:\e[0m %s\n' "$OS" >&2

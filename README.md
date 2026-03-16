@@ -39,7 +39,7 @@ cd ~/agentos
 The installer will:
 
 - Run in interactive terminal mode and prompt for a clone directory (default: `~`), cloning to `<directory>/agentos`
-- Install Obsidian (`brew install --cask obsidian` on macOS, `sudo snap install obsidian --classic` on Linux)
+- Install Obsidian if needed (`brew install --cask obsidian` on macOS, `sudo snap install obsidian --classic` on Linux)
 - Open the cloned repo in Obsidian as a vault
 
 ## Vault Layout
