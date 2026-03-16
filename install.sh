@@ -94,7 +94,7 @@ fi
 OS="$(uname -s)"
 case "$OS" in
   Darwin)
-    if [[ -d "/Applications/Obsidian.app" ]] || [[ -d "$HOME/Applications/Obsidian.app" ]]; then
+    if [[ -e "/Applications/Obsidian.app" ]] || [[ -e "$HOME/Applications/Obsidian.app" ]] || brew list --cask obsidian >/dev/null 2>&1; then
       printf '\e[2m  Obsidian is already installed. Skipping install.\e[0m\n'
     else
       if ! command -v brew >/dev/null 2>&1; then
