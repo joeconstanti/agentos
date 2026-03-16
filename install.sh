@@ -127,7 +127,14 @@ esac
 
 printf '\e[2m  Opening vault in Obsidian...\e[0m\n'
 if [[ "$OS" == "Darwin" ]]; then
-  open -a Obsidian "$ROOT_DIR"
+  if command -v python3 >/dev/null 2>&1; then
+    ENCODED_ROOT="$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$ROOT_DIR")"
+    if ! open "obsidian://open?path=$ENCODED_ROOT" >/dev/null 2>&1; then
+      open -a Obsidian "$ROOT_DIR"
+    fi
+  else
+    open -a Obsidian "$ROOT_DIR"
+  fi
 else
   if command -v obsidian >/dev/null 2>&1; then
     obsidian "$ROOT_DIR" >/dev/null 2>&1 &
