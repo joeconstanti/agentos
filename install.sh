@@ -34,7 +34,7 @@ confirm() {
     fi
 
     read -r answer </dev/tty
-    answer="${answer,,}"
+    answer="$(printf '%s' "$answer" | tr '[:upper:]' '[:lower:]')"
 
     if [[ -z "$answer" ]]; then
       answer="$default_answer"
