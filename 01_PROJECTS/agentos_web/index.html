@@ -86,6 +86,45 @@
     .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.08em; color: #f0edff; }
     .logo-sub  { font-size: 0.7rem; color: #7c6fff; letter-spacing: 0.15em; text-transform: uppercase; }
     .header-right { font-size: 0.78rem; color: #554f88; white-space: nowrap; }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .stat-widget {
+      padding: 18px 20px;
+    }
+    .stat-widget::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -10px;
+      width: 80px; height: 80px;
+      background: radial-gradient(circle, var(--widget-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7c6fff;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f0edff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .stat-sub {
+      font-size: 0.72rem;
+      color: #554f88;
+      margin-top: 6px;
+    }
   </style>
 </head>
 <body>
@@ -102,7 +141,29 @@
         <span class="live-dot"></span>6 agents &middot; March 2026
       </div>
     </header>
-    <!-- stats and grid go here -->
+    <div class="stats-row">
+      <div class="glass stat-widget" style="--widget-glow: rgba(124,111,255,0.25)">
+        <div class="stat-label">Active Agents</div>
+        <div class="stat-value">6</div>
+        <div class="stat-sub">All systems nominal</div>
+      </div>
+      <div class="glass stat-widget" style="--widget-glow: rgba(79,143,255,0.25)">
+        <div class="stat-label">Sessions Today</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Connect data source</div>
+      </div>
+      <div class="glass stat-widget" style="--widget-glow: rgba(61,255,160,0.20)">
+        <div class="stat-label">Skills Available</div>
+        <div class="stat-value">70+</div>
+        <div class="stat-sub">~/.claude/skills/</div>
+      </div>
+      <div class="glass stat-widget" style="--widget-glow: rgba(255,100,200,0.20)">
+        <div class="stat-label">Tokens Used</div>
+        <div class="stat-value">—</div>
+        <div class="stat-sub">Connect data source</div>
+      </div>
+    </div>
+    <!-- agent grid goes here -->
   </div>
 </body>
 </html>
