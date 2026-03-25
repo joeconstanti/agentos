@@ -8,7 +8,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #05040f;
       background-image:
         radial-gradient(ellipse 80% 50% at 20% 10%, rgba(96,57,222,0.18) 0%, transparent 60%),
@@ -23,11 +23,81 @@
       margin: 0 auto;
       padding: 32px 24px;
     }
+
+    /* ── Glass utility ── */
+    .glass {
+      background: rgba(255,255,255,0.045);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .glass::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      pointer-events: none;
+    }
+
+    /* ── Live dot ── */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+    .live-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: #3dffa0;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #3dffa0;
+      animation: pulse 2s infinite;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, #7c6fff, #4f8fff);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1.1rem; color: #fff;
+      box-shadow: 0 0 20px rgba(124,111,255,0.5);
+      flex-shrink: 0;
+    }
+    .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.08em; color: #f0edff; }
+    .logo-sub  { font-size: 0.7rem; color: #7c6fff; letter-spacing: 0.15em; text-transform: uppercase; }
+    .header-right { font-size: 0.78rem; color: #554f88; white-space: nowrap; }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- content goes here -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-mark">A</div>
+        <div>
+          <div class="logo-text">AGENTOS</div>
+          <div class="logo-sub">Control Panel</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="live-dot"></span>6 agents &middot; March 2026
+      </div>
+    </header>
+    <!-- stats and grid go here -->
   </div>
 </body>
 </html>
