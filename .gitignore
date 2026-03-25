@@ -67,3 +67,4 @@ out/
 .nuxt/
 coverage/
 
+.superpowers/
