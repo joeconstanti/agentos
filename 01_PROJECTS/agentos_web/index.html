@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgentOS – Control Panel</title>
   <style>
+    :root {
+      --accent-purple: #7c6fff;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -35,6 +39,7 @@
       overflow: hidden;
     }
     .glass::before {
+      /* static top-edge highlight */
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
