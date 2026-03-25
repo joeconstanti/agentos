@@ -207,6 +207,17 @@
     }
     .stat-bar-label { font-size: 0.68rem; color: #554f88; text-transform: uppercase; letter-spacing: 0.08em; }
     .stat-bar-value { font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .agents-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .agents-grid  { grid-template-columns: 1fr; }
+      .stats-row    { grid-template-columns: repeat(2, 1fr); }
+      .header-right { display: none; }
+      .container    { padding: 20px 16px; }
+    }
   </style>
 </head>
 <body>
