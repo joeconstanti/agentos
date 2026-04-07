@@ -7,20 +7,18 @@
 ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚══════╝
 ```
 
-[GitHub stars](https://github.com/automatedigital/agentos/stargazers)
-[CI](https://github.com/automatedigital/agentos/actions)
-[License](https://github.com/automatedigital/agentos/blob/main/LICENSE)
+## AgentOS
 
-##   AgentOS
-
-AgentOS is a practical workspace for AI-assisted knowledge work.
+AgentOS is a **persistent brain for your AI agents** — a structured knowledge vault that any agent can read, write, and reason over. Use it with one agent or many; it serves as unified memory across all of them.
 
 It combines:
 
-- your files as a durable knowledge vault
-- Obsidian for navigation and linking
-- AI agents (Claude Code, Codex, Gemini CLI, OpenCode, and more)
-- reusable agent skills and playbooks
+- **Durable file-based memory** — knowledge persists across sessions, tools, and model versions
+- **Obsidian** for human navigation, linking, and graph visualization
+- **Any AI agent** — Claude Code, Codex, Gemini CLI, Cursor, OpenCode, and more
+- **Reusable skills and playbooks** — agent capabilities compound over time
+
+> Think of AgentOS as long-term memory that travels with your work, not locked inside any single chat window.
 
 ## Quick Start
 
@@ -28,7 +26,7 @@ It combines:
 curl -fsSL https://raw.githubusercontent.com/joeconstanti/agentos/main/install.sh | bash
 ```
 
-Or clone the repository first:
+Or clone first:
 
 ```bash
 git clone https://github.com/joeconstanti/agentos.git ~/agentos
@@ -38,26 +36,61 @@ cd ~/agentos
 
 The installer will:
 
-- Run in interactive terminal mode and prompt for a clone directory (default: `~`), cloning to `<directory>/agentos`
+- Prompt for a clone directory (default: `~`), cloning to `<directory>/agentos`
 - Install Obsidian if needed (`brew install --cask obsidian` on macOS, `sudo snap install obsidian --classic` on Linux)
-- Open the cloned repo in Obsidian as a vault
+- Open the repo in Obsidian as a vault
+
+## How It Works as a Unified Brain
+
+Each agent reads the same vault when it starts. Notes, decisions, research, and playbooks written by one agent are immediately available to any other. There's no proprietary memory format — everything is plain Markdown files in a git repo.
+
+```
+You / Agent A writes a decision → 02_AREAS/ or 03_RESOURCES/
+Agent B picks it up on next session → reads the same files
+You review everything in Obsidian → backlinks, graph, search
+```
+
+The vault is version-controlled, so memory is auditable and reversible.
 
 ## Vault Layout
 
 Following the PARA methodology (Projects, Areas, Resources, Archives):
 
-- `00_INBOX/` capture inbox for new items, unsorted notes, quick captures
-- `01_PROJECTS/` active projects with specific goals and deadlines
-- `02_AREAS/` ongoing areas of responsibility and standards
-- `03_RESOURCES/` reference materials, research, knowledge base
-- `04_ARCHIVE/` completed projects and retired work
+| Folder | Purpose |
+|--------|---------|
+| `00_INBOX/` | Capture inbox — quick notes, clippings, unsorted captures |
+| `01_PROJECTS/` | Active projects with goals and deadlines |
+| `02_AREAS/` | Ongoing areas of responsibility — agent profiles, standards |
+| `03_RESOURCES/` | Compiled knowledge base, docs, templates, playbooks |
+| `04_ARCHIVE/` | Completed projects and retired work |
+| `05_RAW/` | Unprocessed source material for agents to compile |
 
-## Why this repo
+### Key locations
 
-- **File-first context**: your work is versionable and long-lived
-- **Tool-agnostic**: any filesystem-capable agent can collaborate here
-- **Obsidian-native**: backlinks, graph view, and templates work naturally
-- **Skill-powered**: capabilities compound as you add reusable skills
+| Path | What lives here |
+|------|----------------|
+| `02_AREAS/agents/` | One profile per agent (capabilities, config, notes) |
+| `03_RESOURCES/Docs/` | Structured reference docs |
+| `03_RESOURCES/Playbooks/` | Reusable agent workflows |
+| `03_RESOURCES/Templates/` | Note templates |
+| `05_RAW/_topics/` | Raw ingest — web clips, papers, transcripts |
+
+## Knowledge Base Workflow
+
+AgentOS implements a two-layer knowledge base (inspired by Andrej Karpathy's personal research wiki approach):
+
+- **`05_RAW/`** — drop unprocessed sources here (articles, papers, READMEs)
+- **`03_RESOURCES/`** — agents compile those sources into structured wiki articles
+
+Humans capture; agents compile. The compiled wiki becomes shared memory for all future sessions.
+
+## Why AgentOS
+
+- **Unified memory** — one vault, many agents, no context lost between sessions
+- **Tool-agnostic** — any agent that can read files can participate
+- **Version-controlled** — memory is git-tracked, auditable, and rollback-able
+- **Obsidian-native** — backlinks, graph view, and search work out of the box
+- **Skill-powered** — reusable skills extend what agents can do
 
 ## Supported Agents
 
@@ -70,9 +103,9 @@ Following the PARA methodology (Projects, Areas, Resources, Archives):
 
 ## Typical Workflow
 
-1. Capture notes and requirements in `notes/` and `specs/`
-2. Run your agent in this repo for full workspace context
-3. Save reusable workflows in `playbooks/`
-4. Keep outcomes discoverable and linked in Obsidian
+1. Drop raw sources or quick notes into `00_INBOX/` or `05_RAW/`
+2. Run an agent — it reads the vault for context, then writes findings back
+3. Browse memory in Obsidian — graph view shows how ideas connect
+4. Add reusable workflows to `03_RESOURCES/Playbooks/` as you go
 
-If you want a durable, agent-friendly workspace instead of chat-only output, start here.
+If you want a persistent, agent-friendly brain instead of one-off chat output, start here.
