@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" width="820" height="500" font-family="ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace">
+  <rect width="820" height="500" fill="#1a1a2e" rx="12"/>
+
+  <!-- Title -->
+  <text x="410" y="36" text-anchor="middle" fill="#e2e8f0" font-size="17" font-weight="700" letter-spacing="0.5">RAG Pipeline — Retrieval-Augmented Generation</text>
+
+  <!-- ===== INDEXING PHASE ===== -->
+  <rect x="20" y="55" width="390" height="280" fill="#0f1c2e" stroke="#334155" stroke-width="1.5" rx="10"/>
+  <text x="215" y="76" text-anchor="middle" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1.5">INDEXING PHASE (offline)</text>
+
+  <!-- Documents -->
+  <rect x="40" y="88" width="110" height="60" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2" rx="7"/>
+  <text x="95" y="113" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">Documents</text>
+  <text x="95" y="130" text-anchor="middle" fill="#64748b" font-size="10">PDF, MD, TXT</text>
+  <text x="95" y="143" text-anchor="middle" fill="#64748b" font-size="10">code, web pages</text>
+
+  <!-- Arrow -->
+  <line x1="153" y1="118" x2="175" y2="118" stroke="#3b82f6" stroke-width="2" marker-end="url(#b1)"/>
+  <text x="163" y="112" text-anchor="middle" fill="#64748b" font-size="9">chunk</text>
+
+  <!-- Chunker -->
+  <rect x="178" y="88" width="100" height="60" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2" rx="7"/>
+  <text x="228" y="113" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">Chunker</text>
+  <text x="228" y="130" text-anchor="middle" fill="#64748b" font-size="10">512 tokens</text>
+  <text x="228" y="143" text-anchor="middle" fill="#64748b" font-size="10">+ overlap</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="118" x2="300" y2="118" stroke="#3b82f6" stroke-width="2" marker-end="url(#b1)"/>
+  <text x="290" y="112" text-anchor="middle" fill="#64748b" font-size="9">embed</text>
+
+  <!-- Embedder -->
+  <rect x="303" y="88" width="90" height="60" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2" rx="7"/>
+  <text x="348" y="110" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">Embed</text>
+  <text x="348" y="126" text-anchor="middle" fill="#64748b" font-size="10">Model</text>
+  <text x="348" y="140" text-anchor="middle" fill="#64748b" font-size="10">text-emb-3</text>
+
+  <!-- Arrow down to Vector DB -->
+  <line x1="348" y1="150" x2="348" y2="172" stroke="#3b82f6" stroke-width="2" marker-end="url(#b1)"/>
+  <text x="360" y="165" fill="#64748b" font-size="9">store</text>
+
+  <!-- Vector DB -->
+  <rect x="40" y="175" width="355" height="140" fill="#0a1628" stroke="#22d3ee" stroke-width="2" rx="8"/>
+  <text x="218" y="198" text-anchor="middle" fill="#67e8f9" font-size="13" font-weight="700">Vector Store</text>
+  <!-- Simulated vectors -->
+  <rect x="60" y="208" width="140" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="60" y="208" width="105" height="14" fill="#3b82f6" rx="3" opacity="0.6"/>
+  <text x="215" y="220" fill="#94a3b8" font-size="9">chunk 1  [0.23, 0.89, ...]</text>
+  <rect x="60" y="228" width="140" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="60" y="228" width="85" height="14" fill="#22d3ee" rx="3" opacity="0.5"/>
+  <text x="215" y="240" fill="#94a3b8" font-size="9">chunk 2  [0.71, 0.12, ...]</text>
+  <rect x="60" y="248" width="140" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="60" y="248" width="120" height="14" fill="#6366f1" rx="3" opacity="0.5"/>
+  <text x="215" y="260" fill="#94a3b8" font-size="9">chunk 3  [0.44, 0.66, ...]</text>
+  <rect x="60" y="268" width="140" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="60" y="268" width="65" height="14" fill="#a855f7" rx="3" opacity="0.5"/>
+  <text x="215" y="280" fill="#94a3b8" font-size="9">chunk N  [0.09, 0.55, ...]</text>
+  <text x="218" y="305" text-anchor="middle" fill="#475569" font-size="10">Chroma · Pinecone · pgvector · Weaviate · Qdrant</text>
+
+  <!-- ===== QUERY PHASE ===== -->
+  <rect x="430" y="55" width="370" height="280" fill="#0f1c2e" stroke="#334155" stroke-width="1.5" rx="10"/>
+  <text x="615" y="76" text-anchor="middle" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1.5">QUERY PHASE (online)</text>
+
+  <!-- User Query -->
+  <rect x="450" y="88" width="110" height="60" fill="#2d1b4e" stroke="#a855f7" stroke-width="2" rx="7"/>
+  <text x="505" y="113" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="700">User Query</text>
+  <text x="505" y="130" text-anchor="middle" fill="#94a3b8" font-size="10">"How does X</text>
+  <text x="505" y="143" text-anchor="middle" fill="#94a3b8" font-size="10"> work?"</text>
+
+  <!-- Arrow -->
+  <line x1="562" y1="118" x2="582" y2="118" stroke="#a855f7" stroke-width="2" marker-end="url(#b2)"/>
+
+  <!-- Query Embedder -->
+  <rect x="585" y="88" width="90" height="60" fill="#2d1b4e" stroke="#a855f7" stroke-width="2" rx="7"/>
+  <text x="630" y="110" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="700">Embed</text>
+  <text x="630" y="126" text-anchor="middle" fill="#94a3b8" font-size="10">Query</text>
+  <text x="630" y="140" text-anchor="middle" fill="#94a3b8" font-size="10">Vector</text>
+
+  <!-- Arrow down -->
+  <line x1="630" y1="150" x2="630" y2="172" stroke="#a855f7" stroke-width="2" marker-end="url(#b2)"/>
+
+  <!-- Retriever -->
+  <rect x="450" y="175" width="140" height="140" fill="#0a1628" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="520" y="198" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700">Retriever</text>
+  <text x="520" y="215" text-anchor="middle" fill="#94a3b8" font-size="10">cosine similarity</text>
+  <text x="520" y="230" text-anchor="middle" fill="#94a3b8" font-size="10">search ↑</text>
+  <text x="520" y="248" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">Top-K chunks</text>
+  <rect x="465" y="255" width="110" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="465" y="255" width="100" height="14" fill="#f59e0b" rx="3" opacity="0.7"/>
+  <text x="520" y="265" text-anchor="middle" fill="#1a1a2e" font-size="9" font-weight="700">chunk 3  0.97</text>
+  <rect x="465" y="273" width="110" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="465" y="273" width="80" height="14" fill="#f59e0b" rx="3" opacity="0.5"/>
+  <text x="520" y="283" text-anchor="middle" fill="#94a3b8" font-size="9">chunk 1  0.84</text>
+  <rect x="465" y="291" width="110" height="14" fill="#1e3a5f" rx="3"/>
+  <rect x="465" y="291" width="55" height="14" fill="#f59e0b" rx="3" opacity="0.3"/>
+  <text x="520" y="301" text-anchor="middle" fill="#94a3b8" font-size="9">chunk 7  0.71</text>
+
+  <!-- Arrow to LLM -->
+  <line x1="592" y1="245" x2="615" y2="245" stroke="#f59e0b" stroke-width="2" marker-end="url(#b3)"/>
+  <!-- Retriever line from vector store to retriever -->
+  <line x1="630" y1="172" x2="630" y2="195" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="630" y1="195" x2="592" y2="195" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#b2)"/>
+
+  <!-- LLM -->
+  <rect x="618" y="175" width="160" height="140" fill="#0a1628" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="698" y="198" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">LLM</text>
+  <text x="698" y="215" text-anchor="middle" fill="#94a3b8" font-size="10">System prompt +</text>
+  <text x="698" y="230" text-anchor="middle" fill="#94a3b8" font-size="10">retrieved context +</text>
+  <text x="698" y="245" text-anchor="middle" fill="#94a3b8" font-size="10">user query</text>
+  <line x1="638" y1="258" x2="758" y2="258" stroke="#334155" stroke-width="1"/>
+  <text x="698" y="275" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="600">Grounded</text>
+  <text x="698" y="291" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="600">Response ✓</text>
+  <text x="698" y="307" text-anchor="middle" fill="#475569" font-size="9">cites sources</text>
+
+  <!-- Cross-phase arrow: vector store search -->
+  <line x1="215" y1="315" x2="215" y2="355" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="215" y1="355" x2="520" y2="355" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="520" y1="355" x2="520" y2="317" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#b4)"/>
+  <text x="370" y="370" text-anchor="middle" fill="#22d3ee" font-size="10">similarity search</text>
+
+  <!-- Bottom notes -->
+  <text x="410" y="420" text-anchor="middle" fill="#64748b" font-size="11" font-weight="700">Key Decisions</text>
+  <text x="410" y="440" text-anchor="middle" fill="#475569" font-size="10">Chunk size · Overlap · Embedding model · Top-K · Re-ranking · Hybrid search</text>
+  <text x="410" y="458" text-anchor="middle" fill="#475569" font-size="10">RAG vs Fine-tuning: use RAG for frequently-updated knowledge; fine-tune for style/behavior</text>
+  <text x="410" y="476" text-anchor="middle" fill="#475569" font-size="10">RAG vs Long-context: RAG is cheaper at scale; long-context is simpler for small corpora</text>
+
+  <defs>
+    <marker id="b1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="b2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#a855f7"/>
+    </marker>
+    <marker id="b3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="b4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,6 L0,0 L7,3 z" fill="#22d3ee"/>
+    </marker>
+  </defs>
+</svg>

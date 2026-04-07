@@ -148,3 +148,60 @@ See `~/AGENTS.md` for the full skills catalog.
 
 - `.obsidian/` — Obsidian app config (plugins, hotkeys, themes). Changes affect all users.
 - `installer/node_modules/` — Installer dependencies, ignore entirely.
+
+---
+
+## Knowledge Base Workflow (Karpathy Pattern)
+
+This vault implements a two-layer LLM knowledge base, inspired by Andrej Karpathy's approach to personal research wikis.
+
+### The two layers
+
+| Layer | Path | Role |
+|-------|------|------|
+| **Raw ingest** | `05_RAW/` | Unprocessed source material — web clips, papers, repos, transcripts |
+| **Compiled wiki** | `03_RESOURCES/` | Structured, interlinked wiki articles produced by agents from the raw layer |
+
+**Key principle:** Humans drop raw sources into `05_RAW/`. Agents compile them into `03_RESOURCES/`. You rarely write wiki articles manually — that's the agent's job.
+
+### When to write where
+
+- **Drop into `05_RAW/_topics/<topic>/`** when: you've clipped a web article, downloaded a paper, saved a repo README, or have any unstructured source you want to eventually compile.
+- **Write to `03_RESOURCES/Docs/`** when: you're compiling a raw source, writing a structured reference doc, or the agent has synthesised content from multiple sources.
+- **Write to `00_INBOX/`** when: it's a quick capture with no clear home yet.
+
+### Playbooks
+
+Reusable agent workflows live in `03_RESOURCES/Playbooks/`. For the knowledge base workflow:
+
+| Playbook | When to use |
+|----------|------------|
+| [[Raw Ingest to Wiki]] | Compile raw sources into wiki articles |
+| [[Wiki Health Check]] | Lint the vault — find orphans, stubs, broken links, uncompiled sources |
+| [[Q&A Against the Wiki]] | Query the compiled wiki for research answers |
+| [[Marp Slides Output]] | Turn wiki content into Marp slide decks |
+
+### Health check script
+
+Run periodically to audit vault quality:
+
+```bash
+# Terminal report
+node 01_PROJECTS/agentos_web/wiki-health-check.js
+
+# Write full report to 00_INBOX/_health-report.md
+node 01_PROJECTS/agentos_web/wiki-health-check.js --write-report
+```
+
+Checks: orphaned notes · stub notes · missing frontmatter · notes with no links · uncompiled raw sources older than 7 days.
+
+### MOC index files
+
+Each major section has a `_index.md` Map of Content that lists every note with a one-line description. Agents should:
+- Read `_index.md` first when navigating a section — it's the fastest way to orient
+- Update `_index.md` whenever a new note is added to that section
+- Keep descriptions to one line — they're navigation aids, not summaries
+
+Current MOC files:
+- `03_RESOURCES/Docs/_index.md`
+- `02_AREAS/agents/_index.md`

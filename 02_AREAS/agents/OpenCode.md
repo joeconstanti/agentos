@@ -1,4 +1,5 @@
 ---
+id: 20260314090005
 title: OpenCode
 type: agent
 category: ai-coding-assistant

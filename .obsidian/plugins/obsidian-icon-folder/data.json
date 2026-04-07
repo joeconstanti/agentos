@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiArrowDownCircle",
       "LiDatabase",
       "LiNotebookText",
       "LiSquare",
-      "LiBriefcase",
-      "LiMail"
+      "LiBriefcase"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -34,9 +34,25 @@
     "debugMode": false,
     "useInternalPlugins": false
   },
-  "01_PROJECTS": "LiBriefcase",
-  "00_INBOX": "LiMail",
-  "02_AREAS": "LiSquare",
-  "03_RESOURCES": "LiNotebookText",
-  "04_ARCHIVE": "LiDatabase"
+  "01_PROJECTS": {
+    "iconName": "LiBriefcase",
+    "iconColor": "#a3613e"
+  },
+  "00_INBOX": {
+    "iconName": "LiMail",
+    "iconColor": "#5b6cc2"
+  },
+  "02_AREAS": {
+    "iconName": "LiSquare",
+    "iconColor": "#b9a046"
+  },
+  "03_RESOURCES": {
+    "iconName": "LiNotebookText",
+    "iconColor": "#57276d"
+  },
+  "04_ARCHIVE": {
+    "iconName": "LiDatabase",
+    "iconColor": "#5e5e5e"
+  },
+  "05_RAW": "LiArrowDownCircle"
 }

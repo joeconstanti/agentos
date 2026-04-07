@@ -9,6 +9,22 @@
     }
   ],
   "terminal:close-terminal": [],
+  "terminal:toggle-focus-on-last-terminal": [
+    {
+      "key": "`",
+      "modifiers": [
+        "Ctrl",
+        "Shift"
+      ]
+    },
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "'"
+    }
+  ],
   "editor:toggle-source": [
     {
       "modifiers": [
@@ -358,20 +374,13 @@
       "key": "'"
     }
   ],
-  "terminal:toggle-focus-on-last-terminal": [
-    {
-      "key": "`",
-      "modifiers": [
-        "Ctrl",
-        "Shift"
-      ]
-    },
+  "claudian:open-view": [
     {
       "modifiers": [
         "Mod",
         "Shift"
       ],
-      "key": "'"
+      "key": "C"
     }
   ]
 }

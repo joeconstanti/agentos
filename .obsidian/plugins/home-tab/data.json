@@ -24,8 +24,16 @@
   "unresolvedLinks": false,
   "recentFilesStore": [
     {
-      "filepath": "README.md",
-      "timestamp": 1773677392875
+      "filepath": "01_PROJECTS/agentos_web/index.html",
+      "timestamp": 1775486976322
+    },
+    {
+      "filepath": "02_AREAS/agents/Cursor.md",
+      "timestamp": 1775486974870
+    },
+    {
+      "filepath": "02_AREAS/agents/Claude Code.md",
+      "timestamp": 1775486756691
     }
   ],
   "bookmarkedFileStore": [

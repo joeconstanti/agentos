@@ -1,9 +1,9 @@
 {
   "checkpoints": {
     "README.md": {
-      "mtime": 1773675551834,
+      "mtime": 1774388623338,
       "wordCount": 319,
-      "fileSize": 3187
+      "fileSize": 3373
     },
     "01_PROJECTS/Revori/SOC-Audit-Plan_100226.md": {
       "mtime": 1773527292327,
@@ -2306,34 +2306,34 @@
       "fileSize": 5672
     },
     "02_AREAS/agents/Claude Code.md": {
-      "mtime": 1773527376922,
-      "wordCount": 496,
-      "fileSize": 3840
+      "mtime": 1775560291867,
+      "wordCount": 498,
+      "fileSize": 3859
     },
     "02_AREAS/agents/Codex.md": {
-      "mtime": 1773527376923,
-      "wordCount": 489,
-      "fileSize": 3743
+      "mtime": 1775560291869,
+      "wordCount": 491,
+      "fileSize": 3762
     },
     "02_AREAS/agents/Cursor.md": {
-      "mtime": 1773527376923,
-      "wordCount": 674,
-      "fileSize": 4926
+      "mtime": 1775560291870,
+      "wordCount": 676,
+      "fileSize": 4945
     },
     "02_AREAS/agents/Custom MCP-backed agents.md": {
-      "mtime": 1773527376924,
-      "wordCount": 1050,
-      "fileSize": 7876
+      "mtime": 1775560291871,
+      "wordCount": 1052,
+      "fileSize": 7895
     },
     "02_AREAS/agents/Gemini CLI.md": {
-      "mtime": 1773527376924,
-      "wordCount": 579,
-      "fileSize": 4606
+      "mtime": 1775560291873,
+      "wordCount": 581,
+      "fileSize": 4625
     },
     "02_AREAS/agents/OpenCode.md": {
-      "mtime": 1773527376925,
-      "wordCount": 786,
-      "fileSize": 5672
+      "mtime": 1775560291874,
+      "wordCount": 788,
+      "fileSize": 5691
     },
     "03_RESOURCES/Excalidraw/Drawing 2026-03-14 21.55.42.excalidraw.md": {
       "mtime": 1773527386918,
@@ -2631,9 +2631,179 @@
       "fileSize": 346
     },
     "CLAUDE.md": {
-      "mtime": 1773570847949,
-      "wordCount": 561,
-      "fileSize": 4576
+      "mtime": 1775560027819,
+      "wordCount": 920,
+      "fileSize": 6985
+    },
+    "01_PROJECTS/agentos_web/docs/superpowers/specs/2026-03-25-agentos-dashboard-design.md": {
+      "mtime": 1774443086380,
+      "wordCount": 969,
+      "fileSize": 7269
+    },
+    "03_RESOURCES/Clippings/GitHub - YishenTu - claudian -  An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault.md": {
+      "mtime": 1775560291876,
+      "wordCount": 1779,
+      "fileSize": 16222
+    },
+    "03_RESOURCES/Docs/Claude Code with Obsidian.md": {
+      "mtime": 1774447581249,
+      "wordCount": 1147,
+      "fileSize": 7594
+    },
+    "03_RESOURCES/Docs/AI Coding Agent Alternatives.md": {
+      "mtime": 1774447402625,
+      "wordCount": 607,
+      "fileSize": 4154
+    },
+    "03_RESOURCES/Docs/ComfyUI Getting Started.md": {
+      "mtime": 1775560414167,
+      "wordCount": 749,
+      "fileSize": 5245
+    },
+    "03_RESOURCES/Docs/Claude Skills.md": {
+      "mtime": 1775560398015,
+      "wordCount": 719,
+      "fileSize": 4783
+    },
+    "03_RESOURCES/Docs/Top 10 Claude Code Skills.md": {
+      "mtime": 1775560418924,
+      "wordCount": 1087,
+      "fileSize": 8398
+    },
+    "03_RESOURCES/Docs/20260406090000-getting-started-mcp.md": {
+      "mtime": 1775485308596,
+      "wordCount": 939,
+      "fileSize": 6381
+    },
+    "03_RESOURCES/Docs/20260406090100-building-custom-mcp-server.md": {
+      "mtime": 1775485308599,
+      "wordCount": 1094,
+      "fileSize": 7874
+    },
+    "03_RESOURCES/Docs/20260406090200-n8n-getting-started.md": {
+      "mtime": 1775485378053,
+      "wordCount": 1015,
+      "fileSize": 6488
+    },
+    "03_RESOURCES/Docs/20260406090300-getting-started-ollama.md": {
+      "mtime": 1775485378055,
+      "wordCount": 930,
+      "fileSize": 6359
+    },
+    "03_RESOURCES/Docs/20260406090400-prompt-engineering-for-agents.md": {
+      "mtime": 1775485461793,
+      "wordCount": 1275,
+      "fileSize": 8081
+    },
+    "03_RESOURCES/Docs/20260406090500-claude-md-best-practices.md": {
+      "mtime": 1775485461794,
+      "wordCount": 1131,
+      "fileSize": 7430
+    },
+    "03_RESOURCES/Docs/20260406090600-multi-agent-orchestration.md": {
+      "mtime": 1775485551316,
+      "wordCount": 1233,
+      "fileSize": 8784
+    },
+    "03_RESOURCES/Docs/20260406090700-rag-explained.md": {
+      "mtime": 1775485551329,
+      "wordCount": 1141,
+      "fileSize": 8434
+    },
+    "03_RESOURCES/Docs/20260406090800-getting-started-cursor.md": {
+      "mtime": 1775485648243,
+      "wordCount": 1144,
+      "fileSize": 7219
+    },
+    "03_RESOURCES/Docs/Getting Started with MCP.md": {
+      "mtime": 1775485853934,
+      "wordCount": 939,
+      "fileSize": 6381
+    },
+    "03_RESOURCES/Docs/Building Your Own MCP Server.md": {
+      "mtime": 1775485853935,
+      "wordCount": 1094,
+      "fileSize": 7874
+    },
+    "03_RESOURCES/Docs/n8n Getting Started.md": {
+      "mtime": 1775485853944,
+      "wordCount": 1015,
+      "fileSize": 6488
+    },
+    "03_RESOURCES/Docs/Getting Started with Ollama.md": {
+      "mtime": 1775485853950,
+      "wordCount": 930,
+      "fileSize": 6359
+    },
+    "03_RESOURCES/Docs/Prompt Engineering for Agents.md": {
+      "mtime": 1775485853950,
+      "wordCount": 1275,
+      "fileSize": 8081
+    },
+    "03_RESOURCES/Docs/CLAUDE.md Best Practices.md": {
+      "mtime": 1775485853951,
+      "wordCount": 1131,
+      "fileSize": 7430
+    },
+    "03_RESOURCES/Docs/Multi-Agent Orchestration.md": {
+      "mtime": 1775485853951,
+      "wordCount": 1233,
+      "fileSize": 8784
+    },
+    "03_RESOURCES/Docs/RAG Explained.md": {
+      "mtime": 1775485853951,
+      "wordCount": 1141,
+      "fileSize": 8434
+    },
+    "03_RESOURCES/Docs/Getting Started with Cursor.md": {
+      "mtime": 1775485853959,
+      "wordCount": 1144,
+      "fileSize": 7219
+    },
+    "03_RESOURCES/Docs/AgentOS Daily Workflow.md": {
+      "mtime": 1775485854042,
+      "wordCount": 1362,
+      "fileSize": 8707
+    },
+    "05_RAW/README.md": {
+      "mtime": 1775559813583,
+      "wordCount": 462,
+      "fileSize": 3139
+    },
+    "05_RAW/_topics/README.md": {
+      "mtime": 1775559825581,
+      "wordCount": 288,
+      "fileSize": 2043
+    },
+    "03_RESOURCES/Playbooks/Raw Ingest to Wiki.md": {
+      "mtime": 1775559862945,
+      "wordCount": 866,
+      "fileSize": 5823
+    },
+    "03_RESOURCES/Playbooks/Wiki Health Check.md": {
+      "mtime": 1775559900044,
+      "wordCount": 1153,
+      "fileSize": 7160
+    },
+    "03_RESOURCES/Playbooks/Q&A Against the Wiki.md": {
+      "mtime": 1775559935583,
+      "wordCount": 945,
+      "fileSize": 5967
+    },
+    "03_RESOURCES/Playbooks/Marp Slides Output.md": {
+      "mtime": 1775559970585,
+      "wordCount": 986,
+      "fileSize": 6145
+    },
+    "03_RESOURCES/Docs/_index.md": {
+      "mtime": 1775560100389,
+      "wordCount": 377,
+      "fileSize": 2378
+    },
+    "02_AREAS/agents/_index.md": {
+      "mtime": 1775560112690,
+      "wordCount": 299,
+      "fileSize": 1947
     }
   },
   "activityOverTime": {
@@ -2670,8 +2840,8 @@
       "fileSize": 17349
     },
     "2026-03-14": {
-      "wordCount": 11804,
-      "fileSize": 93260
+      "wordCount": 12847,
+      "fileSize": 101399
     },
     "2026-03-15": {
       "wordCount": 36890,
@@ -2680,6 +2850,22 @@
     "2026-03-16": {
       "wordCount": 36,
       "fileSize": 222
+    },
+    "2026-03-24": {
+      "wordCount": 0,
+      "fileSize": 186
+    },
+    "2026-03-25": {
+      "wordCount": 7697,
+      "fileSize": 61185
+    },
+    "2026-04-06": {
+      "wordCount": 22528,
+      "fileSize": 151514
+    },
+    "2026-04-07": {
+      "wordCount": 5905,
+      "fileSize": 38191
     }
   }
 }

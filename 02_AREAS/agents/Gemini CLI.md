@@ -1,4 +1,5 @@
 ---
+id: 20260314090004
 title: Gemini CLI
 type: agent
 category: ai-coding-assistant

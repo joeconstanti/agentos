@@ -1,12 +1,56 @@
 {
   "recentFiles": [
     {
-      "basename": "README",
-      "path": "README.md"
+      "basename": "index",
+      "path": "01_PROJECTS/agentos_web/index.html"
     },
     {
-      "basename": "20260314223653-top-10-claude-code-skills",
-      "path": "00_INBOX/20260314223653-top-10-claude-code-skills.md"
+      "basename": "Cursor",
+      "path": "02_AREAS/agents/Cursor.md"
+    },
+    {
+      "basename": "Claude Code",
+      "path": "02_AREAS/agents/Claude Code.md"
+    },
+    {
+      "basename": "Top 10 Claude Code Skills",
+      "path": "03_RESOURCES/Docs/Top 10 Claude Code Skills.md"
+    },
+    {
+      "basename": "How to use Obsidian",
+      "path": "03_RESOURCES/Docs/How to use Obsidian.md"
+    },
+    {
+      "basename": "ComfyUI Getting Started",
+      "path": "03_RESOURCES/Docs/ComfyUI Getting Started.md"
+    },
+    {
+      "basename": "Claude Skills",
+      "path": "03_RESOURCES/Docs/Claude Skills.md"
+    },
+    {
+      "basename": "Claude Code with Obsidian",
+      "path": "03_RESOURCES/Docs/Claude Code with Obsidian.md"
+    },
+    {
+      "basename": "AI Coding Agent Alternatives",
+      "path": "03_RESOURCES/Docs/AI Coding Agent Alternatives.md"
+    },
+    {
+      "basename": "Drawing 2026-03-14 21.55.42.excalidraw",
+      "path": "03_RESOURCES/Excalidraw/Drawing 2026-03-14 21.55.42.excalidraw.md"
+    },
+    {
+      "basename": "GitHub - YishenTu - claudian -  An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault",
+      "path": "03_RESOURCES/Clippings/GitHub - YishenTu - claudian -  An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault.md"
+    },
+    {
+      "basename": "CLAUDE",
+      "path": "CLAUDE.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
     }
   ],
   "omittedPaths": [],

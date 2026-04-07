@@ -2,41 +2,41 @@
   "collapse-filter": false,
   "search": "",
   "showTags": true,
-  "showAttachments": true,
+  "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
-      "query": "path:00_INBOX  ",
+      "query": "ftr",
       "color": {
         "a": 1,
-        "rgb": 13720863
+        "rgb": 16711680
       }
     },
     {
-      "query": "path:01_PROJECTS  ",
+      "query": "synthetic",
       "color": {
         "a": 1,
         "rgb": 14725458
       }
     },
     {
-      "query": "path:\"02_AREAS/SAAS Ideas\"  ",
+      "query": "cerebral",
       "color": {
         "a": 1,
-        "rgb": 5463530
+        "rgb": 5431378
       }
     },
     {
-      "query": "path:01_PROJECTS/Revori  ",
+      "query": "daily",
       "color": {
         "a": 1,
-        "rgb": 12459635
+        "rgb": 5401056
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
@@ -46,6 +46,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.19829253453652804,
+  "scale": 0.3370485225916012,
   "close": true
 }

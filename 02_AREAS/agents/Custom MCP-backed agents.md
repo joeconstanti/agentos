@@ -1,4 +1,5 @@
 ---
+id: 20260314090003
 title: Custom MCP-backed Agents
 type: framework
 category: agent-development

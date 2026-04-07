@@ -213,3 +213,11 @@ Use **skill-creator** to build domain-specific skills tailored to your unique wo
 *Research conducted: March 14, 2026*
 *Document status: Draft*
 *Area: Inbox*
+
+---
+
+## Related
+
+- [[Claude Skills]] — Full overview of the Skills system and how to use it
+- [[Claude Code with Obsidian]] — Applying skills in an Obsidian vault context
+- [[Prompt Engineering for Agents]] — Getting the most out of agent instructions

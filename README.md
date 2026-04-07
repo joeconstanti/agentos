@@ -61,12 +61,12 @@ Following the PARA methodology (Projects, Areas, Resources, Archives):
 
 ## Supported Agents
 
-- [[Claude Code]]
-- [[Codex]]
-- [[Gemini CLI]]
-- [[Cursor]]
-- [[OpenCode]]
-- [[Custom MCP-backed agents]]
+- [Claude Code](02_AREAS/agents/Claude%20Code.md)
+- [Codex](02_AREAS/agents/Codex.md)
+- [Gemini CLI](02_AREAS/agents/Gemini%20CLI.md)
+- [Cursor](02_AREAS/agents/Cursor.md)
+- [OpenCode](02_AREAS/agents/OpenCode.md)
+- [Custom MCP-backed agents](02_AREAS/agents/Custom%20MCP-backed%20agents.md)
 
 ## Typical Workflow
 

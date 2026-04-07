@@ -1,4 +1,5 @@
 ---
+id: 20260314090001
 title: Codex
 type: agent
 category: ai-coding-assistant
