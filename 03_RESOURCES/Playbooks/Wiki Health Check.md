@@ -177,6 +177,16 @@ Sort by date ascending (oldest first).
 
 ---
 
+## Check 9 — Index coverage
+
+**What:** A sibling note in a folder that has `_index.md` is not mentioned by a wikilink in that index. Aliases and headings count. Nested folders are checked by their own index.
+
+**Why it matters:** Karpathy-style wiki linters treat a page missing from the index as an error. The index is how agents find notes.
+
+**Fix:** Add a one-line wikilink for the note to that folder's `_index.md`.
+
+---
+
 ## Health report template
 
 After running all checks, produce a report in this format and save it to `00_INBOX/_health-report-YYYYMMDD.md`:
@@ -206,6 +216,7 @@ area: system
 | Inconsistent tags | ✓ / ⚠️ / ✗ | N |
 | Uncompiled raw sources | ✓ / ⚠️ / ✗ | N |
 | Broken wikilinks | ✓ / ⚠️ / ✗ | N |
+| Notes missing from `_index.md` | ✓ / ⚠️ / ✗ | N |
 
 **Overall health:** 🟢 Good / 🟡 Needs attention / 🔴 Critical
 
@@ -240,7 +251,7 @@ area: system
 - ⚠️ = 1–5 issues (low priority)
 - ✗ = 6+ issues (fix soon)
 
-You can also run the automated script for checks 1, 2, 3, 4, 7, and 8:
+You can also run the automated script for checks 1, 2, 3, 4, 7, 8, and 9:
 ```bash
 cd /path/to/agentos
 node 01_PROJECTS/agentos_web/wiki-health-check.js --write-report
