@@ -1,0 +1,23 @@
+{
+  "skill": "session-handoff",
+  "positive": [
+    {
+      "prompt": "Save a handoff while a render job is running and unrelated files are dirty.",
+      "expected": [
+        "Record the existing job ID and check command.",
+        "List dirty paths without overwriting them.",
+        "Do not resubmit or cancel the job."
+      ]
+    },
+    {
+      "prompt": "Give me a handoff in chat; deployment has not been verified.",
+      "expected": [
+        "Write only in chat.",
+        "Record build evidence separately from unverified deployment."
+      ]
+    }
+  ],
+  "negative": [
+    "Give me a one-sentence progress update."
+  ]
+}
