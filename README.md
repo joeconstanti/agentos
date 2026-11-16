@@ -113,3 +113,15 @@ If you want a persistent, agent-friendly brain instead of one-off chat output, s
 ## Project skills
 
 Project skills are versioned in `.agents/skills/` and shared with Claude through repository aliases. Run `python3 scripts/skills.py catalog` to discover them. Other agents can read the listed files directly. See [AGENTS.md](AGENTS.md) for usage and validation. No global installation is required.
+
+The bundled skills cover source compilation, grounded Q&A, wiki maintenance, research intake, memory reconciliation, session handoffs, debugging, outcome verification, and skill evaluation. Their research rationale is in [Agent Skill Improvement Research](03_RESOURCES/Docs/Agent%20Skill%20Improvement%20Research.md).
+
+Validate the suite with:
+
+```bash
+python3 scripts/skills.py check
+python3 scripts/evaluate_skills.py check
+python3 -m unittest discover -s tests
+```
+
+GitHub Actions runs these checks for pull requests and main. The included scenarios support behavior review; CI checks their definitions, not model performance.
