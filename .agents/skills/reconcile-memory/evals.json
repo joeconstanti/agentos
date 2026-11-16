@@ -1,0 +1,23 @@
+{
+  "skill": "reconcile-memory",
+  "positive": [
+    {
+      "prompt": "Update the decision note. An old approved decision conflicts with a newer unapproved proposal.",
+      "expected": [
+        "Preserve the approved decision unless new authority supersedes it.",
+        "Record the proposal as a proposal.",
+        "State the unresolved decision explicitly."
+      ]
+    },
+    {
+      "prompt": "Remember this only for this task: use model X.",
+      "expected": [
+        "Do not write a permanent preference.",
+        "Apply the instruction to the current task only."
+      ]
+    }
+  ],
+  "negative": [
+    "What does this note say?"
+  ]
+}
