@@ -86,6 +86,25 @@ test('runChecks resolves embeds by filename and still flags missing targets', ()
   assert.deepStrictEqual(r.brokenLinks.map((item) => item.link), ['Missing.png']);
 });
 
+test('isValidCreated accepts calendar dates and rejects impossible ones', () => {
+  assert.strictEqual(hc.isValidCreated('2026-04-06'), true);
+  assert.strictEqual(hc.isValidCreated('2026-04-06 10:06'), true);
+  assert.strictEqual(hc.isValidCreated('2026-02-31'), false);
+  assert.strictEqual(hc.isValidCreated('<% tp.date.now("YYYY-MM-DD") %>'), false);
+});
+
+test('runChecks reports invalid status and created values', () => {
+  const root = vault({
+    '03_RESOURCES/Docs/Bad.md': '---\nid: 1\ntype: note\nstatus: purple\ncreated: not-a-date\ntags:\n  - a\n---\nbody',
+    '03_RESOURCES/Docs/Good.md': FM + 'ok',
+    '03_RESOURCES/Templates/main.md': '---\nid: 1\ntype: note\nstatus: draft\ncreated: <% tp.date.now("YYYY-MM-DD HH:mm") %>\ntags:\n  - a\n---\n',
+  });
+  const r = hc.runChecks(root);
+  assert.strictEqual(r.invalidFm.length, 1);
+  assert.deepStrictEqual(r.invalidFm[0].problems, ['status: purple', 'created: not-a-date']);
+  assert.match(hc.buildMarkdownReport(r), /status: purple/);
+});
+
 test('runChecks reports sibling notes missing from _index.md', () => {
   const root = vault({
     '03_RESOURCES/Docs/_index.md': FM + 'See [[Listed|alias]], [[Other#Heading]], and [[Notebook]].',

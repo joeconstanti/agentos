@@ -19,7 +19,8 @@
  *   6. Broken wikilinks (no note with that basename)
  *   7. Duplicate content basenames (not _index or README)
  *   8. Sibling notes missing from a folder _index.md
- *   9. Note counts per top-level folder
+ *   9. Invalid status or created values
+ *   10. Note counts per top-level folder
  */
 
 const fs = require('fs');
@@ -34,6 +35,7 @@ const REQUIRED_FRONTMATTER = ['id', 'type', 'status', 'created', 'tags'];
 const STUB_THRESHOLD = 100; // words
 const RAW_STALE_DAYS = 7;
 const STRUCTURAL_STEMS = new Set(['_index', 'readme']);
+const STATUS_VALUES = new Set(['active', 'draft', 'archived', 'stub', 'pending', 'compiled', 'uncompiled', 'done']);
 const WRITE_REPORT = process.argv.includes('--write-report');
 
 // Folders to exclude from general checks
@@ -152,6 +154,18 @@ function extractDate(filename, frontmatter) {
     if (!isNaN(d)) return d;
   }
   return null;
+}
+
+/** True when created is a real calendar date, with an optional time. */
+function isValidCreated(value) {
+  if (typeof value !== 'string') return false;
+  const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T]\d{2}:\d{2}(?::\d{2})?)?$/);
+  if (!match) return false;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
 }
 
 // ---------------------------------------------------------------------------
@@ -289,7 +303,23 @@ function runChecks(root = VAULT_ROOT) {
     }
   }
 
-  // ---- Check 9: Note counts per folder ----
+  // ---- Check 9: Invalid status or created values ----
+  const VALUE_EXCLUDE = [...FM_EXCLUDE, '03_RESOURCES/Templates'];
+  const invalidFm = [];
+  for (const { filePath, fm } of fileData) {
+    const r = rel(filePath);
+    if (VALUE_EXCLUDE.some(p => r.startsWith(p) || r === p)) continue;
+    const problems = [];
+    if (typeof fm.status === 'string' && fm.status !== '' && !STATUS_VALUES.has(fm.status)) {
+      problems.push(`status: ${fm.status}`);
+    }
+    if (typeof fm.created === 'string' && fm.created !== '' && !isValidCreated(fm.created)) {
+      problems.push(`created: ${fm.created}`);
+    }
+    if (problems.length > 0) invalidFm.push({ filePath, problems });
+  }
+
+  // ---- Check 10: Note counts per folder ----
   const folderCounts = {};
   for (const { filePath } of fileData) {
     const parts = rel(filePath).split(path.sep);
@@ -307,6 +337,7 @@ function runChecks(root = VAULT_ROOT) {
     brokenLinks,
     duplicateStems,
     indexGaps,
+    invalidFm,
     folderCounts,
     totalNotes: allFiles.length,
   };
@@ -331,7 +362,7 @@ function statusIcon(count, warnThreshold = 1, errorThreshold = 6) {
 }
 
 function printReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, invalidFm, folderCounts, totalNotes } = results;
 
   console.log();
   console.log(`${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}`);
@@ -351,6 +382,7 @@ function printReport(results) {
     ['Broken wikilinks', brokenLinks.length],
     ['Duplicate note basenames', duplicateStems.length],
     ['Notes missing from _index.md', indexGaps.length],
+    ['Invalid status or created values', invalidFm.length],
   ];
 
   console.log(`${BOLD}  Summary${RESET}`);
@@ -437,7 +469,15 @@ function printReport(results) {
     console.log();
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length + indexGaps.length;
+  if (invalidFm.length > 0) {
+    console.log(`${BOLD}${YELLOW}  ⚠️  Invalid Frontmatter Values${RESET}`);
+    for (const { filePath, problems } of invalidFm) {
+      console.log(`  ${DIM}·${RESET} ${rel(filePath)} ${DIM}— ${problems.join(', ')}${RESET}`);
+    }
+    console.log();
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length + indexGaps.length + invalidFm.length;
   if (totalIssues === 0) {
     console.log(`${GREEN}${BOLD}  ✓ Vault is healthy — no issues found.${RESET}`);
   } else {
@@ -455,7 +495,7 @@ function printReport(results) {
 // ---------------------------------------------------------------------------
 
 function buildMarkdownReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, invalidFm, folderCounts, totalNotes } = results;
   const now = new Date();
   const dateStr = now.toISOString().slice(0, 10);
   const idStr = now.toISOString().replace(/[-:T]/g, '').slice(0, 14);
@@ -489,6 +529,7 @@ function buildMarkdownReport(results) {
     `| Broken wikilinks | ${statusEmoji(brokenLinks.length)} | ${brokenLinks.length} |`,
     `| Duplicate note basenames | ${statusEmoji(duplicateStems.length)} | ${duplicateStems.length} |`,
     `| Notes missing from _index.md | ${statusEmoji(indexGaps.length)} | ${indexGaps.length} |`,
+    `| Invalid status or created values | ${statusEmoji(invalidFm.length)} | ${invalidFm.length} |`,
     '',
     '## Notes per Folder',
     '',
@@ -567,7 +608,16 @@ function buildMarkdownReport(results) {
     lines.push('');
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length + indexGaps.length;
+  if (invalidFm.length > 0) {
+    lines.push('## Invalid Frontmatter Values');
+    lines.push('');
+    for (const { filePath, problems } of invalidFm) {
+      lines.push(`- \`${rel(filePath)}\` — ${problems.join(', ')}`);
+    }
+    lines.push('');
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length + indexGaps.length + invalidFm.length;
   const overallHealth = totalIssues === 0 ? '🟢 Healthy' : totalIssues < 10 ? '🟡 Needs attention' : '🔴 Critical';
   lines.push(`**Overall health:** ${overallHealth} (${totalIssues} total issues)`);
   lines.push('');
@@ -584,7 +634,8 @@ function summarize(results) {
     + results.staleRaw.length
     + results.brokenLinks.length
     + results.duplicateStems.length
-    + results.indexGaps.length;
+    + results.indexGaps.length
+    + results.invalidFm.length;
   return {
     totalNotes: results.totalNotes,
     issues,
@@ -601,6 +652,10 @@ function summarize(results) {
     indexGaps: results.indexGaps.map(({ indexPath, filePath }) => ({
       index: rel(indexPath),
       path: rel(filePath),
+    })),
+    invalidFrontmatter: results.invalidFm.map(({ filePath, problems }) => ({
+      path: rel(filePath),
+      problems,
     })),
     folderCounts: results.folderCounts,
   };
@@ -655,6 +710,7 @@ module.exports = {
   extractWikilinks,
   wikilinkStem,
   extractDate,
+  isValidCreated,
   runChecks,
   buildMarkdownReport,
   summarize,
