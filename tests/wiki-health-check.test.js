@@ -25,6 +25,15 @@ test('extractWikilinks strips aliases and headings', () => {
   assert.deepStrictEqual(hc.extractWikilinks('[[A]] [[B|alias]] [[C#Heading]]'), ['A', 'B', 'C']);
 });
 
+test('extractWikilinks ignores fenced and inline examples', () => {
+  const text = 'See [[Real]]\n```\n[[Fake]]\n```\nAnd `[[Also Fake]]`.';
+  assert.deepStrictEqual(hc.extractWikilinks(text), ['Real']);
+});
+
+test('wikilinkStem uses the basename without an extension', () => {
+  assert.strictEqual(hc.wikilinkStem('Docs/My Note.md'), 'my note');
+});
+
 test('countWords ignores frontmatter', () => {
   assert.strictEqual(hc.countWords(FM + 'one two three'), 3);
 });
@@ -40,4 +49,23 @@ test('runChecks finds orphans, stubs and missing frontmatter', () => {
   assert.strictEqual(r.stubs.length, 2);
   assert.strictEqual(r.missingFm.length, 1);
   assert.match(hc.buildMarkdownReport(r), /Wiki Health Report/);
+});
+
+test('runChecks resolves embeds by filename and still flags missing targets', () => {
+  const root = vault({
+    '03_RESOURCES/Docs/A.md': FM + 'See ![[diagram.svg]] and ![[Missing.png]].',
+    '03_RESOURCES/Attachments/diagram.svg': '<svg/>',
+  });
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.brokenLinks.map((item) => item.link), ['Missing.png']);
+});
+
+test('runChecks reports wikilinks that match no note', () => {
+  const root = vault({
+    '03_RESOURCES/Docs/A.md': FM + 'See [[Missing]] and [[B#Section|alias]] plus [[docs/B.md]].',
+    '03_RESOURCES/Docs/B.md': FM + '```\n[[Not A Link]]\n```\nBack to [[A]].',
+  });
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.brokenLinks.map((item) => item.link), ['Missing']);
+  assert.match(hc.buildMarkdownReport(r), /\[\[Missing\]\]/);
 });

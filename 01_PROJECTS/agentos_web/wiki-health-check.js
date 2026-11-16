@@ -13,7 +13,8 @@
  *   3. Missing required frontmatter fields
  *   4. Notes with no outbound wikilinks
  *   5. Uncompiled raw sources in 05_RAW/ older than 7 days
- *   6. Note counts per top-level folder
+ *   6. Broken wikilinks (no note with that basename)
+ *   7. Note counts per top-level folder
  */
 
 const fs = require('fs');
@@ -46,8 +47,8 @@ const EXCLUDE_DIRS = new Set([
 // Utilities
 // ---------------------------------------------------------------------------
 
-/** Recursively collect all .md file paths under a directory */
-function collectMarkdownFiles(dir, results = []) {
+/** Recursively collect file paths under a directory, skipping tooling folders. */
+function collectFiles(dir, results = []) {
   let entries;
   try {
     entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -58,8 +59,8 @@ function collectMarkdownFiles(dir, results = []) {
     if (EXCLUDE_DIRS.has(entry.name)) continue;
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      collectMarkdownFiles(fullPath, results);
-    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      collectFiles(fullPath, results);
+    } else if (entry.isFile()) {
       results.push(fullPath);
     }
   }
@@ -93,13 +94,37 @@ function countWords(content) {
   return body.split(/\s+/).filter(Boolean).length;
 }
 
-/** Extract all [[wikilinks]] from content */
+/** Drop fenced and inline examples so sample links are not vault navigation. */
+function withoutExamples(content) {
+  const kept = [];
+  let fence = null;
+  for (const line of content.split(/\r?\n/)) {
+    const marker = line.match(/^\s*(`{3,}|~{3,})/);
+    if (marker) {
+      const token = marker[1][0];
+      if (!fence) fence = token;
+      else if (fence === token) fence = null;
+      continue;
+    }
+    if (!fence) kept.push(line);
+  }
+  return kept.join('\n').replace(/`[^`\n]*`/g, '');
+}
+
+/** Basename used to resolve a wikilink, without a heading, alias, or .md suffix. */
+function wikilinkStem(link) {
+  let name = String(link).trim().replace(/\\/g, '/');
+  if (name.toLowerCase().endsWith('.md')) name = name.slice(0, -3);
+  return path.posix.basename(name).trim().toLowerCase();
+}
+
+/** Extract navigational [[wikilinks]] from content. */
 function extractWikilinks(content) {
-  const matches = content.match(/\[\[([^\]|#]+)[^\]]*\]\]/g) || [];
+  const matches = withoutExamples(content).match(/\[\[([^\]|#]+)[^\]]*\]\]/g) || [];
   return matches.map(m => {
     const inner = m.slice(2, -2).split('|')[0].split('#')[0].trim();
     return inner;
-  });
+  }).filter(Boolean);
 }
 
 /** Relative path from vault root for display */
@@ -129,7 +154,9 @@ function extractDate(filename, frontmatter) {
 
 function runChecks(root = VAULT_ROOT) {
   VAULT_ROOT = path.resolve(root);
-  const allFiles = collectMarkdownFiles(VAULT_ROOT);
+  const allPaths = collectFiles(VAULT_ROOT);
+  const allFiles = allPaths.filter((filePath) => filePath.endsWith('.md'));
+  const assetNames = new Set(allPaths.map((filePath) => path.basename(filePath).toLowerCase()));
 
   // Build a lookup: note stem → full path (for wikilink resolution)
   const stemToPath = new Map();
@@ -210,7 +237,22 @@ function runChecks(root = VAULT_ROOT) {
     return (now - d.getTime()) > RAW_STALE_DAYS * MS_PER_DAY;
   });
 
-  // ---- Check 6: Note counts per folder ----
+  // ---- Check 6: Broken wikilinks ----
+  const brokenLinks = [];
+  const seenBroken = new Set();
+  for (const { filePath, outlinks } of fileData) {
+    for (const link of outlinks) {
+      const stem = wikilinkStem(link);
+      // Notes resolve without an extension. Embeds such as ![[diagram.svg]] resolve by filename.
+      if (!stem || stemToPath.has(stem) || assetNames.has(stem)) continue;
+      const key = `${filePath}\0${link}`;
+      if (seenBroken.has(key)) continue;
+      seenBroken.add(key);
+      brokenLinks.push({ filePath, link });
+    }
+  }
+
+  // ---- Check 7: Note counts per folder ----
   const folderCounts = {};
   for (const { filePath } of fileData) {
     const parts = rel(filePath).split(path.sep);
@@ -225,6 +267,7 @@ function runChecks(root = VAULT_ROOT) {
     missingFm,
     noOutbound,
     staleRaw,
+    brokenLinks,
     folderCounts,
     totalNotes: allFiles.length,
   };
@@ -249,7 +292,7 @@ function statusIcon(count, warnThreshold = 1, errorThreshold = 6) {
 }
 
 function printReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, folderCounts, totalNotes } = results;
 
   console.log();
   console.log(`${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}`);
@@ -266,6 +309,7 @@ function printReport(results) {
     ['Missing frontmatter fields', missingFm.length],
     ['Notes with no outbound links', noOutbound.length],
     ['Stale raw sources (> 7 days)', staleRaw.length],
+    ['Broken wikilinks', brokenLinks.length],
   ];
 
   console.log(`${BOLD}  Summary${RESET}`);
@@ -327,7 +371,15 @@ function printReport(results) {
     console.log();
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length;
+  if (brokenLinks.length > 0) {
+    console.log(`${BOLD}${RED}  ✗  Broken Wikilinks${RESET}`);
+    for (const { filePath, link } of brokenLinks) {
+      console.log(`  ${DIM}·${RESET} ${rel(filePath)} ${DIM}→ [[${link}]]${RESET}`);
+    }
+    console.log();
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length;
   if (totalIssues === 0) {
     console.log(`${GREEN}${BOLD}  ✓ Vault is healthy — no issues found.${RESET}`);
   } else {
@@ -345,7 +397,7 @@ function printReport(results) {
 // ---------------------------------------------------------------------------
 
 function buildMarkdownReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, folderCounts, totalNotes } = results;
   const now = new Date();
   const dateStr = now.toISOString().slice(0, 10);
   const idStr = now.toISOString().replace(/[-:T]/g, '').slice(0, 14);
@@ -376,6 +428,7 @@ function buildMarkdownReport(results) {
     `| Missing frontmatter fields | ${statusEmoji(missingFm.length)} | ${missingFm.length} |`,
     `| Notes with no outbound links | ${statusEmoji(noOutbound.length)} | ${noOutbound.length} |`,
     `| Stale raw sources (> 7 days) | ${statusEmoji(staleRaw.length)} | ${staleRaw.length} |`,
+    `| Broken wikilinks | ${statusEmoji(brokenLinks.length)} | ${brokenLinks.length} |`,
     '',
     '## Notes per Folder',
     '',
@@ -427,7 +480,16 @@ function buildMarkdownReport(results) {
     lines.push('');
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length;
+  if (brokenLinks.length > 0) {
+    lines.push('## Broken Wikilinks');
+    lines.push('');
+    for (const { filePath, link } of brokenLinks) {
+      lines.push(`- \`${rel(filePath)}\` → \`[[${link}]]\``);
+    }
+    lines.push('');
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length;
   const overallHealth = totalIssues === 0 ? '🟢 Healthy' : totalIssues < 10 ? '🟡 Needs attention' : '🔴 Critical';
   lines.push(`**Overall health:** ${overallHealth} (${totalIssues} total issues)`);
   lines.push('');
@@ -463,6 +525,6 @@ try {
 }
 }
 
-module.exports = { parseFrontmatter, countWords, extractWikilinks, extractDate, runChecks, buildMarkdownReport };
+module.exports = { parseFrontmatter, countWords, extractWikilinks, wikilinkStem, extractDate, runChecks, buildMarkdownReport };
 
 if (require.main === module) main();
