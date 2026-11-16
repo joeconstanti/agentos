@@ -46,6 +46,30 @@ class SkillValidation(unittest.TestCase):
         alias.symlink_to('missing')
         self.assertTrue(skills.inspect(self.root)[1])
 
+    def test_local_reference_is_resolved_and_checked(self):
+        path = self.folder / 'SKILL.md'
+        target = self.folder / 'Reference File.md'
+        target.write_text('Reference')
+        path.write_text(path.read_text() + '\n[Reference](Reference%20File.md)\n')
+        self.assertEqual(skills.inspect(self.root)[1], [])
+        target.unlink()
+        self.assertTrue(skills.inspect(self.root)[1])
+
+    def test_external_reference_is_not_fetched(self):
+        path = self.folder / 'SKILL.md'
+        path.write_text(path.read_text() + '\n[Source](https://example.invalid/source)\n')
+        self.assertEqual(skills.inspect(self.root)[1], [])
+
+    def test_reference_outside_repository_is_rejected(self):
+        path = self.folder / 'SKILL.md'
+        path.write_text(path.read_text() + '\n[Outside](../../../../outside.md)\n')
+        self.assertTrue(skills.inspect(self.root)[1])
+
+    def test_empty_catalog_is_rejected(self):
+        (self.folder / 'SKILL.md').unlink()
+        self.folder.rmdir()
+        self.assertTrue(skills.inspect(self.root)[1])
+
     def test_rejects_duplicate_metadata(self):
         path = self.folder / 'SKILL.md'
         path.write_text(path.read_text().replace('---\n#', 'name: "example"\n---\n#'))

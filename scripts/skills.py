@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
@@ -36,12 +37,21 @@ def inspect(root):
                 raise ValueError('description must contain 1-1024 characters')
             if not parts[2].strip():
                 raise ValueError('instructions are empty')
+            for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)', parts[2]):
+                url = urlsplit(target)
+                if url.scheme or not url.path:
+                    continue
+                reference = (folder / unquote(url.path)).resolve()
+                if not reference.is_relative_to(root.resolve()) or not reference.exists():
+                    raise ValueError(f'local reference is missing or outside repository: {target}')
             alias = root / '.claude/skills' / folder.name
             if not alias.is_symlink() or alias.resolve() != folder.resolve():
                 raise ValueError('Claude alias must point to canonical skill')
             skills.append({**metadata, 'path': path.relative_to(root).as_posix()})
         except (OSError, ValueError) as exc:
             errors.append(f'{path.relative_to(root)}: {exc}')
+    if not skills and not errors:
+        errors.append('no portable skills found')
     return skills, errors
 
 

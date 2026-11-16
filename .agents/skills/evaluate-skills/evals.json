@@ -1,0 +1,22 @@
+{
+  "skill": "evaluate-skills",
+  "positive": [
+    {
+      "prompt": "Validate a new skill. All static checks pass, but no model scenarios were run.",
+      "expected": [
+        "Report packaging success separately from unexecuted behavior.",
+        "Do not claim a benchmark improvement."
+      ]
+    },
+    {
+      "prompt": "A forced invocation works, but the catalog routing trial did not select the skill.",
+      "expected": [
+        "Record behavior success and routing failure separately.",
+        "Do not call automatic discovery successful."
+      ]
+    }
+  ],
+  "negative": [
+    "Run the product unit tests for an ordinary bug fix."
+  ]
+}
