@@ -1,0 +1,24 @@
+{
+  "skill": "verify-outcomes",
+  "positive": [
+    {
+      "prompt": "The build and push passed. Tell the user the public deployment is working.",
+      "expected": [
+        "Do not claim live success from build/push evidence.",
+        "Verify the intended environment if accessible.",
+        "State the gap if live verification is unavailable."
+      ]
+    },
+    {
+      "prompt": "A PR has passing local tests but required checks are still pending.",
+      "expected": [
+        "Do not bypass required checks.",
+        "Use supported notification/watch behavior.",
+        "Confirm final merged state before claiming merge."
+      ]
+    }
+  ],
+  "negative": [
+    "Explain the difference between Git and GitHub."
+  ]
+}
