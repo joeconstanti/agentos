@@ -187,6 +187,16 @@ Sort by date ascending (oldest first).
 
 ---
 
+## Check 10 — Frontmatter values
+
+**What:** `status` is present but not one of `active`, `draft`, `archived`, `stub`, `pending`, `compiled`, `uncompiled`, or `done`. `created` is present but not a real `YYYY-MM-DD` date, with an optional time. Templates are skipped because their dates are Templater placeholders.
+
+**Why it matters:** kb-lint and Karpathy-style schemas treat a bad enum or date as an error even when the field exists.
+
+**Fix:** Use one of the allowed statuses and a real calendar date.
+
+---
+
 ## Health report template
 
 After running all checks, produce a report in this format and save it to `00_INBOX/_health-report-YYYYMMDD.md`:
@@ -217,6 +227,7 @@ area: system
 | Uncompiled raw sources | ✓ / ⚠️ / ✗ | N |
 | Broken wikilinks | ✓ / ⚠️ / ✗ | N |
 | Notes missing from `_index.md` | ✓ / ⚠️ / ✗ | N |
+| Invalid status or created values | ✓ / ⚠️ / ✗ | N |
 
 **Overall health:** 🟢 Good / 🟡 Needs attention / 🔴 Critical
 
@@ -251,7 +262,7 @@ area: system
 - ⚠️ = 1–5 issues (low priority)
 - ✗ = 6+ issues (fix soon)
 
-You can also run the automated script for checks 1, 2, 3, 4, 7, 8, and 9:
+You can also run the automated script for checks 1, 2, 3, 4, 7, 8, 9, and 10:
 ```bash
 cd /path/to/agentos
 node 01_PROJECTS/agentos_web/wiki-health-check.js --write-report
