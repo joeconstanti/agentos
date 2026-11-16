@@ -109,3 +109,7 @@ Humans capture; agents compile. The compiled wiki becomes shared memory for all 
 4. Add reusable workflows to `03_RESOURCES/Playbooks/` as you go
 
 If you want a persistent, agent-friendly brain instead of one-off chat output, start here.
+
+## Project skills
+
+Project skills are versioned in `.agents/skills/` and shared with Claude through repository aliases. Run `python3 scripts/skills.py catalog` to discover them. Other agents can read the listed files directly. See [AGENTS.md](AGENTS.md) for usage and validation. No global installation is required.

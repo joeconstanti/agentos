@@ -135,14 +135,7 @@ Agent profiles live in `02_AREAS/agents/`. Each file has frontmatter with `type:
 
 ## Skills
 
-Skills extend agent capabilities. They live in `~/.claude/skills/`.
-
-```bash
-npx openskills read <skill-name>
-npx openskills read skill-one,skill-two
-```
-
-See `~/AGENTS.md` for the full skills catalog.
+Project skills live in `.agents/skills/`, with aliases in `.claude/skills/`. Run `python3 scripts/skills.py catalog` for their names, descriptions, and paths. Read the relevant `SKILL.md` only when needed. See `AGENTS.md` for discovery and validation. Use the current environment registry for user-level skills.
 
 ## Do Not Modify
 
