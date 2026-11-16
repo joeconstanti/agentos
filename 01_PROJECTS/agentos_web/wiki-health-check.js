@@ -18,7 +18,8 @@
  *   5. Uncompiled raw sources in 05_RAW/ older than 7 days
  *   6. Broken wikilinks (no note with that basename)
  *   7. Duplicate content basenames (not _index or README)
- *   8. Note counts per top-level folder
+ *   8. Sibling notes missing from a folder _index.md
+ *   9. Note counts per top-level folder
  */
 
 const fs = require('fs');
@@ -266,7 +267,29 @@ function runChecks(root = VAULT_ROOT) {
     }
   }
 
-  // ---- Check 7: Note counts per folder ----
+  // ---- Check 8: Sibling notes missing from _index.md ----
+  const indexGaps = [];
+  for (const index of fileData) {
+    if (path.basename(index.filePath) !== '_index.md') continue;
+    const dir = path.dirname(index.filePath);
+    const text = index.content.toLowerCase();
+    for (const note of fileData) {
+      if (path.dirname(note.filePath) !== dir || path.basename(note.filePath) === '_index.md') continue;
+      const stem = path.basename(note.filePath, '.md').toLowerCase();
+      const needle = `[[${stem}`;
+      let mentioned = false;
+      for (let from = 0; from < text.length && !mentioned;) {
+        const at = text.indexOf(needle, from);
+        if (at === -1) break;
+        const next = text[at + needle.length];
+        mentioned = next === undefined || next === ']' || next === '|' || next === '#';
+        from = at + needle.length;
+      }
+      if (!mentioned) indexGaps.push({ indexPath: index.filePath, filePath: note.filePath });
+    }
+  }
+
+  // ---- Check 9: Note counts per folder ----
   const folderCounts = {};
   for (const { filePath } of fileData) {
     const parts = rel(filePath).split(path.sep);
@@ -283,6 +306,7 @@ function runChecks(root = VAULT_ROOT) {
     staleRaw,
     brokenLinks,
     duplicateStems,
+    indexGaps,
     folderCounts,
     totalNotes: allFiles.length,
   };
@@ -307,7 +331,7 @@ function statusIcon(count, warnThreshold = 1, errorThreshold = 6) {
 }
 
 function printReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, folderCounts, totalNotes } = results;
 
   console.log();
   console.log(`${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}`);
@@ -326,6 +350,7 @@ function printReport(results) {
     ['Stale raw sources (> 7 days)', staleRaw.length],
     ['Broken wikilinks', brokenLinks.length],
     ['Duplicate note basenames', duplicateStems.length],
+    ['Notes missing from _index.md', indexGaps.length],
   ];
 
   console.log(`${BOLD}  Summary${RESET}`);
@@ -404,7 +429,15 @@ function printReport(results) {
     console.log();
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length;
+  if (indexGaps.length > 0) {
+    console.log(`${BOLD}${YELLOW}  ⚠️  Notes Missing From _index.md${RESET}`);
+    for (const { indexPath, filePath } of indexGaps) {
+      console.log(`  ${DIM}·${RESET} ${rel(filePath)} ${DIM}(not in ${rel(indexPath)})${RESET}`);
+    }
+    console.log();
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length + indexGaps.length;
   if (totalIssues === 0) {
     console.log(`${GREEN}${BOLD}  ✓ Vault is healthy — no issues found.${RESET}`);
   } else {
@@ -422,7 +455,7 @@ function printReport(results) {
 // ---------------------------------------------------------------------------
 
 function buildMarkdownReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, folderCounts, totalNotes } = results;
   const now = new Date();
   const dateStr = now.toISOString().slice(0, 10);
   const idStr = now.toISOString().replace(/[-:T]/g, '').slice(0, 14);
@@ -455,6 +488,7 @@ function buildMarkdownReport(results) {
     `| Stale raw sources (> 7 days) | ${statusEmoji(staleRaw.length)} | ${staleRaw.length} |`,
     `| Broken wikilinks | ${statusEmoji(brokenLinks.length)} | ${brokenLinks.length} |`,
     `| Duplicate note basenames | ${statusEmoji(duplicateStems.length)} | ${duplicateStems.length} |`,
+    `| Notes missing from _index.md | ${statusEmoji(indexGaps.length)} | ${indexGaps.length} |`,
     '',
     '## Notes per Folder',
     '',
@@ -524,7 +558,16 @@ function buildMarkdownReport(results) {
     lines.push('');
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length;
+  if (indexGaps.length > 0) {
+    lines.push('## Notes Missing From Index');
+    lines.push('');
+    for (const { indexPath, filePath } of indexGaps) {
+      lines.push(`- \`${rel(filePath)}\` is missing from \`${rel(indexPath)}\``);
+    }
+    lines.push('');
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length + indexGaps.length;
   const overallHealth = totalIssues === 0 ? '🟢 Healthy' : totalIssues < 10 ? '🟡 Needs attention' : '🔴 Critical';
   lines.push(`**Overall health:** ${overallHealth} (${totalIssues} total issues)`);
   lines.push('');
@@ -540,7 +583,8 @@ function summarize(results) {
     + results.noOutbound.length
     + results.staleRaw.length
     + results.brokenLinks.length
-    + results.duplicateStems.length;
+    + results.duplicateStems.length
+    + results.indexGaps.length;
   return {
     totalNotes: results.totalNotes,
     issues,
@@ -553,6 +597,10 @@ function summarize(results) {
     duplicateStems: results.duplicateStems.map(({ stem, filePaths }) => ({
       stem,
       paths: filePaths.map((filePath) => rel(filePath)),
+    })),
+    indexGaps: results.indexGaps.map(({ indexPath, filePath }) => ({
+      index: rel(indexPath),
+      path: rel(filePath),
     })),
     folderCounts: results.folderCounts,
   };

@@ -86,6 +86,20 @@ test('runChecks resolves embeds by filename and still flags missing targets', ()
   assert.deepStrictEqual(r.brokenLinks.map((item) => item.link), ['Missing.png']);
 });
 
+test('runChecks reports sibling notes missing from _index.md', () => {
+  const root = vault({
+    '03_RESOURCES/Docs/_index.md': FM + 'See [[Listed|alias]], [[Other#Heading]], and [[Notebook]].',
+    '03_RESOURCES/Docs/Note.md': FM + 'Prefix of Notebook, so the longer link must not hide it.',
+    '03_RESOURCES/Docs/Listed.md': FM + 'Indexed.',
+    '03_RESOURCES/Docs/Other.md': FM + 'Also indexed.',
+    '03_RESOURCES/Docs/Absent.md': FM + 'Not in the index.',
+    '02_AREAS/agents/Alone.md': FM + 'No index in this folder.',
+  });
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.indexGaps.map((gap) => path.basename(gap.filePath)).sort(), ['Absent.md', 'Note.md']);
+  assert.match(hc.buildMarkdownReport(r), /Absent\.md/);
+});
+
 test('--json prints relative paths for a chosen vault root', () => {
   const root = vault({
     '03_RESOURCES/Docs/A.md': FM + 'See [[Missing]].',
