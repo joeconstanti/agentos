@@ -98,6 +98,21 @@ test('--json prints relative paths for a chosen vault root', () => {
   assert.ok(body.issues >= 1);
 });
 
+test('--strict exits non-zero only when findings exist', () => {
+  const script = path.join(__dirname, '../01_PROJECTS/agentos_web/wiki-health-check.js');
+  const words = Array.from({ length: 120 }, () => 'word').join(' ');
+  const dirty = vault({ '03_RESOURCES/Docs/A.md': FM + 'See [[Missing]].' });
+  const clean = vault({
+    '03_RESOURCES/Docs/A.md': `${FM}${words} [[B]]`,
+    '03_RESOURCES/Docs/B.md': `${FM}${words} [[A]]`,
+  });
+  const failed = spawnSync(process.execPath, [script, '--json', '--strict', '--root', dirty], { encoding: 'utf8' });
+  const passed = spawnSync(process.execPath, [script, '--json', '--strict', '--root', clean], { encoding: 'utf8' });
+  assert.strictEqual(failed.status, 1);
+  assert.strictEqual(passed.status, 0, passed.stdout + passed.stderr);
+  assert.strictEqual(JSON.parse(passed.stdout).issues, 0);
+});
+
 test('runChecks reports wikilinks that match no note', () => {
   const root = vault({
     '03_RESOURCES/Docs/A.md': FM + 'See [[Missing]] and [[B#Section|alias]] plus [[docs/B.md]].',

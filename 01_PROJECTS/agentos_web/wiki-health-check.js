@@ -8,6 +8,7 @@
  *   node wiki-health-check.js --json        # print a relative-path JSON summary
  *   node wiki-health-check.js --write-report # also write 00_INBOX/_health-report.md
  *   node wiki-health-check.js --root <dir>  # check a vault other than this repo
+ *   node wiki-health-check.js --strict      # exit 1 when any check finds an issue
  *
  * Checks:
  *   1. Orphaned notes (no inbound wikilinks)
@@ -590,6 +591,9 @@ try {
       console.log(`  ${notice}`);
       console.log();
     }
+  }
+  if (process.argv.includes('--strict') && summarize(results).issues > 0) {
+    process.exitCode = 1;
   }
 } catch (err) {
   console.error('Health check failed:', err.message);
