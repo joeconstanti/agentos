@@ -1,0 +1,23 @@
+{
+  "skill": "compile-sources",
+  "positive": [
+    {
+      "prompt": "Compile a topic with two sources that disagree about a version, then one source fails to open.",
+      "expected": [
+        "Attribute the disagreement to both readable sources.",
+        "Do not mark the unreadable source compiled.",
+        "Create or update one article and one index entry."
+      ]
+    },
+    {
+      "prompt": "Run the same ingest again after the article already exists.",
+      "expected": [
+        "Update the existing synthesis.",
+        "Avoid duplicate article and index entries."
+      ]
+    }
+  ],
+  "negative": [
+    "What does our wiki say about MCP?"
+  ]
+}
