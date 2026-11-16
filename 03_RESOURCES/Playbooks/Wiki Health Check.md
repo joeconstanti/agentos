@@ -41,7 +41,9 @@ List all files that have zero inbound wikilinks.
 Format: orphaned note path | note title | suggested parent note to link from
 ```
 
-**Fix:** Add a wikilink to the orphan from at least one related note, or from the relevant `_index.md` MOC file.
+**Fix:** Add a wikilink to the orphan from at least one related note, or from the relevant `_index.md` MOC file. Path-qualified links (`[[folder/Note]]`) and links with a `.md` suffix count as inbound links.
+
+
 
 ---
 

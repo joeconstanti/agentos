@@ -51,6 +51,16 @@ test('runChecks finds orphans, stubs and missing frontmatter', () => {
   assert.match(hc.buildMarkdownReport(r), /Wiki Health Report/);
 });
 
+test('path-qualified wikilinks count as inbound links', () => {
+  const words = Array.from({ length: 120 }, () => 'word').join(' ');
+  const root = vault({
+    '03_RESOURCES/Docs/A.md': FM + 'See [[sub/B.md]].',
+    '03_RESOURCES/Docs/sub/B.md': FM + words,
+  });
+  const r = hc.runChecks(root);
+  assert.strictEqual(r.orphaned.some((note) => note.filePath.endsWith(`${path.sep}B.md`)), false);
+});
+
 test('runChecks resolves embeds by filename and still flags missing targets', () => {
   const root = vault({
     '03_RESOURCES/Docs/A.md': FM + 'See ![[diagram.svg]] and ![[Missing.png]].',
