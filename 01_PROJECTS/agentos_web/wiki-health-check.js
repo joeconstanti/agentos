@@ -23,7 +23,7 @@ const path = require('path');
 // Config
 // ---------------------------------------------------------------------------
 
-const VAULT_ROOT = path.resolve(__dirname, '../..'); // two levels up from 01_PROJECTS/agentos_web/
+let VAULT_ROOT = path.resolve(__dirname, '../..'); // two levels up from 01_PROJECTS/agentos_web/
 const REQUIRED_FRONTMATTER = ['id', 'type', 'status', 'created', 'tags'];
 const STUB_THRESHOLD = 100; // words
 const RAW_STALE_DAYS = 7;
@@ -127,7 +127,8 @@ function extractDate(filename, frontmatter) {
 // Checks
 // ---------------------------------------------------------------------------
 
-function runChecks() {
+function runChecks(root = VAULT_ROOT) {
+  VAULT_ROOT = path.resolve(root);
   const allFiles = collectMarkdownFiles(VAULT_ROOT);
 
   // Build a lookup: note stem → full path (for wikilink resolution)
@@ -438,6 +439,7 @@ function buildMarkdownReport(results) {
 // Main
 // ---------------------------------------------------------------------------
 
+function main() {
 try {
   const results = runChecks();
   printReport(results);
@@ -459,3 +461,8 @@ try {
   console.error('Health check failed:', err.message);
   process.exit(1);
 }
+}
+
+module.exports = { parseFrontmatter, countWords, extractWikilinks, extractDate, runChecks, buildMarkdownReport };
+
+if (require.main === module) main();
