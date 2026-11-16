@@ -1,0 +1,23 @@
+{
+  "skill": "query-wiki",
+  "positive": [
+    {
+      "prompt": "Which model are we using? The vault has a 2025 proposal and a 2026 decision but neither has been checked live.",
+      "expected": [
+        "Cite both relevant notes and distinguish proposal from decision.",
+        "Do not call the installed model live-verified.",
+        "Do not write a new note."
+      ]
+    },
+    {
+      "prompt": "Answer only from the vault; the relevant note has no supporting source.",
+      "expected": [
+        "State the support gap.",
+        "Do not browse or invent a source."
+      ]
+    }
+  ],
+  "negative": [
+    "Compile these raw sources into a new article."
+  ]
+}
