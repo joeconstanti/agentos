@@ -5,7 +5,9 @@
  *
  * Usage:
  *   node wiki-health-check.js               # print report to terminal
+ *   node wiki-health-check.js --json        # print a relative-path JSON summary
  *   node wiki-health-check.js --write-report # also write 00_INBOX/_health-report.md
+ *   node wiki-health-check.js --root <dir>  # check a vault other than this repo
  *
  * Checks:
  *   1. Orphaned notes (no inbound wikilinks)
@@ -529,14 +531,48 @@ function buildMarkdownReport(results) {
   return lines.join('\n');
 }
 
+/** Machine-readable summary. Paths are relative to the vault that was checked. */
+function summarize(results) {
+  const issues = results.orphaned.length
+    + results.stubs.length
+    + results.missingFm.length
+    + results.noOutbound.length
+    + results.staleRaw.length
+    + results.brokenLinks.length
+    + results.duplicateStems.length;
+  return {
+    totalNotes: results.totalNotes,
+    issues,
+    orphaned: results.orphaned.map(({ filePath }) => rel(filePath)),
+    stubs: results.stubs.map(({ filePath, wordCount }) => ({ path: rel(filePath), words: wordCount })),
+    missingFrontmatter: results.missingFm.map(({ filePath, missing }) => ({ path: rel(filePath), missing })),
+    noOutbound: results.noOutbound.map(({ filePath }) => rel(filePath)),
+    staleRaw: results.staleRaw.map(({ filePath }) => rel(filePath)),
+    brokenLinks: results.brokenLinks.map(({ filePath, link }) => ({ path: rel(filePath), link })),
+    duplicateStems: results.duplicateStems.map(({ stem, filePaths }) => ({
+      stem,
+      paths: filePaths.map((filePath) => rel(filePath)),
+    })),
+    folderCounts: results.folderCounts,
+  };
+}
+
+function flagValue(name) {
+  const index = process.argv.indexOf(name);
+  if (index === -1 || index + 1 >= process.argv.length) return null;
+  return process.argv[index + 1];
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 function main() {
 try {
-  const results = runChecks();
-  printReport(results);
+  const results = runChecks(flagValue('--root') || VAULT_ROOT);
+  const asJson = process.argv.includes('--json');
+  if (asJson) console.log(JSON.stringify(summarize(results), null, 2));
+  else printReport(results);
 
   if (WRITE_REPORT) {
     const reportContent = buildMarkdownReport(results);
@@ -548,8 +584,12 @@ try {
     if (!fs.existsSync(inboxDir)) fs.mkdirSync(inboxDir, { recursive: true });
 
     fs.writeFileSync(reportPath, reportContent, 'utf8');
-    console.log(`  Report written to: ${path.relative(VAULT_ROOT, reportPath)}`);
-    console.log();
+    const notice = `Report written to: ${path.relative(VAULT_ROOT, reportPath)}`;
+    if (asJson) console.error(notice);
+    else {
+      console.log(`  ${notice}`);
+      console.log();
+    }
   }
 } catch (err) {
   console.error('Health check failed:', err.message);
@@ -557,6 +597,15 @@ try {
 }
 }
 
-module.exports = { parseFrontmatter, countWords, extractWikilinks, wikilinkStem, extractDate, runChecks, buildMarkdownReport };
+module.exports = {
+  parseFrontmatter,
+  countWords,
+  extractWikilinks,
+  wikilinkStem,
+  extractDate,
+  runChecks,
+  buildMarkdownReport,
+  summarize,
+};
 
 if (require.main === module) main();

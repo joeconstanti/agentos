@@ -3,6 +3,7 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 const hc = require('../01_PROJECTS/agentos_web/wiki-health-check.js');
 
 function vault(files) {
@@ -83,6 +84,18 @@ test('runChecks resolves embeds by filename and still flags missing targets', ()
   });
   const r = hc.runChecks(root);
   assert.deepStrictEqual(r.brokenLinks.map((item) => item.link), ['Missing.png']);
+});
+
+test('--json prints relative paths for a chosen vault root', () => {
+  const root = vault({
+    '03_RESOURCES/Docs/A.md': FM + 'See [[Missing]].',
+  });
+  const script = path.join(__dirname, '../01_PROJECTS/agentos_web/wiki-health-check.js');
+  const proc = spawnSync(process.execPath, [script, '--json', '--root', root], { encoding: 'utf8' });
+  assert.strictEqual(proc.status, 0, proc.stderr);
+  const body = JSON.parse(proc.stdout);
+  assert.deepStrictEqual(body.brokenLinks, [{ path: '03_RESOURCES/Docs/A.md', link: 'Missing' }]);
+  assert.ok(body.issues >= 1);
 });
 
 test('runChecks reports wikilinks that match no note', () => {
