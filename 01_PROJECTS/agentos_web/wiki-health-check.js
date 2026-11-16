@@ -180,7 +180,7 @@ function runChecks(root = VAULT_ROOT) {
 
     // Record inbound links
     for (const link of outlinks) {
-      const target = stemToPath.get(link.toLowerCase());
+      const target = stemToPath.get(wikilinkStem(link));
       if (target && target !== filePath) {
         inboundLinks.get(target)?.add(filePath);
       }
