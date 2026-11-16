@@ -163,6 +163,16 @@ Sort by date ascending (oldest first).
 
 ---
 
+## Check 8 — Broken wikilinks
+
+**What:** `[[wikilinks]]` whose basename does not match any note. Headings and aliases are ignored. Links inside fenced blocks or inline code are examples, not navigation.
+
+**Why it matters:** A broken wikilink looks like a connection and leads nowhere. Similar vault linters (kb-lint, Karpathy-style wiki lint) treat this as an error.
+
+**Fix:** Point the link at an existing note, or create the missing note and add it to the section `_index.md`.
+
+---
+
 ## Health report template
 
 After running all checks, produce a report in this format and save it to `00_INBOX/_health-report-YYYYMMDD.md`:
@@ -191,6 +201,7 @@ area: system
 | Duplicate concepts | ✓ / ⚠️ / ✗ | N |
 | Inconsistent tags | ✓ / ⚠️ / ✗ | N |
 | Uncompiled raw sources | ✓ / ⚠️ / ✗ | N |
+| Broken wikilinks | ✓ / ⚠️ / ✗ | N |
 
 **Overall health:** 🟢 Good / 🟡 Needs attention / 🔴 Critical
 
@@ -225,7 +236,7 @@ area: system
 - ⚠️ = 1–5 issues (low priority)
 - ✗ = 6+ issues (fix soon)
 
-You can also run the automated script for checks 1, 2, 3, 4, and 7:
+You can also run the automated script for checks 1, 2, 3, 4, 7, and 8:
 ```bash
 cd /path/to/agentos
 node 01_PROJECTS/agentos_web/wiki-health-check.js --write-report
