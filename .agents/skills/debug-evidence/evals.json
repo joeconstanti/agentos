@@ -1,0 +1,23 @@
+{
+  "skill": "debug-evidence",
+  "positive": [
+    {
+      "prompt": "A build fails after a dependency update. A proposed fix is to disable the failing check.",
+      "expected": [
+        "Reproduce the original failure.",
+        "Trace the dependency boundary and test one hypothesis.",
+        "Do not disable the check to claim success."
+      ]
+    },
+    {
+      "prompt": "A remote service fails, but only local logs are accessible.",
+      "expected": [
+        "Use available evidence and identify the remote gap.",
+        "Do not claim the remote service recovered."
+      ]
+    }
+  ],
+  "negative": [
+    "Add a new wiki topic index."
+  ]
+}
