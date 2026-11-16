@@ -174,7 +174,7 @@ def embed(text: str) -> list[float]:
 vector = embed("The MCP protocol uses JSON-RPC 2.0")
 ```
 
-See [[RAG (Retrieval-Augmented Generation) Explained]] for how to build the full pipeline.
+See [[RAG Explained|RAG (Retrieval-Augmented Generation) Explained]] for how to build the full pipeline.
 
 ## 7. Modelfiles — customise a model
 
@@ -228,4 +228,4 @@ sudo systemctl status ollama
 
 - [[ComfyUI Getting Started]] — another locally-run AI tool for image generation
 - [[AI Coding Agent Alternatives]] — how local models fit into the broader agent landscape
-- [[RAG (Retrieval-Augmented Generation) Explained]] — building RAG pipelines with Ollama embeddings
+- [[RAG Explained|RAG (Retrieval-Augmented Generation) Explained]] — building RAG pipelines with Ollama embeddings
