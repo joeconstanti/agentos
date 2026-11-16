@@ -18,6 +18,7 @@ tags:
   - integration
 created: 2026-03-14
 updated: 2026-03-14
+area: agents
 ---
 
 # Custom MCP-backed Agents
