@@ -50,3 +50,5 @@ Update this file whenever a new doc is added to the folder.
 ## Obsidian
 
 - [[How to use Obsidian]] — Basic guide to Obsidian: vault structure, Markdown, links, plugins, and daily workflow
+
+- [[Agent Skill Improvement Research]] — Source review and rationale for portable AgentOS workflow skills.
