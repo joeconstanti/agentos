@@ -162,7 +162,7 @@ function runChecks() {
   }
 
   // ---- Check 1: Orphaned notes ----
-  const ORPHAN_EXCLUDE_PREFIXES = ['00_INBOX', '05_RAW', 'CLAUDE.md', 'README.md', '03_RESOURCES/Excalidraw', '03_RESOURCES/Templates'];
+  const ORPHAN_EXCLUDE_PREFIXES = ['00_INBOX', '05_RAW', 'CLAUDE.md', 'AGENTS.md', 'README.md', '03_RESOURCES/Excalidraw', '03_RESOURCES/Templates'];
   const orphaned = fileData.filter(({ filePath }) => {
     const r = rel(filePath);
     if (ORPHAN_EXCLUDE_PREFIXES.some(p => r.startsWith(p))) return false;
@@ -178,7 +178,7 @@ function runChecks() {
   });
 
   // ---- Check 3: Missing frontmatter ----
-  const FM_EXCLUDE = ['05_RAW', 'README.md', 'CLAUDE.md', '03_RESOURCES/Excalidraw'];
+  const FM_EXCLUDE = ['05_RAW', 'README.md', 'CLAUDE.md', 'AGENTS.md', '03_RESOURCES/Excalidraw'];
   const missingFm = fileData.flatMap(({ filePath, fm }) => {
     const r = rel(filePath);
     if (FM_EXCLUDE.some(p => r.startsWith(p) || r === p)) return [];
@@ -191,7 +191,7 @@ function runChecks() {
   });
 
   // ---- Check 4: No outbound links ----
-  const NO_LINK_EXCLUDE = ['00_INBOX', '05_RAW', 'README.md', 'CLAUDE.md', '03_RESOURCES/Excalidraw', '03_RESOURCES/Templates'];
+  const NO_LINK_EXCLUDE = ['00_INBOX', '05_RAW', 'README.md', 'CLAUDE.md', 'AGENTS.md', '03_RESOURCES/Excalidraw', '03_RESOURCES/Templates'];
   const noOutbound = fileData.filter(({ filePath, outlinks }) => {
     const r = rel(filePath);
     if (NO_LINK_EXCLUDE.some(p => r.startsWith(p))) return false;
