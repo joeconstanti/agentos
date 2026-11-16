@@ -14,7 +14,8 @@
  *   4. Notes with no outbound wikilinks
  *   5. Uncompiled raw sources in 05_RAW/ older than 7 days
  *   6. Broken wikilinks (no note with that basename)
- *   7. Note counts per top-level folder
+ *   7. Duplicate content basenames (not _index or README)
+ *   8. Note counts per top-level folder
  */
 
 const fs = require('fs');
@@ -28,6 +29,7 @@ let VAULT_ROOT = path.resolve(__dirname, '../..'); // two levels up from 01_PROJ
 const REQUIRED_FRONTMATTER = ['id', 'type', 'status', 'created', 'tags'];
 const STUB_THRESHOLD = 100; // words
 const RAW_STALE_DAYS = 7;
+const STRUCTURAL_STEMS = new Set(['_index', 'readme']);
 const WRITE_REPORT = process.argv.includes('--write-report');
 
 // Folders to exclude from general checks
@@ -160,9 +162,18 @@ function runChecks(root = VAULT_ROOT) {
 
   // Build a lookup: note stem → full path (for wikilink resolution)
   const stemToPath = new Map();
+  const stemOwners = new Map();
   for (const f of allFiles) {
-    const stem = path.basename(f, '.md');
-    stemToPath.set(stem.toLowerCase(), f);
+    const stem = path.basename(f, '.md').toLowerCase();
+    stemToPath.set(stem, f);
+    if (!stemOwners.has(stem)) stemOwners.set(stem, []);
+    stemOwners.get(stem).push(f);
+  }
+  const duplicateStems = [];
+  for (const [stem, filePaths] of stemOwners) {
+    if (filePaths.length > 1 && !STRUCTURAL_STEMS.has(stem)) {
+      duplicateStems.push({ stem, filePaths });
+    }
   }
 
   // Build inbound link map: path → Set of paths that link to it
@@ -268,6 +279,7 @@ function runChecks(root = VAULT_ROOT) {
     noOutbound,
     staleRaw,
     brokenLinks,
+    duplicateStems,
     folderCounts,
     totalNotes: allFiles.length,
   };
@@ -292,7 +304,7 @@ function statusIcon(count, warnThreshold = 1, errorThreshold = 6) {
 }
 
 function printReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, folderCounts, totalNotes } = results;
 
   console.log();
   console.log(`${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}`);
@@ -310,6 +322,7 @@ function printReport(results) {
     ['Notes with no outbound links', noOutbound.length],
     ['Stale raw sources (> 7 days)', staleRaw.length],
     ['Broken wikilinks', brokenLinks.length],
+    ['Duplicate note basenames', duplicateStems.length],
   ];
 
   console.log(`${BOLD}  Summary${RESET}`);
@@ -379,7 +392,16 @@ function printReport(results) {
     console.log();
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length;
+  if (duplicateStems.length > 0) {
+    console.log(`${BOLD}${YELLOW}  ⚠️  Duplicate Note Basenames${RESET}`);
+    for (const { stem, filePaths } of duplicateStems) {
+      console.log(`  ${DIM}·${RESET} ${stem}`);
+      for (const filePath of filePaths) console.log(`    ${DIM}${rel(filePath)}${RESET}`);
+    }
+    console.log();
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length;
   if (totalIssues === 0) {
     console.log(`${GREEN}${BOLD}  ✓ Vault is healthy — no issues found.${RESET}`);
   } else {
@@ -397,7 +419,7 @@ function printReport(results) {
 // ---------------------------------------------------------------------------
 
 function buildMarkdownReport(results) {
-  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, folderCounts, totalNotes } = results;
+  const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, folderCounts, totalNotes } = results;
   const now = new Date();
   const dateStr = now.toISOString().slice(0, 10);
   const idStr = now.toISOString().replace(/[-:T]/g, '').slice(0, 14);
@@ -429,6 +451,7 @@ function buildMarkdownReport(results) {
     `| Notes with no outbound links | ${statusEmoji(noOutbound.length)} | ${noOutbound.length} |`,
     `| Stale raw sources (> 7 days) | ${statusEmoji(staleRaw.length)} | ${staleRaw.length} |`,
     `| Broken wikilinks | ${statusEmoji(brokenLinks.length)} | ${brokenLinks.length} |`,
+    `| Duplicate note basenames | ${statusEmoji(duplicateStems.length)} | ${duplicateStems.length} |`,
     '',
     '## Notes per Folder',
     '',
@@ -489,7 +512,16 @@ function buildMarkdownReport(results) {
     lines.push('');
   }
 
-  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length;
+  if (duplicateStems.length > 0) {
+    lines.push('## Duplicate Note Basenames');
+    lines.push('');
+    for (const { stem, filePaths } of duplicateStems) {
+      lines.push(`- \`${stem}\`: ${filePaths.map((filePath) => `\`${rel(filePath)}\``).join(', ')}`);
+    }
+    lines.push('');
+  }
+
+  const totalIssues = orphaned.length + stubs.length + missingFm.length + noOutbound.length + staleRaw.length + brokenLinks.length + duplicateStems.length;
   const overallHealth = totalIssues === 0 ? '🟢 Healthy' : totalIssues < 10 ? '🟡 Needs attention' : '🔴 Critical';
   lines.push(`**Overall health:** ${overallHealth} (${totalIssues} total issues)`);
   lines.push('');

@@ -120,7 +120,9 @@ List suspected duplicate pairs.
 Format: note A path | note B path | similarity reason
 ```
 
-**Fix:** Merge the weaker note into the stronger one. Add a redirect wikilink in the merged note's location: `Merged into [[Target Note]].`
+**Fix:** Merge the weaker note into the stronger one. Add a redirect wikilink in the merged note's location: `Merged into [[Target Note]].` The health check also reports identical content basenames, which make `[[Note]]` ambiguous. Shared `_index` and `README` names are structural and are not reported.
+
+
 
 ---
 

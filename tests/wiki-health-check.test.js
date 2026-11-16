@@ -61,6 +61,21 @@ test('path-qualified wikilinks count as inbound links', () => {
   assert.strictEqual(r.orphaned.some((note) => note.filePath.endsWith(`${path.sep}B.md`)), false);
 });
 
+test('runChecks reports duplicate content basenames and ignores structural names', () => {
+  const root = vault({
+    '03_RESOURCES/Docs/Note.md': FM + 'One.',
+    '02_AREAS/Note.md': FM + 'Two.',
+    'README.md': FM + 'root',
+    '05_RAW/README.md': FM + 'raw',
+    '02_AREAS/agents/_index.md': FM + 'agents',
+    '03_RESOURCES/Docs/_index.md': FM + 'docs',
+  });
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.duplicateStems.map((item) => item.stem), ['note']);
+  assert.strictEqual(r.duplicateStems[0].filePaths.length, 2);
+  assert.match(hc.buildMarkdownReport(r), /Duplicate Note Basenames/);
+});
+
 test('runChecks resolves embeds by filename and still flags missing targets', () => {
   const root = vault({
     '03_RESOURCES/Docs/A.md': FM + 'See ![[diagram.svg]] and ![[Missing.png]].',

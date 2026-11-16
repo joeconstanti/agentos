@@ -6,7 +6,7 @@ description: "Audit AgentOS wiki health and make scoped repairs when requested. 
 
 Read the [health playbook](../../../03_RESOURCES/Playbooks/Wiki%20Health%20Check.md). Start with `node 01_PROJECTS/agentos_web/wiki-health-check.js` from the repository root. This default command reports without writing. Use `--write-report` only when a saved report is requested; it writes a fixed inbox report path and can replace an older report.
 
-The script reports orphans, stubs, missing frontmatter, notes with no outbound links, stale raw sources, and broken wikilinks. It ignores fenced and inline examples. It does not judge duplicate concepts or tag conflicts; inspect those separately when they fall within the requested audit. Exclude `.obsidian/`, hidden skill infrastructure, dependencies, and generated output from note repair.
+The script reports orphans, stubs, missing frontmatter, notes with no outbound links, stale raw sources, broken wikilinks, and duplicate content basenames. It ignores fenced and inline examples, and it does not treat shared `_index` or `README` names as duplicates. It does not judge overlapping concepts or tag conflicts; inspect those separately when they fall within the requested audit. Exclude `.obsidian/`, hidden skill infrastructure, dependencies, and generated output from note repair.
 
 Treat short notes, indexes, and zero-inbound notes as candidates for review. A short index can be complete; do not add filler or artificial links to satisfy a threshold. Resolve wikilinks using the actual path, alias, and heading. Duplicate basenames need path-qualified links. Fenced example links are not necessarily broken navigation.
 
