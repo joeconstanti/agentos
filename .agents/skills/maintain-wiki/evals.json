@@ -1,0 +1,24 @@
+{
+  "skill": "maintain-wiki",
+  "positive": [
+    {
+      "prompt": "Audit health but do not change notes. A short index is flagged as a stub.",
+      "expected": [
+        "Run the default read-only checker.",
+        "Inspect the index before calling it incomplete.",
+        "Do not save a report or repair notes."
+      ]
+    },
+    {
+      "prompt": "Fix a broken link to a note whose basename exists in two folders.",
+      "expected": [
+        "Inspect both targets.",
+        "Use the intended path-qualified target.",
+        "Check references and report remaining ambiguity."
+      ]
+    }
+  ],
+  "negative": [
+    "Write a new note about MCP."
+  ]
+}
