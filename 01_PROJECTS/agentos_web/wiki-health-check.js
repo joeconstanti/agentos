@@ -57,12 +57,8 @@ const EXCLUDE_DIRS = new Set([
 
 /** Recursively collect file paths under a directory, skipping tooling folders. */
 function collectFiles(dir, results = []) {
-  let entries;
-  try {
-    entries = fs.readdirSync(dir, { withFileTypes: true });
-  } catch {
-    return results;
-  }
+  // An incomplete scan must not be reported as a healthy vault.
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
     if (EXCLUDE_DIRS.has(entry.name)) continue;
     const fullPath = path.join(dir, entry.name);
