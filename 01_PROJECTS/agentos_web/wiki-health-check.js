@@ -30,7 +30,7 @@ const path = require('path');
 // Config
 // ---------------------------------------------------------------------------
 
-let VAULT_ROOT = path.resolve(__dirname, '../..'); // two levels up from 01_PROJECTS/agentos_web/
+const VAULT_ROOT = path.resolve(__dirname, '../..'); // two levels up from 01_PROJECTS/agentos_web/
 const REQUIRED_FRONTMATTER = ['id', 'type', 'status', 'created', 'tags'];
 const STUB_THRESHOLD = 100; // words
 const RAW_STALE_DAYS = 7;
@@ -131,11 +131,6 @@ function extractWikilinks(content) {
   }).filter(Boolean);
 }
 
-/** Relative path from vault root for display */
-function rel(p) {
-  return path.relative(VAULT_ROOT, p);
-}
-
 /** Parse YYYYMMDD from filename or frontmatter `created` */
 function extractDate(filename, frontmatter) {
   // Try filename prefix YYYYMMDD-...
@@ -169,8 +164,9 @@ function isValidCreated(value) {
 // ---------------------------------------------------------------------------
 
 function runChecks(root = VAULT_ROOT) {
-  VAULT_ROOT = path.resolve(root);
-  const allPaths = collectFiles(VAULT_ROOT);
+  const vaultRoot = path.resolve(root);
+  const rel = (p) => path.relative(vaultRoot, p);
+  const allPaths = collectFiles(vaultRoot);
   const allFiles = allPaths.filter((filePath) => filePath.endsWith('.md'));
   const assetNames = new Set(allPaths.map((filePath) => path.basename(filePath).toLowerCase()));
 
@@ -324,6 +320,7 @@ function runChecks(root = VAULT_ROOT) {
   }
 
   return {
+    vaultRoot,
     allFiles,
     orphaned,
     stubs,
@@ -358,13 +355,14 @@ function statusIcon(count, warnThreshold = 1, errorThreshold = 6) {
 }
 
 function printReport(results) {
+  const rel = (p) => path.relative(results.vaultRoot, p);
   const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, invalidFm, folderCounts, totalNotes } = results;
 
   console.log();
   console.log(`${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}`);
   console.log(`${BOLD}  AgentOS Wiki Health Check${RESET}`);
   console.log(`${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}`);
-  console.log(`  Vault: ${DIM}${VAULT_ROOT}${RESET}`);
+  console.log(`  Vault: ${DIM}${results.vaultRoot}${RESET}`);
   console.log(`  Total notes scanned: ${BOLD}${totalNotes}${RESET}`);
   console.log();
 
@@ -491,6 +489,7 @@ function printReport(results) {
 // ---------------------------------------------------------------------------
 
 function buildMarkdownReport(results) {
+  const rel = (p) => path.relative(results.vaultRoot, p);
   const { orphaned, stubs, missingFm, noOutbound, staleRaw, brokenLinks, duplicateStems, indexGaps, invalidFm, folderCounts, totalNotes } = results;
   const now = new Date();
   const dateStr = now.toISOString().slice(0, 10);
@@ -623,6 +622,7 @@ function buildMarkdownReport(results) {
 
 /** Machine-readable summary. Paths are relative to the vault that was checked. */
 function summarize(results) {
+  const rel = (p) => path.relative(results.vaultRoot, p);
   const issues = results.orphaned.length
     + results.stubs.length
     + results.missingFm.length
@@ -677,14 +677,14 @@ try {
   if (WRITE_REPORT) {
     const reportContent = buildMarkdownReport(results);
     const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    const reportPath = path.join(VAULT_ROOT, '00_INBOX', `_health-report-${dateStr}.md`);
+    const reportPath = path.join(results.vaultRoot, '00_INBOX', `_health-report-${dateStr}.md`);
 
     // Ensure 00_INBOX exists
-    const inboxDir = path.join(VAULT_ROOT, '00_INBOX');
+    const inboxDir = path.join(results.vaultRoot, '00_INBOX');
     if (!fs.existsSync(inboxDir)) fs.mkdirSync(inboxDir, { recursive: true });
 
     fs.writeFileSync(reportPath, reportContent, 'utf8');
-    const notice = `Report written to: ${path.relative(VAULT_ROOT, reportPath)}`;
+    const notice = `Report written to: ${path.relative(results.vaultRoot, reportPath)}`;
     if (asJson) console.error(notice);
     else {
       console.log(`  ${notice}`);
@@ -708,6 +708,7 @@ module.exports = {
   extractDate,
   isValidCreated,
   runChecks,
+  printReport,
   buildMarkdownReport,
   summarize,
 };

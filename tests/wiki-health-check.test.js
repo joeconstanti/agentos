@@ -185,3 +185,36 @@ test('CLI exits nonzero on invalid roots without emitting a healthy JSON report'
     assert.match(proc.stderr, /Health check failed:/);
   }
 });
+
+
+test('reports retain their own vault root across interleaved scans', (t) => {
+  const first = vault({ '03_RESOURCES/Docs/A.md': FM + '[[Missing]]' });
+  const second = vault({ '02_AREAS/B.md': FM + '[[Absent]]' });
+  t.after(() => [first, second].forEach(root => fs.rmSync(root, { recursive: true, force: true })));
+  const result = hc.runChecks(first);
+  const summary = hc.summarize(result);
+  const markdown = hc.buildMarkdownReport(result);
+  const output = [];
+  t.mock.method(console, 'log', (...args) => output.push(args.join(' ')));
+  hc.printReport(result);
+  const terminal = output.join('\n');
+  hc.runChecks(second);
+  assert.deepStrictEqual(hc.summarize(result), summary);
+  assert.strictEqual(hc.buildMarkdownReport(result), markdown);
+  output.length = 0;
+  hc.printReport(result);
+  assert.strictEqual(output.join('\n'), terminal);
+  assert.deepStrictEqual(summary.brokenLinks, [{ path: '03_RESOURCES/Docs/A.md', link: 'Missing' }]);
+});
+
+test('--write-report saves inside the explicitly selected vault', (t) => {
+  const root = vault({ '03_RESOURCES/Docs/A.md': FM + '[[Missing]]' });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const script = path.join(__dirname, '../01_PROJECTS/agentos_web/wiki-health-check.js');
+  const proc = spawnSync(process.execPath, [script, '--json', '--root', root, '--write-report'], { encoding: 'utf8' });
+  assert.strictEqual(proc.status, 0, proc.stderr);
+  assert.strictEqual(JSON.parse(proc.stdout).totalNotes, 1);
+  const reports = fs.readdirSync(path.join(root, '00_INBOX'));
+  assert.strictEqual(reports.length, 1);
+  assert.match(fs.readFileSync(path.join(root, '00_INBOX', reports[0]), 'utf8'), /03_RESOURCES\/Docs\/A.md/);
+});
