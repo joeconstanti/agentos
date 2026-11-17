@@ -155,3 +155,33 @@ test('runChecks reports wikilinks that match no note', () => {
   assert.deepStrictEqual(r.brokenLinks.map((item) => item.link), ['Missing']);
   assert.match(hc.buildMarkdownReport(r), /\[\[Missing\]\]/);
 });
+
+
+test('scan failures never produce a healthy summary', (t) => {
+  const root = vault({ '03_RESOURCES/Docs/A.md': FM + 'body' });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  assert.throws(() => hc.runChecks(path.join(root, 'missing')), /ENOENT/);
+  assert.throws(() => hc.runChecks(path.join(root, '03_RESOURCES/Docs/A.md')), /ENOTDIR/);
+  const original = fs.readdirSync;
+  t.mock.method(fs, 'readdirSync', (dir, ...args) => {
+    if (dir === path.join(root, '03_RESOURCES')) {
+      const error = new Error('Permission denied');
+      error.code = 'EACCES';
+      throw error;
+    }
+    return original(dir, ...args);
+  });
+  assert.throws(() => hc.runChecks(root), /Permission denied/);
+});
+
+test('CLI exits nonzero on invalid roots without emitting a healthy JSON report', (t) => {
+  const root = vault({ 'not-a-directory': 'file' });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const script = path.join(__dirname, '../01_PROJECTS/agentos_web/wiki-health-check.js');
+  for (const target of ['missing', 'not-a-directory']) {
+    const proc = spawnSync(process.execPath, [script, '--json', '--strict', '--root', path.join(root, target)], { encoding: 'utf8' });
+    assert.strictEqual(proc.status, 1);
+    assert.strictEqual(proc.stdout, '');
+    assert.match(proc.stderr, /Health check failed:/);
+  }
+});
