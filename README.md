@@ -207,6 +207,33 @@ For wiki health, run the read-only report with Node.js:
 node 01_PROJECTS/agentos_web/wiki-health-check.js
 ```
 
+### CI behavior and limits
+
+[Skill validation](.github/workflows/skills.yml) runs on pull requests and pushes
+into `main`. Feature-branch pushes use the PR run; the subsequent `main` run
+checks the merged result. New revisions cancel superseded runs on the same PR.
+Each `main` run remains independent so post-merge evidence is retained.
+
+CI runs the Python checks above, followed by:
+
+```sh
+node --test tests/*.test.js
+git diff --check
+```
+
+Use Python 3.10+ and Node.js 18+ for these checks. They require no dependency
+installation, Obsidian session, network service, browser or live vault. The
+health-check regression tests use temporary fixture vaults; permission-denied
+traversal is mocked so it also works under privileged runners.
+
+The read-only wiki health report can contain heuristic findings in real notes;
+`--strict` deliberately returns a failure when findings exist. CI tests that
+contract on fixtures rather than requiring the entire personal vault to have
+zero findings. Skill definition checks do not execute model trials, and CI does
+not verify the installer UI, installed Obsidian or a live deployment. Investigate
+a failed current-head check before merging; rerun only after a change or evidence
+of a transient runner failure.
+
 ### Workflow Evaluation
 
 List the positive behavior and negative routing cases:
