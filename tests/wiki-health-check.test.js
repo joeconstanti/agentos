@@ -248,3 +248,18 @@ test('bare duplicate links prefer a local note and never credit an arbitrary rem
   assert.ok(!orphans.includes('02_AREAS/Note.md'));
   assert.ok(orphans.includes('03_RESOURCES/Docs/Note.md'));
 });
+
+test('index coverage uses real resolved links rather than raw examples or basename prefixes', (t) => {
+  const root = vault({
+    '03_RESOURCES/Docs/_index.md': FM + '[[03_RESOURCES/Docs/Listed.md|label]] [[Docs/Heading#Section]] [[02_AREAS/Wrong]]\n`[[Inline]]`\n```md\n[[Fenced]]\n```',
+    '03_RESOURCES/Docs/Listed.md': FM + 'listed',
+    '03_RESOURCES/Docs/Heading.md': FM + 'listed heading',
+    '03_RESOURCES/Docs/Wrong.md': FM + 'not the linked duplicate',
+    '02_AREAS/Wrong.md': FM + 'actual target',
+    '03_RESOURCES/Docs/Inline.md': FM + 'example only',
+    '03_RESOURCES/Docs/Fenced.md': FM + 'example only',
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.indexGaps.map(x => path.basename(x.filePath)).sort(), ['Fenced.md', 'Inline.md', 'Wrong.md']);
+});

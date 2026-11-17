@@ -299,20 +299,13 @@ function runChecks(root = VAULT_ROOT) {
   for (const index of fileData) {
     if (path.basename(index.filePath) !== '_index.md') continue;
     const dir = path.dirname(index.filePath);
-    const text = index.content.toLowerCase();
+    const indexed = new Set(index.outlinks.flatMap(link => {
+      const targets = resolveTargets(link, index.filePath);
+      return targets.length === 1 ? targets : [];
+    }));
     for (const note of fileData) {
       if (path.dirname(note.filePath) !== dir || path.basename(note.filePath) === '_index.md') continue;
-      const stem = path.basename(note.filePath, '.md').toLowerCase();
-      const needle = `[[${stem}`;
-      let mentioned = false;
-      for (let from = 0; from < text.length && !mentioned;) {
-        const at = text.indexOf(needle, from);
-        if (at === -1) break;
-        const next = text[at + needle.length];
-        mentioned = next === undefined || next === ']' || next === '|' || next === '#';
-        from = at + needle.length;
-      }
-      if (!mentioned) indexGaps.push({ indexPath: index.filePath, filePath: note.filePath });
+      if (!indexed.has(note.filePath)) indexGaps.push({ indexPath: index.filePath, filePath: note.filePath });
     }
   }
 
