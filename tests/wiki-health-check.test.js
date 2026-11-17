@@ -263,3 +263,31 @@ test('index coverage uses real resolved links rather than raw examples or basena
   const r = hc.runChecks(root);
   assert.deepStrictEqual(r.indexGaps.map(x => path.basename(x.filePath)).sort(), ['Fenced.md', 'Inline.md', 'Wrong.md']);
 });
+
+test('created validation rejects impossible clock values while preserving valid dates', () => {
+  for (const value of ['2026-01-01 24:00', '2026-01-01 12:60', '2026-01-01T12:30:60', '2026-01-01 99:99']) {
+    assert.strictEqual(hc.isValidCreated(value), false, value);
+  }
+  for (const value of ['2024-02-29', '2026-01-01 23:59', '2026-01-01T23:59:59', '0099-01-01']) {
+    assert.strictEqual(hc.isValidCreated(value), true, value);
+  }
+});
+
+test('raw date extraction rejects normalized impossible dates and supports compact metadata', () => {
+  assert.strictEqual(hc.extractDate('20000231-note.md', {}), null);
+  assert.strictEqual(hc.extractDate('note.md', { created: '2000-02-31' }), null);
+  assert.strictEqual(hc.extractDate('note.md', { created: [] }), null);
+  assert.strictEqual(hc.extractDate('note.md', { created: '20000229' }).toISOString(), '2000-02-29T00:00:00.000Z');
+  assert.strictEqual(hc.extractDate('20001301-note.md', { created: '2000-01-02' }).toISOString(), '2000-01-02T00:00:00.000Z');
+});
+
+test('stale raw findings use validated source dates', (t) => {
+  const root = vault({
+    '05_RAW/20000231-invalid.md': 'body',
+    '05_RAW/compact.md': '---\ncreated: 20000101\nstatus: pending\n---\nbody',
+    '05_RAW/compiled.md': '---\ncreated: 2000-01-01\nstatus: compiled\n---\nbody',
+    '05_RAW/future.md': '---\ncreated: 2999-01-01\n---\nbody',
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  assert.deepStrictEqual(hc.runChecks(root).staleRaw.map(x => path.basename(x.filePath)), ['compact.md']);
+});

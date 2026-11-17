@@ -131,32 +131,36 @@ function extractWikilinks(content) {
   }).filter(Boolean);
 }
 
-/** Parse YYYYMMDD from filename or frontmatter `created` */
-function extractDate(filename, frontmatter) {
-  // Try filename prefix YYYYMMDD-...
-  const fnMatch = path.basename(filename).match(/^(\d{8})/);
-  if (fnMatch) {
-    const s = fnMatch[1];
-    return new Date(`${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 8)}`);
-  }
-  // Try frontmatter `created: YYYY-MM-DD` or `created: YYYYMMDD`
-  if (frontmatter.created) {
-    const d = new Date(frontmatter.created.split(' ')[0]);
-    if (!isNaN(d)) return d;
-  }
-  return null;
+/** Parse only the vault's calendar format; Date parsing otherwise normalizes bad days. */
+function parseCreated(value) {
+  if (typeof value !== 'string') return null;
+  const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+  if (!match) return null;
+  const [, year, month, day, hour = '0', minute = '0', second = '0'] = match;
+  if (Number(hour) > 23 || Number(minute) > 59 || Number(second) > 59) return null;
+  const date = new Date(0);
+  // setUTCFullYear avoids Date.UTC's special handling of years 0-99.
+  date.setUTCFullYear(Number(year), Number(month) - 1, Number(day));
+  date.setUTCHours(Number(hour), Number(minute), Number(second), 0);
+  if (date.getUTCFullYear() !== Number(year) || date.getUTCMonth() !== Number(month) - 1 || date.getUTCDate() !== Number(day)) return null;
+  return date;
 }
 
-/** True when created is a real calendar date, with an optional time. */
+/** Parse a valid filename date first, then the documented created metadata formats. */
+function extractDate(filename, frontmatter) {
+  const compactDate = (value) => value.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
+  const prefix = path.basename(filename).match(/^(\d{8})/);
+  if (prefix) {
+    const date = parseCreated(compactDate(prefix[1]));
+    if (date) return date;
+  }
+  if (typeof frontmatter.created !== 'string') return null;
+  return parseCreated(compactDate(frontmatter.created.trim()));
+}
+
+/** True when created is a real calendar date, with an optional valid time. */
 function isValidCreated(value) {
-  if (typeof value !== 'string') return false;
-  const match = value.trim().match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T]\d{2}:\d{2}(?::\d{2})?)?$/);
-  if (!match) return false;
-  const year = Number(match[1]);
-  const month = Number(match[2]);
-  const day = Number(match[3]);
-  const date = new Date(Date.UTC(year, month - 1, day));
-  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+  return parseCreated(value) !== null;
 }
 
 // ---------------------------------------------------------------------------
