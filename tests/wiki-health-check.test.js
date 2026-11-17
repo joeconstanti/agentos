@@ -218,3 +218,33 @@ test('--write-report saves inside the explicitly selected vault', (t) => {
   assert.strictEqual(reports.length, 1);
   assert.match(fs.readFileSync(path.join(root, '00_INBOX', reports[0]), 'utf8'), /03_RESOURCES\/Docs\/A.md/);
 });
+
+test('path resolution distinguishes duplicate notes and missing folders', (t) => {
+  const root = vault({
+    '03_RESOURCES/Docs/A.md': FM + '[[02_AREAS/Note]] [[Wrong/Note]] [[Wrong/image.svg]] [[Attachments/image.svg]]',
+    '02_AREAS/Note.md': FM + 'target',
+    '03_RESOURCES/Docs/Note.md': FM + 'other',
+    '03_RESOURCES/Attachments/image.svg': '<svg/>',
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.brokenLinks.map(x => x.link), ['Wrong/Note', 'Wrong/image.svg']);
+  const orphans = r.orphaned.map(x => path.relative(root, x.filePath));
+  assert.ok(!orphans.includes('02_AREAS/Note.md'));
+  assert.ok(orphans.includes('03_RESOURCES/Docs/Note.md'));
+});
+
+test('bare duplicate links prefer a local note and never credit an arbitrary remote duplicate', (t) => {
+  const root = vault({
+    '02_AREAS/A.md': FM + '[[Note]]',
+    '02_AREAS/Note.md': FM + 'local',
+    '03_RESOURCES/Docs/Note.md': FM + 'remote',
+    '01_PROJECTS/B.md': FM + '[[Note]]',
+  });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const r = hc.runChecks(root);
+  assert.deepStrictEqual(r.brokenLinks, []);
+  const orphans = r.orphaned.map(x => path.relative(root, x.filePath));
+  assert.ok(!orphans.includes('02_AREAS/Note.md'));
+  assert.ok(orphans.includes('03_RESOURCES/Docs/Note.md'));
+});

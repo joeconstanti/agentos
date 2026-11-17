@@ -168,14 +168,35 @@ function runChecks(root = VAULT_ROOT) {
   const rel = (p) => path.relative(vaultRoot, p);
   const allPaths = collectFiles(vaultRoot);
   const allFiles = allPaths.filter((filePath) => filePath.endsWith('.md'));
-  const assetNames = new Set(allPaths.map((filePath) => path.basename(filePath).toLowerCase()));
+  // Keep complete paths: a matching basename cannot validate a wrong folder.
+  const targetKey = (name) => name.replace(/\\/g, '/').replace(/\.md$/i, '').toLowerCase();
+  const pathsByKey = new Map();
+  const pathsByName = new Map();
+  for (const filePath of allPaths) {
+    const key = targetKey(rel(filePath));
+    pathsByKey.set(key, filePath);
+    const name = path.posix.basename(key);
+    if (!pathsByName.has(name)) pathsByName.set(name, []);
+    pathsByName.get(name).push(filePath);
+  }
+  function resolveTargets(link, source) {
+    const key = targetKey(link.trim());
+    if (key.includes('/')) {
+      const exact = pathsByKey.get(key);
+      if (exact) return [exact];
+      // Obsidian can use the shortest unique folder-qualified path.
+      return (pathsByName.get(path.posix.basename(key)) || [])
+        .filter(filePath => targetKey(rel(filePath)).endsWith('/' + key));
+    }
+    const local = pathsByKey.get(targetKey(path.join(path.dirname(rel(source)), key)));
+    if (local) return [local];
+    return pathsByName.get(key) || [];
+  }
 
-  // Build a lookup: note stem → full path (for wikilink resolution)
-  const stemToPath = new Map();
+  // Track duplicate note basenames separately from target resolution.
   const stemOwners = new Map();
   for (const f of allFiles) {
     const stem = path.basename(f, '.md').toLowerCase();
-    stemToPath.set(stem, f);
     if (!stemOwners.has(stem)) stemOwners.set(stem, []);
     stemOwners.get(stem).push(f);
   }
@@ -201,7 +222,8 @@ function runChecks(root = VAULT_ROOT) {
 
     // Record inbound links
     for (const link of outlinks) {
-      const target = stemToPath.get(wikilinkStem(link));
+      const targets = resolveTargets(link, filePath);
+      const target = targets.length === 1 ? targets[0] : null;
       if (target && target !== filePath) {
         inboundLinks.get(target)?.add(filePath);
       }
@@ -263,9 +285,8 @@ function runChecks(root = VAULT_ROOT) {
   const seenBroken = new Set();
   for (const { filePath, outlinks } of fileData) {
     for (const link of outlinks) {
-      const stem = wikilinkStem(link);
-      // Notes resolve without an extension. Embeds such as ![[diagram.svg]] resolve by filename.
-      if (!stem || stemToPath.has(stem) || assetNames.has(stem)) continue;
+      // Ambiguous targets exist, but do not establish an inbound link to one note.
+      if (resolveTargets(link, filePath).length > 0) continue;
       const key = `${filePath}\0${link}`;
       if (seenBroken.has(key)) continue;
       seenBroken.add(key);
