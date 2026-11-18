@@ -214,7 +214,12 @@ into `main`. Feature-branch pushes use the PR run; the subsequent `main` run
 checks the merged result. New revisions cancel superseded runs on the same PR.
 Each `main` run remains independent so post-merge evidence is retained.
 
-CI runs the Python checks above, followed by:
+CI always runs the Python checks above and `git diff --check`. The Node
+fixture suite runs on every `main` push and every PR except those that only
+edit existing Markdown files in `03_RESOURCES/Docs/` or the root `README.md`.
+Additions, deletions, renames, type changes and unverified PR comparisons
+use the full suite. Python checks still validate skill references to the
+documentation.
 
 ```sh
 node --test tests/*.test.js
