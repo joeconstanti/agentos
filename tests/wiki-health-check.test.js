@@ -31,6 +31,28 @@ test('extractWikilinks ignores fenced and inline examples', () => {
   assert.deepStrictEqual(hc.extractWikilinks(text), ['Real']);
 });
 
+test('extractWikilinks ignores examples until a valid closing fence', () => {
+  const text = [
+    '[[Before]]',
+    '````markdown',
+    '```',
+    '[[After short marker]]',
+    '~~~~',
+    '[[After different marker]]',
+    '````still code',
+    '[[After marker with text]]',
+    '`````  ',
+    '[[After backticks]]',
+    '~~~~markdown',
+    '~~~',
+    '[[After short tilde marker]]',
+    '~~~~',
+    '[[After tildes]]',
+  ].join('\r\n');
+  assert.deepStrictEqual(hc.extractWikilinks(text), ['Before', 'After backticks', 'After tildes']);
+  assert.deepStrictEqual(hc.extractWikilinks('```invalid`info\n[[Outside]]'), ['Outside']);
+});
+
 test('wikilinkStem uses the basename without an extension', () => {
   assert.strictEqual(hc.wikilinkStem('Docs/My Note.md'), 'my note');
 });

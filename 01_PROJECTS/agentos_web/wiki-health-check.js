@@ -103,14 +103,18 @@ function withoutExamples(content) {
   const kept = [];
   let fence = null;
   for (const line of content.split(/\r?\n/)) {
-    const marker = line.match(/^\s*(`{3,}|~{3,})/);
-    if (marker) {
-      const token = marker[1][0];
-      if (!fence) fence = token;
-      else if (fence === token) fence = null;
+    const marker = line.match(/^\s*(`{3,}|~{3,})(.*)$/);
+    if (fence) {
+      if (marker && marker[1].startsWith(fence) && /^[ \t]*$/.test(marker[2])) {
+        fence = null;
+      }
       continue;
     }
-    if (!fence) kept.push(line);
+    if (marker && (marker[1][0] === '~' || !marker[2].includes('`'))) {
+      fence = marker[1];
+      continue;
+    }
+    kept.push(line);
   }
   return kept.join('\n').replace(/`[^`\n]*`/g, '');
 }
