@@ -676,9 +676,16 @@ function summarize(results) {
 }
 
 function flagValue(name) {
-  const index = process.argv.indexOf(name);
-  if (index === -1 || index + 1 >= process.argv.length) return null;
-  return process.argv[index + 1];
+  const index = process.argv.indexOf(name, 2);
+  if (index === -1) return null;
+  const value = process.argv[index + 1];
+  if (!value || value.startsWith('--')) {
+    throw new Error(`${name} requires a directory path`);
+  }
+  if (process.argv.includes(name, index + 2)) {
+    throw new Error(`${name} may only be specified once`);
+  }
+  return value;
 }
 
 // ---------------------------------------------------------------------------
