@@ -131,6 +131,34 @@ test('--json prints relative paths for a chosen vault root', () => {
   assert.ok(body.issues >= 1);
 });
 
+test('invalid --root usage fails before scanning or writing a report', (t) => {
+  const scriptName = '01_PROJECTS/agentos_web/wiki-health-check.js';
+  const root = vault({ '03_RESOURCES/Docs/Default.md': FM + 'Default vault fixture.' });
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const script = path.join(root, scriptName);
+  fs.mkdirSync(path.dirname(script), { recursive: true });
+  fs.copyFileSync(path.join(__dirname, '..', scriptName), script);
+
+  const reportOptions = ['--json', '--write-report'];
+  const invalidCases = [
+    [['--root'], /--root requires a directory path/],
+    [['--root', ''], /--root requires a directory path/],
+    [['--root', '--strict'], /--root requires a directory path/],
+    [['--root', root, '--root', root], /--root may only be specified once/],
+  ];
+  for (const [args, diagnostic] of invalidCases) {
+    const result = spawnSync(process.execPath, [script, ...reportOptions, ...args], { encoding: 'utf8' });
+    assert.strictEqual(result.status, 1, result.stderr);
+    assert.strictEqual(result.stdout, '');
+    assert.match(result.stderr, diagnostic);
+    assert.strictEqual(fs.existsSync(path.join(root, '00_INBOX')), false);
+  }
+
+  const result = spawnSync(process.execPath, [script, '--json'], { encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.strictEqual(JSON.parse(result.stdout).totalNotes, 1);
+});
+
 test('--strict exits non-zero only when findings exist', () => {
   const script = path.join(__dirname, '../01_PROJECTS/agentos_web/wiki-health-check.js');
   const words = Array.from({ length: 120 }, () => 'word').join(' ');
